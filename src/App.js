@@ -1,11 +1,13 @@
-import React from 'react';
-import Aux from './hoc/Aux'
+import React, { Fragment } from 'react';
+import Header from '../src/containers/header/Header';
+import Home from '../src/components/home/Home';
 
 const App = () => {
   return (
-      <Aux>
-          <h1 className='text-danger'>Fuck You Richard</h1>
-      </Aux>
+      <Fragment>
+        <Header className='Header'></Header>
+        <Home></Home>
+      </Fragment>
   );
 }
 
