@@ -1,13 +1,19 @@
-import React, { Fragment } from 'react';
-import Header from '../src/containers/header/Header';
-import Home from '../src/components/home/Home';
+import React from 'react';
+import HomePage from './containers/HomePage/HomePage'
+import Test from './containers/test/test'
+import Layout from './components/layout/layout'
+import {BrowserRouter as Router, Switch,Route} from "react-router-dom";
 
 const App = () => {
   return (
-      <Fragment>
-        <Header className='Header'></Header>
-        <Home></Home>
-      </Fragment>
+      <Layout>
+        <Router>
+            <Switch>
+                <Route path="/" exact component={HomePage}/>
+                <Route path="/test" component={Test}/>
+            </Switch>
+        </Router>
+      </Layout>
   );
 }
 
