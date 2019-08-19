@@ -3,9 +3,9 @@
     width: 100%;
     background:rgba(38, 39, 35, 0.5);
 
-    position: fixed;
+    position: absolute;
     top:0;
-    z-index: 100;
+    z-index: 1;
 }
 .cs_header_title{
     font-size: 2rem;
