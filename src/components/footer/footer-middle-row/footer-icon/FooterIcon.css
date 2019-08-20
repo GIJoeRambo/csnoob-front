@@ -1,0 +1,20 @@
+.cs_footer_icon{
+    width: 5rem;
+    height: 5rem;
+    background: rgb(180, 179, 179);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 4.8rem;
+    display: inline-block;
+    margin: 0 0.8rem;
+    margin-bottom: 0.5rem;
+}
+.cs_footer_icon:hover{
+    cursor: pointer;
+    background: white;
+}
+.cs_footer_icon img{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}

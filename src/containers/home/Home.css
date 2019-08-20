@@ -1,22 +1,15 @@
 .Home{
     height: 100%;
+}
+.cs_home_bg{
+    height: 100%;
     background-image: url('../../assets/images/background/home_bg.jpg');
     background-position: center;
-    /* 子绝父相 */
-    position: relative;
+    filter: sepia(30%);
 }
-.cs_home_bg_filter{
+.cs_home_filter{
     height: 100%;
     background-image: url('../../assets/images/background/home_layer.jpg');
     background-position: center;
     opacity: 0.3;
-    filter:sepia(60%);
-}
-.cs_home_content{
-    /* overflow: hidden; */
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 2;
 }

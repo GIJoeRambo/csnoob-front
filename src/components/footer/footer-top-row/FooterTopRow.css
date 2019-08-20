@@ -1,0 +1,14 @@
+.cs_footer_top{
+    text-align: center;
+    color:rgb(141, 140, 140);
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-bottom: 1px solid rgb(141, 140, 140);
+}
+.cs_footer_top_label{
+    margin: 1rem;
+}
+.cs_footer_top_label a:hover{
+    cursor: pointer;
+    color: white!important;
+}

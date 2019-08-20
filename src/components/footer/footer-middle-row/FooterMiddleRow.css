@@ -1,0 +1,19 @@
+.FooterMiddleRow{
+    border-bottom: 1px solid rgb(141, 140, 140);
+}
+.cs_footer_icon_group{
+    margin:0 auto;
+}
+.cs_footer_slogan{
+    text-align: center;
+    color:rgb(141, 140, 140);   
+}
+.cs_footer_contact{
+    margin-top:2rem!important;
+    margin-bottom: 1rem!important;
+    color:white;
+    text-align: center;
+}
+.cs_footer_contact span{
+    margin:0 0.8rem;
+}

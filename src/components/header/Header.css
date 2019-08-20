@@ -1,11 +1,7 @@
 .cs_header{
     height: 3rem;
     width: 100%;
-    background:rgba(38, 39, 35, 0.5);
-
-    position: absolute;
-    top:0;
-    z-index: 1;
+    background: #2a2a2a;
 }
 .cs_header_title{
     font-size: 2rem;
