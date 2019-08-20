@@ -1,14 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import './Home.css';
-
+import Tellurion from '../../components/UI/background/tellurion/tellurion'
 const HomePage = () => {
     return (
         <Fragment>
-            <div className='Home'>
-                <div className='cs_home_bg'>
-                    <div className='cs_home_filter'></div>
-                </div>
-            </div>
+            <Tellurion>
+                <h1 className="text-white text-center">Fk u Richard</h1>
+            </Tellurion>
         </Fragment>
     )
 }
