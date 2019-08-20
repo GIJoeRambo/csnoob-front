@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import FooterIcon from './footer-icon/FooterIcon';
 import './FooterMiddleRow.css';
 
 const FooterMiddleRow = () => {
     const uniAbbrList = ['uoa', 'aut', 'messay', 'waikato', 'uc', 'victoria', 'otago', 'lincoln'];
     return (
-        <div class='FooterMiddleRow'>
+        <div className='FooterMiddleRow'>
             <div className='row'>
                 <div className='py-3 cs_footer_icon_group'>
                     <FooterIcon uniAbbrList={uniAbbrList}></FooterIcon>

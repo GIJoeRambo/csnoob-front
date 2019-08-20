@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
-import Header from "../../components/header/Header";
-import Footer from '../footer/Footer'
-const layout = (props) => {
+import Header from "../../navigation/header/Header";
+import Footer from '../../navigation/footer/Footer'
+const MainLayout = (props) => {
     return (
         <Fragment>
             <Header className='Header'></Header>
@@ -11,4 +11,4 @@ const layout = (props) => {
     )
 }
 
-export default layout
+export default MainLayout

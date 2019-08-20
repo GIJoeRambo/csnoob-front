@@ -8,11 +8,12 @@ const FooterIcon = (props) => {
                 props.uniAbbrList.map(
                     (item, index) => {
                         return (
-                            <div className='cs_footer_icon'>
-                                <img 
-                                src={require('../../../../assets/images/uni_icons/' + item )}
-                                title={item}
-                                ></img>
+                            <div key={index} className='cs_footer_icon'>
+                                <img
+                                    alt="circle"
+                                    src={require('../../../../../assets/images/uni_icons/' + item )}
+                                    title={item}
+                                />
                             </div>
                         )
                     }
@@ -23,4 +24,3 @@ const FooterIcon = (props) => {
 }
 
 export default FooterIcon;
-// '../../../../assets/images/uni_icons/messay.png'

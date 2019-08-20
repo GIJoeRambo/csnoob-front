@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, {Fragment } from 'react';
 import Tellurion from '../../components/UI/background/tellurion/tellurion'
 const HomePage = () => {
     return (
