@@ -1,7 +1,6 @@
 import React from 'react'
 import './NotFound.css'
 import WireBiting from '../../components/UI/background/WireBiting/WireBiting'
-import {BrowserRouter as Router, Link} from 'react-router-dom'
 
 const NotFound = () => {
     return (
@@ -20,9 +19,7 @@ const NotFound = () => {
 
                                     <p>the page you are looking for not avaible!</p>
 
-                                    <Router>
-                                        <Link to="/" className="link_404">Go to Home</Link>
-                                    </Router>
+                                    <a href="/" className="link_404">Go to Home</a>
                                 </div>
                             </div>
                         </div>
