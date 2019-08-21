@@ -9,7 +9,7 @@ const FooterIcon = (props) => {
                     (item, index) => {
                         return (
                             <div key={item.uniId} className='cs_footer_icon'>
-                                <a href={item.uniHref} target='_blank'>
+                                <a href={item.uniHref} target='_blank' rel="noopener noreferrer">
                                     <img
                                         alt="circle"
                                         src={require('../../../../../assets/images/uni_icons/' + item.uniName)}
