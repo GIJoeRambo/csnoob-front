@@ -1,14 +1,15 @@
-.cs_header{
-    height: 3rem;
-    width: 100%;
-    background: #2a2a2a;
+.cs_header {
+  height: 4rem;
+  line-height: 4rem;
+  white-space: nowrap;
+  width: 100%;
+  background: #2a2a2a;
 }
-.cs_header_title{
-    font-size: 2rem;
-    font-weight: bold;
-    color:white;
-    margin-left: 1rem;
-}
-.cs_header_title:hover{
-    cursor: pointer;
+.cs_header_title {
+  font-size: 2rem;
+  font-family: "Courier New";
+  color: white;
+  margin-left: 1rem;
+  cursor: pointer;
+  user-select: none;
 }

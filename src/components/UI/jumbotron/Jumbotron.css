@@ -1,16 +1,16 @@
-.jumbotron{
-    margin-top: 10rem;
-    padding:6rem!important;
-    background:rgba(255, 255, 255, 0.2)!important;
+.jumbotron {
+  margin-top: 5rem;
+  padding: 6rem !important;
+  background: rgba(255, 255, 255, 0.2) !important;
 }
-.jumbotron_title{
-    color:white;
-    font-weight: bold;
+.jumbotron_title {
+  color: white;
+  font-weight: bold;
 }
-.jumbotron_content{
-    color:white;
+.jumbotron_content {
+  color: white;
 }
-.jumbtron_btn{
-    margin-top:3rem;
-    text-align: right;
+.jumbtron_btn {
+  margin-top: 3rem;
+  text-align: right;
 }
