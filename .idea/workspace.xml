@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f9cca90-c916-49c1-9afb-756660e5c898" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/jumbotron/Jumbotron.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/jumbotron/Jumbotron.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/footer/footer-middle-row/footer-icon/FooterIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/footer/footer-middle-row/footer-icon/FooterIcon.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/test/test.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,11 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/UI/jumbotron/Jumbotron.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="165">
               <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -185,12 +177,12 @@
       <workItem from="1566203524595" duration="60000" />
       <workItem from="1566203586491" duration="2691000" />
       <workItem from="1566297076876" duration="6747000" />
-      <workItem from="1566358325057" duration="3107000" />
+      <workItem from="1566358325057" duration="3221000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13166000" />
+    <option name="totallyTimeSpent" value="13280000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -397,13 +389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/home/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/layout/dashboard_layout/dashboard_layout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -462,13 +447,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/home/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UI/jumbotron/Jumbotron.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="165">
           <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
