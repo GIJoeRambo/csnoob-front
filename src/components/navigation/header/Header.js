@@ -14,7 +14,12 @@ class Header extends React.Component {
     return (
       <Fragment>
         <div className="cs_header">
-          <span className="cs_header_title">cs noob</span>
+          <span
+            className="cs_header_title"
+            onClick={() => (window.location.href = "/")}
+          >
+            cs noob
+          </span>
           <span
             className={
               this.state.counter % 2 === 0
