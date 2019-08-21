@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import './FooterIcon.css';
+import React, { Fragment } from "react";
+import "./FooterIcon.css";
 
 const FooterIcon = (props) => {
     return (

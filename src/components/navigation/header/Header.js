@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import './Header.css';
+import React, { Fragment } from "react";
+import "./Header.css";
 
 const Header = () => {
   return (
@@ -9,6 +9,6 @@ const Header = () => {
         </div>
       </Fragment>
   );
-}
+};
 
 export default Header;

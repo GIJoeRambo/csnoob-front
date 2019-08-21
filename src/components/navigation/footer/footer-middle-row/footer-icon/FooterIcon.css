@@ -1,19 +1,19 @@
-.cs_footer_icon{
-    width: 4rem;
-    height: 4rem;
-    background: rgb(107, 107, 107);
-    border-radius: 50%;
-    text-align: center;
-    line-height: 3.8rem;
-    display: inline-block;
-    margin: 0 0.8rem;
+.cs_footer_icon {
+  width: 4rem;
+  height: 4rem;
+  background: rgb(107, 107, 107);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 3.8rem;
+  display: inline-block;
+  margin: 0 2rem;
 }
-.cs_footer_icon:hover{
-    cursor: pointer;
-    background: rgb(199, 199, 199);
+.cs_footer_icon:hover {
+  cursor: pointer;
+  background: rgb(199, 199, 199);
 }
-.cs_footer_icon img{
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
+.cs_footer_icon img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
 }

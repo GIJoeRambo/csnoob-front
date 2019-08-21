@@ -1,5 +1,5 @@
-import React from 'react'
-import './Jumbotron.css'
+import React from "react";
+import "./Jumbotron.css";
 
 const Jumbotron = (props) => {
     return (
