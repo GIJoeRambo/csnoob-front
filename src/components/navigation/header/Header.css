@@ -5,6 +5,7 @@
   width: 100%;
   background: #2a2a2a;
 }
+
 .cs_header_title {
   font-size: 2rem;
   font-family: "Courier New";
@@ -12,4 +13,18 @@
   margin-left: 1rem;
   cursor: pointer;
   user-select: none;
+}
+
+.cs_header_bar {
+  font-size: 2rem;
+  font-family: "Courier New";
+  user-select: none;
+  color: #2a2a2a;
+}
+
+.cs_header_white_bar {
+  font-size: 2rem;
+  font-family: "Courier New";
+  user-select: none;
+  color: #fff;
 }
