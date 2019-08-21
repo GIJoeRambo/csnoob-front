@@ -3,13 +3,15 @@ import "./Header.css";
 
 class Header extends React.Component {
   state = {
-    counter: 0
+    displayFlag: false
   };
+
   componentDidMount() {
     setInterval(() => {
-      this.setState({ counter: this.state.counter + 1 });
+      this.setState({ displayFlag: !this.state.displayFlag });
     }, 1000);
   }
+
   render() {
     return (
       <Fragment>
@@ -22,9 +24,7 @@ class Header extends React.Component {
           </span>
           <span
             className={
-              this.state.counter % 2 === 0
-                ? "cs_header_bar"
-                : "cs_header_white_bar"
+              this.state.displayFlag ? "cs_header_bar" : "cs_header_white_bar"
             }
           >
             |

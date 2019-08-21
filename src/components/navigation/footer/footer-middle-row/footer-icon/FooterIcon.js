@@ -13,7 +13,7 @@ const FooterIcon = (props) => {
                                     <img
                                         alt="circle"
                                         src={require('../../../../../assets/images/uni_icons/' + item.uniName)}
-                                        title={item}
+                                        title={item.uniName}
                                     />
                                 </a>
                             </div>

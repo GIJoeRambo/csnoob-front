@@ -6,7 +6,7 @@ const FooterMiddleRow = () => {
   const uniAbbrList = [
     { uniId: 0, uniName: "uoa", uniHref: "https://www.auckland.ac.nz/" },
     { uniId: 1, uniName: "aut", uniHref: "https://www.aut.ac.nz/" },
-    { uniId: 2, uniName: "messay", uniHref: "http://www.massey.ac.nz/" },
+    { uniId: 2, uniName: "massey", uniHref: "http://www.massey.ac.nz/" },
     { uniId: 3, uniName: "waikato", uniHref: "https://www.waikato.ac.nz/" },
     { uniId: 4, uniName: "uc", uniHref: "https://www.canterbury.ac.nz/" },
     { uniId: 5, uniName: "victoria", uniHref: "https://www.victoria.ac.nz/" },
