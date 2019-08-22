@@ -3,6 +3,7 @@ import Home from "./containers/home/Home";
 import Dashboard from "./containers/dashboard/dashboard";
 import NotFound from "./containers/NotFound/NotFound";
 import MainLayout from "./components/layout/main_layout/main_layout";
+import "./App.css";
 import {
   BrowserRouter as Router,
   Switch,

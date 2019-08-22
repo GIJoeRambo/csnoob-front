@@ -3,7 +3,7 @@
   line-height: 4rem;
   white-space: nowrap;
   width: 100%;
-  background: #2a2a2a;
+  background: var(--primary-black);
 }
 
 .cs_header_title {
@@ -19,7 +19,7 @@
   font-size: 2rem;
   font-family: "Courier New";
   user-select: none;
-  color: #2a2a2a;
+  color: var(--primary-black);
 }
 
 .cs_header_white_bar {

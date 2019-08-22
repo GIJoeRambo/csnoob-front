@@ -1,0 +1,13 @@
+.cs_sidebar_container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 9rem;
+}
+
+.cs_sidebar_link {
+  background-color: var(--primary-black);
+  color: white;
+  padding: 12px 0;
+}

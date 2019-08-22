@@ -1,27 +1,53 @@
 import React from "react";
 import { List, ListItem, ListItemText } from "@material-ui/core";
 import { NavLink, withRouter } from "react-router-dom";
+import "./Sidebar.css";
 
-const Sidebar = props => {
-  return (
-    <List component="nav">
-      <ListItem button>
-        <NavLink to={props.match.path + "/uoa"}>
-          <ListItemText primary="UoA" />
-        </NavLink>
-      </ListItem>
-      <ListItem button>
-        <NavLink to={props.match.path + "/aut"}>
-          <ListItemText primary="AUT" />
-        </NavLink>
-      </ListItem>
-      <ListItem button>
-        <NavLink to={props.match.path + "/massey"}>
-          <ListItemText primary="Massey" />
-        </NavLink>
-      </ListItem>
-    </List>
-  );
-};
+class Sidebar extends React.Component {
+  univisityList = [
+    { id: 1, name: "UoA", path: "uoa" },
+    { id: 2, name: "AUT", path: "aut" },
+    { id: 3, name: "Massey", path: "massey" },
+    { id: 4, name: "Lincoln", path: "lincoln" },
+    { id: 5, name: "Otago", path: "otago" },
+    { id: 6, name: "Uc", path: "uc" },
+    { id: 7, name: "Victoria", path: "victoria" },
+    { id: 8, name: "Waikato", path: "waikato" }
+  ];
+
+  state = {
+    selectedIndex: 0
+  };
+
+  handleClick = index => {
+    this.setState({ selectedIndex: index });
+  };
+
+  render() {
+    return (
+      <List component="nav" className="cs_sidebar_container">
+        {this.univisityList.map((el, index) => (
+          <NavLink
+            to={this.props.match.path + "/" + el.path}
+            key={el.id}
+            className="cs_sidebar_link"
+          >
+            <ListItem
+              button
+              selected={index === this.state.selectedIndex}
+              onClick={() => this.handleClick(index)}
+              divider
+            >
+              <ListItemText
+                primary={el.name}
+                primaryTypographyProps={{ variant: "h6" }}
+              />
+            </ListItem>
+          </NavLink>
+        ))}
+      </List>
+    );
+  }
+}
 
 export default withRouter(Sidebar);
