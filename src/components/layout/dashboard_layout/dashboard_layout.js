@@ -6,7 +6,9 @@ const DashboardLayout = props => {
   return (
     <div className="row cs_dashboard_panel">
       <Sidebar className="col-4" />
-      {props.children}
+      <div className="pl-4">
+          {props.children}
+      </div>
     </div>
   );
 };

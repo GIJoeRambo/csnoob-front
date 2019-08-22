@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 9rem;
 }
 
 .cs_sidebar_link {
