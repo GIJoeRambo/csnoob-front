@@ -15,14 +15,6 @@ class Sidebar extends React.Component {
     { id: 8, name: "Waikato", path: "waikato" }
   ];
 
-  state = {
-    selectedIndex: 0
-  };
-
-  handleClick = index => {
-    this.setState({ selectedIndex: index });
-  };
-
   render() {
     return (
       <List component="nav" className="cs_sidebar_container">
@@ -32,12 +24,7 @@ class Sidebar extends React.Component {
             key={el.id}
             className="cs_sidebar_link"
           >
-            <ListItem
-              button
-              selected={index === this.state.selectedIndex}
-              onClick={() => this.handleClick(index)}
-              divider
-            >
+            <ListItem button divider className="cs_sidebar_item" dense>
               <ListItemText
                 primary={el.name}
                 primaryTypographyProps={{ variant: "h6" }}
