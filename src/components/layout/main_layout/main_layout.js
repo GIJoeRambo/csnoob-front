@@ -6,11 +6,9 @@ import "./main_layout.css";
 const MainLayout = props => {
   return (
     <Fragment>
-      <Header className="Header" />
-      <div className="main_layout">
+      <div className="MainLayout">
         {props.children}
       </div>
-      <Footer className="Footer" />
     </Fragment>
   );
 };

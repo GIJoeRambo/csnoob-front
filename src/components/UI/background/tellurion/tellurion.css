@@ -1,9 +1,13 @@
-.tellurion {
+.Tellurion{
   height: 100%;
+  background-image: url("../../../../assets/images/background/home_bg.jpg");
+  background-position: center;
+  position: absolute;
+  top: 10rem;
 }
-.tellurion_bg {
+/* .tellurion_bg {
   height: 100%;
   background-image: url("../../../../assets/images/background/home_bg.jpg");
   background-position: center;
   overflow: hidden;
-}
+} */

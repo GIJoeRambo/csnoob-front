@@ -1,17 +1,16 @@
-.cs_footer_top {
-  text-align: center;
+.FooterTopRow {
+  border-bottom: 1px solid rgb(141, 140, 140);
+}
+.cs_footer_top_lable_group{
   color: rgb(141, 140, 140);
   font-size: 1rem;
   font-weight: bold;
-  border-bottom: 1px solid rgb(141, 140, 140);
 }
-.cs_footer_top_label {
-  margin: 0 2rem;
-}
-.cs_footer_top_label a {
+.cs_footer_top_label{
+  text-align: center;
   color: rgb(141, 140, 140);
 }
-.cs_footer_top_label a:hover {
+.cs_footer_top_label:hover {
   cursor: pointer;
   color: white !important;
   text-decoration: none;

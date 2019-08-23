@@ -3,7 +3,7 @@ import "./Jumbotron.css";
 
 const Jumbotron = props => {
   return (
-    <div className="jumbotron">
+    <div className="col-12 Jumbotron">
       <h1 className="display-4 jumbotron_title">Welcome, Noobs!</h1>
       <p className="lead jumbotron_content">
         This is a simple hero unit, a simple jumbotron-style component for

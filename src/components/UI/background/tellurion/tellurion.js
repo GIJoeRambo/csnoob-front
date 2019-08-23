@@ -2,8 +2,10 @@ import React from "react";
 import "./tellurion.css";
 const Tellurion = props => {
   return (
-    <div className="tellurion">
-      <div className="tellurion_bg">{props.children}</div>
+    <div className="Tellurion">
+      <div>
+        {props.children}
+      </div>
     </div>
   );
 };

@@ -5,20 +5,34 @@ import "./Sidebar.css";
 
 class Sidebar extends React.Component {
   univisityList = [
-    { id: 1, name: "UoA", path: "uoa" },
-    { id: 2, name: "AUT", path: "aut" },
-    { id: 3, name: "Massey", path: "massey" },
-    { id: 4, name: "Lincoln", path: "lincoln" },
-    { id: 5, name: "Otago", path: "otago" },
-    { id: 6, name: "Uc", path: "uc" },
-    { id: 7, name: "Victoria", path: "victoria" },
-    { id: 8, name: "Waikato", path: "waikato" }
+    { id: 1, name: "University of Auckland", path: "uoa" },
+    { id: 2, name: "Auckland University of Technology", path: "aut" },
+    { id: 3, name: "Massey University", path: "massey" },
+    { id: 4, name: "Lincoln University", path: "lincoln" },
+    { id: 5, name: "University of Otago", path: "otago" },
+    { id: 6, name: "University of Canterbury", path: "uc" },
+    { id: 7, name: "Victoria University of Wellington", path: "victoria" },
+    { id: 8, name: "University of Waikato", path: "waikato" }
   ];
 
   render() {
     return (
-      <List component="nav" className="cs_sidebar_container">
-        {this.univisityList.map((el, index) => (
+      <List component="nav" className="col-3 cs_sidebar_container">
+        {
+          this.univisityList.map((item, index) =>
+            (
+              <div className='row cs_sidebar_item'>
+                <div className='col-12 cs_sidebar_uniName'>{item.name}</div>
+              </div>
+            )
+          )
+        }
+
+
+
+
+
+        {/* {this.univisityList.map((el, index) => (
           <NavLink
             to={this.props.match.path + "/" + el.path}
             key={el.id}
@@ -31,7 +45,7 @@ class Sidebar extends React.Component {
               />
             </ListItem>
           </NavLink>
-        ))}
+        ))} */}
       </List>
     );
   }

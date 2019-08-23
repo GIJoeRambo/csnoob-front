@@ -1,3 +1,4 @@
-.main_layout{
+.MainLayout{
     height: 100%;
+    position: relative;
 }

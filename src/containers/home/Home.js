@@ -1,15 +1,14 @@
 import React, { Fragment } from "react";
 import Tellurion from "../../components/UI/background/tellurion/tellurion";
 import Jumbotron from "../../components/UI/jumbotron/Jumbotron";
+import './Home.css'
 
 const HomePage = () => {
   return (
     <Fragment>
-      <Tellurion>
-        <div className="container">
-          <Jumbotron />
-        </div>
-      </Tellurion>
+      <div className='row HomePage'>
+        <Jumbotron />
+      </div>
     </Fragment>
   );
 };

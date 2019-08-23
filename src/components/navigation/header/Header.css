@@ -1,8 +1,7 @@
-.cs_header {
+.Header {
   height: 4rem;
   line-height: 4rem;
   white-space: nowrap;
-  width: 100%;
   background: var(--primary-black);
 }
 

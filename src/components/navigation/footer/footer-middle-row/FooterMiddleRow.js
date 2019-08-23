@@ -14,33 +14,18 @@ const FooterMiddleRow = () => {
     { uniId: 7, uniName: "lincoln", uniHref: "http://www.lincoln.ac.nz/" }
   ];
   return (
-    <div className="FooterMiddleRow">
-      <div className="row">
-        <div className="py-3 cs_footer_icon_group">
-          <FooterIcon uniAbbrList={uniAbbrList} />
+    <div className="col-12 FooterMiddleRow">
+      <FooterIcon uniAbbrList={uniAbbrList} />
+      <div className="row cs_footer_contact_group">
+        <div className='col-3'></div>
+        <div className="col-6">
+          <div className='row'>
+            <span className='col-md-4 col-sm-12 cs_footer_contact'>info@xxxxxxxx.com</span>
+            <span className='col-md-4 col-sm-12 cs_footer_contact'>xxxxxxxxx</span>
+            <span className='col-md-4 col-sm-12 cs_footer_contact'>xxxxxxxxxxxxxxxxx</span>
+          </div>
         </div>
-      </div>
-      <div className="row">
-        {/* <h5 className='col-12 cs_footer_slogan'>We're based in Auckland, New Zealand.</h5> */}
-        {/* <h6 className="col-12 cs_footer_slogan">
-          We work with students from universities of NZ. Get in touch with us.
-        </h6> */}
-      </div>
-      <div className="row cs_footer_contact">
-        <div className="col-12">
-          <span>
-            <span />
-            info@xxxxxxxx.com
-          </span>
-          <span>
-            <span />
-            xxxxxxxxx
-          </span>
-          <span>
-            <span />
-            xxxxxxxxxxxxxxxxx
-          </span>
-        </div>
+        <div className='col-3'></div>
       </div>
     </div>
   );

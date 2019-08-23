@@ -3,20 +3,18 @@ import "./FooterTopRow.css";
 
 const FooterTopRow = () => {
   return (
-    <div className="row">
-      <div className="col-12 py-2 cs_footer_top">
-        <span className="cs_footer_top_label">
-          <a href="/">OUR TEAM</a>
-        </span>
-        <span className="cs_footer_top_label">
-          <a href="/">ABOUT</a>
-        </span>
-        <span className="cs_footer_top_label">
-          <a href="/">CONTACT</a>
-        </span>
-        <span className="cs_footer_top_label">
-          <a href="/">JOIN US</a>
-        </span>
+    <div className="col-12 FooterTopRow">
+      <div className="row">
+        <div className='col-2'></div>
+        <div className='col-8 cs_footer_top_lable_group'>
+          <div className='row'>
+            <a href="/" className='col-md-3 col-sm-6 cs_footer_top_label'>OUR TEAM</a>
+            <a href="/" className='col-md-3 col-sm-6 cs_footer_top_label'>ABOUT</a>
+            <a href="/" className='col-md-3 col-sm-6 cs_footer_top_label'>CONTACT</a>
+            <a href="/" className='col-md-3 col-sm-6 cs_footer_top_label'>JOIN US</a>
+          </div>
+        </div>
+        <div className='col-2'></div>
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ class Header extends React.Component {
   render() {
     return (
       <Fragment>
-        <div className="cs_header">
+        <div className="row Header">
           <span
             className="cs_header_title"
             onClick={() => (window.location.href = "/")}

@@ -1,4 +1,7 @@
-.cs_home_content{
-    height: 100%;
+.HomePage{
+    min-height: 65rem;
+    background-image: url("../../assets/images/background/home_bg.jpg");
+    background-position: center;
+    position: relative;
+    overflow: hidden;
 }
-

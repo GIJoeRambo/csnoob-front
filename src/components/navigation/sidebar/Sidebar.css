@@ -1,10 +1,32 @@
 .cs_sidebar_container {
+  padding:0!important;
   background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 9rem;
+  background: rgb(95, 93, 93);
+  margin-top:2rem!important;
+  /* display: flex; */
+  /* flex-direction: column;
+  justify-content: center; */
 }
+.cs_sidebar_item{
+  height: 8rem;
+  line-height: 8rem;
+  background-image: url('../../../assets/images/background/home_bg.jpg');
+  margin-bottom:0.2rem;
+}
+.cs_sidebar_item:hover{
+  cursor: pointer;
+  margin-left: 5rem;
+  margin-right: -5rem;
+  transition-duration: 0.5s;
+}
+
+.cs_sidebar_uniName{
+  text-align: center;
+  font-size:1.8rem;
+  color:white;
+}
+
+
 
 .cs_sidebar_link {
   background-color: var(--primary-black);
@@ -14,9 +36,4 @@
 .cs_sidebar_link:hover {
   text-decoration: none;
   color: white;
-}
-
-.cs_sidebar_item {
-  padding-top: 1.2rem !important;
-  padding-bottom: 1.2rem !important;
 }
