@@ -1,6 +1,6 @@
 import React from "react";
-import { List, ListItem, ListItemText } from "@material-ui/core";
-import { NavLink, withRouter } from "react-router-dom";
+import { List} from "@material-ui/core";
+import { withRouter } from "react-router-dom";
 import "./Sidebar.css";
 
 class Sidebar extends React.Component {
