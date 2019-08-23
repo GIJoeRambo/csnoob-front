@@ -1,27 +1,21 @@
 import React from "react";
 import DashboardLayout from "../../components/layout/dashboard_layout/dashboard_layout";
 import { Switch, Route } from "react-router-dom";
-import UoA from "./uoa/uoa";
-import Aut from "./aut/aut";
-import Massey from "./massey/massey";
-import Lincoln from "./lincoln/lincoln";
-import Otago from "./otago/otago";
-import Uc from "./uc/uc";
-import Victoria from "./victoria/victoria";
-import Waikato from "./waikato/waikato";
+import Content from './content/content'
+import SchoolHoc from '../../hoc/SchoolHoc'
 
 const Dashboard = props => {
   return (
     <DashboardLayout>
       <Switch>
-        <Route path={`${props.match.path}/uoa`} component={UoA} />
-        <Route path={`${props.match.path}/aut`} component={Aut} />
-        <Route path={`${props.match.path}/massey`} component={Massey} />
-        <Route path={`${props.match.path}/lincoln`} component={Lincoln} />
-        <Route path={`${props.match.path}/otago`} component={Otago} />
-        <Route path={`${props.match.path}/uc`} component={Uc} />
-        <Route path={`${props.match.path}/victoria`} component={Victoria} />
-        <Route path={`${props.match.path}/waikato`} component={Waikato} />
+        <Route path={`${props.match.path}/uoa`} component={SchoolHoc({name:'uoa'})(Content)} />
+        <Route path={`${props.match.path}/aut`} component={SchoolHoc({name:'aut'})(Content)} />
+        <Route path={`${props.match.path}/massey`} component={SchoolHoc({name:'massey'})(Content)} />
+        <Route path={`${props.match.path}/lincoln`} component={SchoolHoc({name:'lincoln'})(Content)} />
+        <Route path={`${props.match.path}/otago`} component={SchoolHoc({name:'otago'})(Content)} />
+        <Route path={`${props.match.path}/uc`} component={SchoolHoc({name:'uc'})(Content)} />
+        <Route path={`${props.match.path}/victoria`} component={SchoolHoc({name:'victoria'})(Content)} />
+        <Route path={`${props.match.path}/waikato`} component={SchoolHoc({name:'waikato'})(Content)} />
       </Switch>
     </DashboardLayout>
   );

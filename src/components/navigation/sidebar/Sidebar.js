@@ -21,7 +21,7 @@ class Sidebar extends React.Component {
         {
           this.univisityList.map((item, index) =>
             (
-              <div className='row cs_sidebar_item'>
+              <div key={index} className='row cs_sidebar_item'>
                 <div className='col-12 cs_sidebar_uniName'>{item.name}</div>
               </div>
             )

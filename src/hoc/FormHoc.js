@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-const Form = (fileds) =>{
+const FormHoc = (fileds) =>{
     return WrappedForm =>{
         return class extends Component{
             state = {...fileds};
@@ -35,7 +35,7 @@ const Form = (fileds) =>{
     }
 };
 
-export default Form
+export default FormHoc
 
 
 // const Data = ({onSubmit,onChange,fields}) =>{
