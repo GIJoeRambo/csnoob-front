@@ -5,17 +5,38 @@ import Content from './content/content'
 import SchoolHoc from '../../hoc/SchoolHoc'
 
 const Dashboard = props => {
+  const schools = [
+    {
+      name: 'uoa',
+    },
+    {
+      name: 'aut',
+    },
+    {
+      name: 'massey',
+    },
+    {
+      name: 'lincoln',
+    },
+    {
+      name: 'otago',
+    },
+    {
+      name: 'uc',
+    },
+    {
+      name: 'victoria',
+    },
+    {
+      name: 'waikato',
+    }
+  ]
   return (
     <DashboardLayout>
       <Switch>
-        <Route path={`${props.match.path}/uoa`} component={SchoolHoc({name:'uoa'})(Content)} />
-        <Route path={`${props.match.path}/aut`} component={SchoolHoc({name:'aut'})(Content)} />
-        <Route path={`${props.match.path}/massey`} component={SchoolHoc({name:'massey'})(Content)} />
-        <Route path={`${props.match.path}/lincoln`} component={SchoolHoc({name:'lincoln'})(Content)} />
-        <Route path={`${props.match.path}/otago`} component={SchoolHoc({name:'otago'})(Content)} />
-        <Route path={`${props.match.path}/uc`} component={SchoolHoc({name:'uc'})(Content)} />
-        <Route path={`${props.match.path}/victoria`} component={SchoolHoc({name:'victoria'})(Content)} />
-        <Route path={`${props.match.path}/waikato`} component={SchoolHoc({name:'waikato'})(Content)} />
+        {schools.map((school,index)=>(
+            <Route key={index} path={`${props.match.path}/${school.name}`} component={SchoolHoc({name: school.name})(Content)} />
+        ))}
       </Switch>
     </DashboardLayout>
   );
