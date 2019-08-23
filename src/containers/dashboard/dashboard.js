@@ -35,7 +35,11 @@ const Dashboard = props => {
     <DashboardLayout>
       <Switch>
         {schools.map((school,index)=>(
-            <Route key={index} path={`${props.match.path}/${school.name}`} component={SchoolHoc({name: school.name})(Content)} />
+            <Route
+                key={index}
+                path={`${props.match.path}/${school.name}`}
+                component={SchoolHoc({name: school.name})(Content)}
+            />
         ))}
       </Switch>
     </DashboardLayout>
