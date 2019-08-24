@@ -7,7 +7,6 @@ const NotFound = () => {
     return (
         <NotFoundLayout>
             <WireBiting/>
-
             <div className="contant_box_404">
                 <h3 className="h2">
                     Look like you're lost

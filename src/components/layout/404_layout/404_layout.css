@@ -1,4 +1,8 @@
+.NotFoundLayout{
+  
+}
 .page_404{
+    min-height: 50rem;
     padding:40px 0;
     background:#fff;
     font-family: 'Arvo', serif;

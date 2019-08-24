@@ -4,7 +4,7 @@ import "./dashboard_layout.css";
 
 const DashboardLayout = props => {
   return (
-    <div className="row cs_dashboard_panel">
+    <div className="row DashboardLayout">
       <Sidebar className="col-4" />
       <div className="pl-4">
           {props.children}
