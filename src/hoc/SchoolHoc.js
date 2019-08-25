@@ -1,18 +1,13 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
-const SchoolHoc = (fileds) => {
-    return WrappedComponent => {
-        return class extends Component{
-            render(){
-                return (
-                    <WrappedComponent
-                        {...this.props}
-                        school={{...fileds}}
-                    />
-                )
-            }
-        }
-    }
-}
+const SchoolHoc = fields => {
+  return WrappedComponent => {
+    return class extends Component {
+      render() {
+        return <WrappedComponent {...this.props} school={{ ...fields }} />;
+      }
+    };
+  };
+};
 
-export default SchoolHoc
+export default SchoolHoc;

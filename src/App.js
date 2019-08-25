@@ -15,15 +15,15 @@ const App = () => {
   return (
     <MainLayout>
       {/* <div className='App'> */}
-        <Router>
-          <Switch>
-            <Route exact path="/404" component={NotFound} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/forum" component={Forum}/>
-            <Route path="/" exact component={Home} />
-            <Redirect from={"*"} to={"/404"} />
-          </Switch>
-        </Router>
+      <Router>
+        <Switch>
+          <Route exact path="/404" component={NotFound} />
+          <Route path="/dashboard" component={Dashboard} />
+          {/* <Route path="/forum" component={Forum}/> */}
+          <Route path="/" exact component={Home} />
+          <Redirect from={"*"} to={"/404"} />
+        </Switch>
+      </Router>
       {/* </div> */}
     </MainLayout>
   );

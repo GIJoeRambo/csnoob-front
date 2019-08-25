@@ -1,10 +1,10 @@
 import React from "react";
-import { List } from "@material-ui/core";
-import { withRouter } from "react-router-dom";
+import { List, ListItem } from "@material-ui/core";
+import { withRouter, NavLink } from "react-router-dom";
 import "./Sidebar.css";
 
 class Sidebar extends React.Component {
-  imgPath = '../../../assets/images/university/';
+  imgPath = "../../../assets/images/university/";
   univisityList = [
     { id: 1, name: "University of Auckland", path: "uoa" },
     { id: 2, name: "Auckland University of Technology", path: "aut" },
@@ -16,37 +16,37 @@ class Sidebar extends React.Component {
     { id: 8, name: "University of Waikato", path: "waikato" }
   ];
 
+  state = {
+    selectedId: -1
+  };
+
+  handleClick = index => {
+    this.setState({ selectedId: index }, () => {
+      console.log(index);
+    });
+  };
+
   render() {
     return (
-      <List component="nav" className="col-3 SideBar">
-        {
-          this.univisityList.map((item, index) =>
-            (
-              <div key={index} className='row cs_sidebar_item'>
-                <div className='col-12 cs_sidebar_uniName'>{item.name}</div>
-              </div>
-            )
-          )
-        }
-
-
-
-
-
-        {/* {this.univisityList.map((el, index) => (
+      <List component="nav" className="row col-12 col-md-3 SideBar">
+        {this.univisityList.map((item, index) => (
           <NavLink
-            to={this.props.match.path + "/" + el.path}
-            key={el.id}
-            className="cs_sidebar_link"
+            to={this.props.match.path + "/" + item.path}
+            key={item.id}
+            className="cs_sidebar_link col-6 col-md-12"
+            onClick={() => this.handleClick(index)}
           >
-            <ListItem button divider className="cs_sidebar_item" dense>
-              <ListItemText
-                primary={el.name}
-                primaryTypographyProps={{ variant: "h6" }}
-              />
+            <ListItem
+              className={`row cs_sidebar_item ${
+                this.state.selectedId === index
+                  ? "cs_sidebar_item_selected"
+                  : ""
+              }`}
+            >
+              <h5 className="cs_sidebar_uniName">{item.name}</h5>
             </ListItem>
           </NavLink>
-        ))} */}
+        ))}
       </List>
     );
   }
