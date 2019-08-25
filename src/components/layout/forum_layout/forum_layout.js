@@ -4,9 +4,7 @@ const ForumLayout = (props) =>{
     return (
         <Fragment>
             <div className="container">
-                <div className="col-full">
-                    {props.children}
-                </div>
+                {props.children}
             </div>
             <div className="forum-stats desktop-only">
                 <hr/>
