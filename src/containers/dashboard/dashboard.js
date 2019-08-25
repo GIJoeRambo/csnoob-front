@@ -2,7 +2,6 @@ import React from "react";
 import DashboardLayout from "../../components/layout/dashboard_layout/dashboard_layout";
 import { Switch, Route } from "react-router-dom";
 import Content from "./content/content";
-import SchoolHoc from "../../hoc/SchoolHoc";
 
 const Dashboard = props => {
   return (
