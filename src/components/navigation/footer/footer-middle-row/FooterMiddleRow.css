@@ -1,13 +1,13 @@
-span{
-  margin:0!important;
-  padding:0!important;
-}
+/* span {
+  margin: 0 !important;
+  padding: 0 !important;
+} */
 .FooterMiddleRow {
-  border-bottom: 1px solid rgb(141, 140, 140);
+  border-bottom: 1px solid var(--primary-gray);
 }
-.cs_footer_contact_group{
-  margin-top: 0.5rem!important;
-  margin-bottom: 0.5rem!important;
+.cs_footer_contact_group {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
 }
 .cs_footer_contact {
   color: white;

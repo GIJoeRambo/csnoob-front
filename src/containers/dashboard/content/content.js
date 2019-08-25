@@ -1,10 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const Content = (props) =>{
-    return (
-        <h1>{props.school.name}</h1>
+const Content = props => {
+  return <h1>{props.location.state.university.name}</h1>;
+};
 
-    )
-}
-
-export default Content
+export default Content;
