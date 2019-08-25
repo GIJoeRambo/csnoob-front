@@ -21,32 +21,40 @@ class Sidebar extends React.Component {
   };
 
   handleClick = index => {
-    this.setState({ selectedId: index }, () => {
-      console.log(index);
-    });
+    this.setState({ selectedId: index });
   };
 
   render() {
+    console.log(this.props);
     return (
       <List component="nav" className="row col-12 col-md-3 SideBar">
-        {this.univisityList.map((item, index) => (
-          <NavLink
-            to={this.props.match.path + "/" + item.path}
-            key={item.id}
-            className="cs_sidebar_link col-6 col-md-12"
-            onClick={() => this.handleClick(index)}
-          >
-            <ListItem
-              className={`row cs_sidebar_item ${
-                this.state.selectedId === index
-                  ? "cs_sidebar_item_selected"
-                  : ""
-              }`}
+        {this.univisityList.map((item, index) => {
+          let path = {
+            pathname: this.props.match.path + "/" + item.path,
+            state: {
+              school: item
+            }
+          };
+          return (
+            <NavLink
+              // to={this.props.match.path + "/" + item.path}
+              to={path}
+              key={item.id}
+              className="cs_sidebar_link col-6 col-md-12"
+              onClick={() => this.handleClick(index)}
             >
-              <h5 className="cs_sidebar_uniName">{item.name}</h5>
-            </ListItem>
-          </NavLink>
-        ))}
+              <ListItem
+                className={`row cs_sidebar_item ${
+                  this.state.selectedId === index
+                    ? "cs_sidebar_item_selected"
+                    : ""
+                }`}
+              >
+                <h5 className="cs_sidebar_uniName">{item.name}</h5>
+              </ListItem>
+            </NavLink>
+          );
+        })}
       </List>
     );
   }

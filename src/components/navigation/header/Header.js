@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { withRouter } from "react-router-dom";
 import "./Header.css";
 
 class Header extends React.Component {
@@ -6,11 +7,13 @@ class Header extends React.Component {
     displayFlag: false
   };
 
-  componentDidMount() {
+  componentDidMount = () => {
     setInterval(() => {
       this.setState({ displayFlag: !this.state.displayFlag });
     }, 1000);
-  }
+  };
+
+  handleClick = () => {};
 
   render() {
     return (

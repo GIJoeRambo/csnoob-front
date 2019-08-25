@@ -5,8 +5,8 @@ import "./dashboard_layout.css";
 const DashboardLayout = props => {
   return (
     <div className="row DashboardLayout">
-      <Sidebar className="col-md-4 col-12" />
-      <div className="pl-4 col-md-8 col-12">{props.children}</div>
+      <Sidebar />
+      <div className="pl-4 col-md col-12">{props.children}</div>
     </div>
   );
 };

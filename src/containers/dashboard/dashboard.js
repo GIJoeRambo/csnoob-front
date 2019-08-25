@@ -34,13 +34,18 @@ const Dashboard = props => {
   return (
     <DashboardLayout>
       <Switch>
-        {schools.map((school, index) => (
+        {/* {schools.map((school, index) => (
           <Route
             key={index}
-            path={`${props.match.path}/${school.name}`}
+            // path={`${props.match.path}/${school.name}`}
+            path={props.match.path + "/:uniName"}
             component={SchoolHoc({ name: school.name })(Content)}
           />
-        ))}
+        ))} */}
+        <Route
+          path={props.match.path + "/:uniName"}
+          component={Content}
+        />
       </Switch>
     </DashboardLayout>
   );
