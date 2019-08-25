@@ -1,9 +1,10 @@
 import React from "react";
-import { List} from "@material-ui/core";
+import { List } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 import "./Sidebar.css";
 
 class Sidebar extends React.Component {
+  imgPath = '../../../assets/images/university/';
   univisityList = [
     { id: 1, name: "University of Auckland", path: "uoa" },
     { id: 2, name: "Auckland University of Technology", path: "aut" },
@@ -17,7 +18,7 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <List component="nav" className="col-3 cs_sidebar_container">
+      <List component="nav" className="col-3 SideBar">
         {
           this.univisityList.map((item, index) =>
             (

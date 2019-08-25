@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import './404_layout.css';
 
 const NotFoundLayout = (props) => {
     return (
-        <div className="align-items-center">
+        <div className="NotFoundLayout ">
             <section className="page_404">
                 <div className="container">
                     <div className="row">

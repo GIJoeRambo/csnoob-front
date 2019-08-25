@@ -1,4 +1,4 @@
-.cs_sidebar_container {
+.SideBar {
   padding:0!important;
   background-color: white;
   background: rgb(95, 93, 93);
@@ -8,10 +8,10 @@
   justify-content: center; */
 }
 .cs_sidebar_item{
-  height: 8rem;
+  min-height: 8rem;
   line-height: 8rem;
-  background-image: url('../../../assets/images/background/home_bg.jpg');
   margin-bottom:0.2rem;
+  margin-bottom: 0.2rem!important;
 }
 .cs_sidebar_item:hover{
   cursor: pointer;
