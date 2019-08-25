@@ -10,6 +10,7 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
+import Forum from "./containers/forum/forum";
 
 const App = () => {
   return (
