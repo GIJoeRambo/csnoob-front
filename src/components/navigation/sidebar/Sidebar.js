@@ -31,7 +31,6 @@ class Sidebar extends React.Component {
   };
 
   render() {
-    console.log(this.props)
     return (
       <List component="nav" className="row col-12 col-md-3 SideBar">
         {this.univisityList.map(item => {
