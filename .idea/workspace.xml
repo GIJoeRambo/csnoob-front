@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f9cca90-c916-49c1-9afb-756660e5c898" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forumList/forumList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forumList/forumList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/forum_layout/forum_layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/forum_layout/forum_layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/forum/forum.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/forum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forumContentList/forumContentItem/forumContentItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forumContentList/forumContentItem/forumContentItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/sidebar/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/forum/content/content.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/content/content.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,24 +18,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/forum/content/content.js">
+        <entry file="file://$PROJECT_DIR$/src/components/forumContentList/forumContentItem/forumContentItem.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
-              <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/forumContentList/forumContentList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+              <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -100,7 +88,6 @@
         <option value="$PROJECT_DIR$/src/containers/forum/forum.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/containers/dashboard/dashboard.js" />
-        <option value="$PROJECT_DIR$/src/components/navigation/sidebar/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/components/navigation/header/Header.js" />
         <option value="$PROJECT_DIR$/src/containers/dashboard/content/content.js" />
         <option value="$PROJECT_DIR$/src/components/forumList/forumItem/forumItem.js" />
@@ -109,15 +96,16 @@
         <option value="$PROJECT_DIR$/src/components/layout/forum_layout/forum_layout.js" />
         <option value="$PROJECT_DIR$/src/components/forumList/forumList.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/components/forumContentList/forumContentItem/forumContentItem.js" />
         <option value="$PROJECT_DIR$/src/components/forumContentList/forumContentList.js" />
+        <option value="$PROJECT_DIR$/src/components/navigation/sidebar/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/components/forumContentList/forumContentItem/forumContentItem.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/content/content.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1835" />
-    <option name="y" value="64" />
+    <option name="x" value="1854" />
+    <option name="y" value="57" />
     <option name="width" value="1680" />
     <option name="height" value="919" />
   </component>
@@ -151,6 +139,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="forumContentList" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="forumContentList" type="462c0819:PsiDirectoryNode" />
+              <item name="forumContentItem" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
@@ -233,12 +229,13 @@
       <workItem from="1566653886178" duration="2000" />
       <workItem from="1566653986409" duration="107000" />
       <workItem from="1566692656019" duration="2000" />
-      <workItem from="1566692716425" duration="6587000" />
+      <workItem from="1566692716425" duration="6894000" />
+      <workItem from="1566794058971" duration="833000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24632000" />
+    <option name="totallyTimeSpent" value="25772000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -250,10 +247,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1835" y="64" width="1680" height="919" extended-state="0" />
-    <editor active="true" />
+    <frame x="1854" y="57" width="1680" height="919" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1923077" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1923077" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -267,7 +263,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32889965" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32889965" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -462,13 +458,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/forumList/forumList.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="74" lean-forward="true" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/forumList/forumList.css" />
     <entry file="file://$PROJECT_DIR$/src/components/layout/main_layout/main_layout.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -528,16 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/navigation/sidebar/Sidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -579,16 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/forum/forum.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/layout/forum_layout/forum_layout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -617,27 +587,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/forumContentList/forumContentItem/forumContentItem.js">
+    <entry file="file://$PROJECT_DIR$/src/components/navigation/sidebar/Sidebar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        <state relative-caret-position="236">
+          <caret line="34" column="12" lean-forward="true" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/forum/forum.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/forumContentList/forumContentList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+        <state relative-caret-position="75">
+          <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/forum/content/content.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/forumContentList/forumContentItem/forumContentItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
         </state>
       </provider>
     </entry>

@@ -8,10 +8,23 @@ const Content = () => {
             title="Cooking"
             description="Discuss your passion for food and cooking"
         >
-            <ForumContentItem/>
-            <ForumContentItem/>
-            <ForumContentItem/>
-            <ForumContentItem/>
+            <ForumContentItem
+                title="What is IT?"
+                postAuthor="Oliver Deng"
+                when="Yesterday"
+                replyNum="1"
+                LastReplyName="Richard Wang"
+                LastReplyTime="2 hours ago"
+            />
+            <ForumContentItem
+                title="What is IT?"
+                postAuthor="Oliver Deng"
+                when="Yesterday"
+                replyNum="1"
+                LastReplyName="Richard Wang"
+                LastReplyTime="2 hours ago"
+            />
+
 
         </ForumContentList>
     )

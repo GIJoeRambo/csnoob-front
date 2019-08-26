@@ -6,16 +6,16 @@ const ForumContentItem = (props) =>{
         <div className="thread">
             <div>
                 <p>
-                    <a href="thread.html">How can I chop onions without crying?</a>
+                    <a href="thread.html">{props.title}</a>
                 </p>
                 <p className="text-faded text-xsmall">
-                    By <a href="profile.html">Joseph Kerr</a>, yesterday.
+                    By <a href="/">{props.postAuthor}</a>, {props.when}.
                 </p>
             </div>
 
             <div className="activity">
                 <p className="replies-count">
-                    1 reply
+                    {props.replyNum} reply
                 </p>
 
                 <img className="avatar-medium"
@@ -24,9 +24,9 @@ const ForumContentItem = (props) =>{
 
                     <div>
                         <p className="text-xsmall">
-                            <a href="profile.html">Bruce Wayne</a>
+                            <a href="profile.html">{props.LastReplyName}</a>
                         </p>
-                        <p className="text-xsmall text-faded">2 hours ago</p>
+                        <p className="text-xsmall text-faded">{props.LastReplyTime}</p>
                     </div>
             </div>
         </div>
