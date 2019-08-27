@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import {  } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import "./Header.css";
 
 class Header extends React.Component {
@@ -13,16 +13,15 @@ class Header extends React.Component {
     }, 1000);
   };
 
-  handleClick = () => {};
+  handleClick = () => {
+    this.props.history.push("/");
+  };
 
   render() {
     return (
       <Fragment>
         <div className="row Header">
-          <span
-            className="cs_header_title"
-            onClick={() => (window.location.href = "/")}
-          >
+          <span className="cs_header_title" onClick={() => this.handleClick()}>
             cs noob
           </span>
           <span
@@ -38,4 +37,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

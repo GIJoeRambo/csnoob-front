@@ -1,5 +1,6 @@
 import React from "react";
 import "./Jumbotron.css";
+import { Link } from "react-router-dom";
 
 const Jumbotron = props => {
   return (
@@ -14,9 +15,9 @@ const Jumbotron = props => {
         within the larger container.
       </p>
       <p className="lead jumbtron_btn">
-        <a className="btn btn-primary btn-lg" href="/dashboard" role="button">
+        <Link className="btn btn-primary btn-lg" to="/dashboard">
           Get Start
-        </a>
+        </Link>
       </p>
     </div>
   );
