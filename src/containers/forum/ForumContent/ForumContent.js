@@ -2,7 +2,7 @@ import React from 'react'
 import ForumContentList from "../../../components/forumContentList/forumContentList";
 import ForumContentItem from "../../../components/forumContentList/forumContentItem/forumContentItem";
 
-const Content = () => {
+const ForumContent = () => {
     return (
         <ForumContentList
             title="Cooking"
@@ -30,4 +30,4 @@ const Content = () => {
     )
 }
 
-export default Content
+export default ForumContent

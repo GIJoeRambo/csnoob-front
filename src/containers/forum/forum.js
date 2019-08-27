@@ -3,9 +3,10 @@ import {
     Route,
 } from "react-router-dom";
 import React from 'react';
-import ForumContent from './content/content'
+import ForumContent from './ForumContent/ForumContent'
 import ForumIndex from "./index/index";
 import ForumLayout from "../../components/layout/forum_layout/forum_layout";
+import ForumNewThread from './newThread/newThread'
 import './forum.css'
 
 const Forum = (props) => {
@@ -16,6 +17,10 @@ const Forum = (props) => {
                 <Route
                     path={`${props.match.path}/content`}
                     component={ForumContent}
+                />
+                <Route
+                    path={`${props.match.path}/newThread`}
+                    component={ForumNewThread}
                 />
                 <Route
                     path={`${props.match.path}/`}

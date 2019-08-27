@@ -66,11 +66,11 @@ function registerValidSW(swUrl, config) {
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
-              // At this point, the updated precached content has been fetched,
+              // At this point, the updated precached ForumContent has been fetched,
               // but the previous service worker will still serve the older
-              // content until all client tabs are closed.
+              // ForumContent until all client tabs are closed.
               console.log(
-                'New content is available and will be used when all ' +
+                'New ForumContent is available and will be used when all ' +
                   'tabs for this page are closed. See https://bit.ly/CRA-PWA.'
               );
 
@@ -81,8 +81,8 @@ function registerValidSW(swUrl, config) {
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a
-              // "Content is cached for offline use." message.
-              console.log('Content is cached for offline use.');
+              // "ForumContent is cached for offline use." message.
+              console.log('ForumContent is cached for offline use.');
 
               // Execute callback
               if (config && config.onSuccess) {
@@ -103,7 +103,7 @@ function checkValidServiceWorker(swUrl, config) {
   fetch(swUrl)
     .then(response => {
       // Ensure service worker exists, and that we really are getting a JS file.
-      const contentType = response.headers.get('content-type');
+      const contentType = response.headers.get('ForumContent-type');
       if (
         response.status === 404 ||
         (contentType != null && contentType.indexOf('javascript') === -1)
