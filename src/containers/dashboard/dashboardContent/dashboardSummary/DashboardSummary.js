@@ -1,15 +1,18 @@
 import React, { Component } from "react";
-import { Card, CardContent, Typography } from "@material-ui/core";
+import { Card, CardContent, Typography, Divider } from "@material-ui/core";
 
 class DashboardSummary extends Component {
   render() {
     return (
       <Card>
         <CardContent>
-          <Typography variant="h4" gutterBottom>Summary</Typography>
+          {/* <Typography variant="h4" gutterBottom>
+            Summary
+          </Typography> */}
           <Typography variant="h5" gutterBottom>
             {this.props.location.state.university.name}
           </Typography>
+          <Divider></Divider>
           <Typography variant="body1" color="textSecondary">
             We are empirically mapping the variant prop to a range of different
             DOM element types. If you wish to change that mapping, you can

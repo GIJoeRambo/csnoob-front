@@ -1,25 +1,87 @@
 import React, { Component } from "react";
-import { Card, CardContent, Typography } from "@material-ui/core";
-
-const courseList = [
-  { id: 1, courseName: "101", courseFullName: "101 safafsc" },
-  { id: 2, courseName: "102", courseFullName: "102 ascfasv" },
-  { id: 3, courseName: "103", courseFullName: "103 vax zc" },
-  { id: 4, courseName: "104", courseFullName: "104 safascfaswdfsc" },
-  { id: 5, courseName: "105", courseFullName: "105 fac" },
-  { id: 6, courseName: "106", courseFullName: "106 scd" },
-  { id: 7, courseName: "107", courseFullName: "107 safcsacafsc" },
-  { id: 8, courseName: "108", courseFullName: "108 vascsac" }
-];
+import {
+  Card,
+  CardContent,
+  Typography,
+  Tabs,
+  Tab,
+  Divider
+} from "@material-ui/core";
+import service from "../../../../service/http";
 
 class DashboardCourse extends Component {
+  state = {
+    tabIndex: 0,
+    courseList: []
+  };
+
+  stageList = ["Stage One", "Stage Two", "Stage Three", "Postgraduate"];
+
+  componentDidMount = () => {
+    service.getCourse(
+      res => {
+        console.log(res);
+        this.setState({ courseList: res.Data });
+      },
+      err => console.log(err)
+    );
+  };
+
+  handleChange = (e, newValue) => {
+    this.setState({ tabIndex: newValue });
+  };
+
+  createComponent = () => {
+    return <h1>1</h1>;
+  };
+
   render() {
     return (
       <Card>
         <CardContent>
-          <Typography color="textSecondary" gutterBottom>
+          <Typography variant="h5" gutterBottom>
             Course List
           </Typography>
+          <Divider></Divider>
+          <Tabs
+            value={this.state.tabIndex}
+            onChange={(e, newValue) => this.handleChange(e, newValue)}
+            indicatorColor="primary"
+            variant="fullWidth"
+            className="dashboard_course_tabs"
+          >
+            {this.stageList.map((el, index) => {
+              return <Tab label={el} key={index}></Tab>;
+            })}
+          </Tabs>
+          <Typography
+            component="div"
+            hidden={this.state.tabIndex !== 0}
+            index={0}
+          >
+            {this.state.courseList.map((el, index) => {
+              return (
+                <Typography key={index} className="col-3">
+                  {el.code}
+                </Typography>
+              );
+            })}
+          </Typography>
+          <Typography
+            component="div"
+            hidden={this.state.tabIndex !== 1}
+            index={1}
+          ></Typography>
+          <Typography
+            component="div"
+            hidden={this.state.tabIndex !== 2}
+            index={2}
+          ></Typography>
+          <Typography
+            component="div"
+            hidden={this.state.tabIndex !== 3}
+            index={3}
+          ></Typography>
         </CardContent>
       </Card>
     );
