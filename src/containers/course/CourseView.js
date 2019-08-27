@@ -34,11 +34,11 @@ class CourseView extends Component {
           indicatorColor="primary"
           variant="fullWidth"
         >
-          <Tab label={"Resource"}></Tab>
           <Tab label={"Comment"}></Tab>
+          <Tab label={"Resource"}></Tab>
         </Tabs>
-        <Typography hidden={this.state.tabIndex !== 0}>Resource</Typography>
-        <Typography hidden={this.state.tabIndex !== 1}>Comment</Typography>
+        <Typography hidden={this.state.tabIndex !== 0}>Comment</Typography>
+        <Typography hidden={this.state.tabIndex !== 1}>Resource</Typography>
       </div>
     );
   }
