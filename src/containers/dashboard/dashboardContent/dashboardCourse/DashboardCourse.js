@@ -15,7 +15,13 @@ class DashboardCourse extends Component {
     courseList: []
   };
 
-  stageList = ["Stage One", "Stage Two", "Stage Three", "Postgraduate"];
+  // stageList = [{name:"Stage One"}, "Stage Two", "Stage Three", "Postgraduate"];
+  stageList = [
+    { id: 1, name: "Stage One", stage: 1 },
+    { id: 2, name: "Stage Two", stage: 2 },
+    { id: 3, name: "Stage Three", stage: 3 },
+    { id: 4, name: "Postgraduate", stage: 7 }
+  ];
 
   componentDidMount = () => {
     service.getCourse(
@@ -31,10 +37,6 @@ class DashboardCourse extends Component {
     this.setState({ tabIndex: newValue });
   };
 
-  createComponent = () => {
-    return <h1>1</h1>;
-  };
-
   render() {
     return (
       <Card>
@@ -43,45 +45,38 @@ class DashboardCourse extends Component {
             Course List
           </Typography>
           <Divider></Divider>
-          <Tabs
-            value={this.state.tabIndex}
-            onChange={(e, newValue) => this.handleChange(e, newValue)}
-            indicatorColor="primary"
-            variant="fullWidth"
-            className="dashboard_course_tabs"
-          >
-            {this.stageList.map((el, index) => {
-              return <Tab label={el} key={index}></Tab>;
-            })}
-          </Tabs>
-          <Typography
-            component="div"
-            hidden={this.state.tabIndex !== 0}
-            index={0}
-          >
-            {this.state.courseList.map((el, index) => {
-              return (
-                <Typography key={index} className="col-3">
-                  {el.code}
-                </Typography>
-              );
-            })}
-          </Typography>
-          <Typography
-            component="div"
-            hidden={this.state.tabIndex !== 1}
-            index={1}
-          ></Typography>
-          <Typography
-            component="div"
-            hidden={this.state.tabIndex !== 2}
-            index={2}
-          ></Typography>
-          <Typography
-            component="div"
-            hidden={this.state.tabIndex !== 3}
-            index={3}
-          ></Typography>
+
+          {this.stageList.map(stage => {
+            return (
+              <Typography
+                component={"div"}
+                hidden={this.state.tabIndex !== stage.id - 1}
+                index={stage.id - 1}
+                key={stage.id}
+              >
+                <Tabs
+                  value={this.state.tabIndex}
+                  onChange={(e, newValue) => this.handleChange(e, newValue)}
+                  indicatorColor="primary"
+                  variant="fullWidth"
+                  className="dashboard_course_tabs"
+                >
+                  {this.stageList.map((el, index) => {
+                    return <Tab label={el.name} key={index}></Tab>;
+                  })}
+                </Tabs>
+                {this.state.courseList
+                  .filter(course => course.stage === stage.stage)
+                  .map(course => {
+                    return (
+                      <Typography key={course._id} className="col-3">
+                        {course.code}
+                      </Typography>
+                    );
+                  })}
+              </Typography>
+            );
+          })}
         </CardContent>
       </Card>
     );
