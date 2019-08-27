@@ -1,4 +1,4 @@
-const hostUrl = '"https://35.244.113.148:3000/api/'
+const hostUrl = 'http://35.244.113.148:3000/api/'
 const service = {
   getCourse: (res, err) => {
     fetch(hostUrl + "course")
