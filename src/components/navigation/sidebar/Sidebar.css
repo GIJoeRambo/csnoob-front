@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 767px) {
-  h5 {
+  .cs_sidebar_uniName {
     font-size: 1rem !important;
   }
 }
