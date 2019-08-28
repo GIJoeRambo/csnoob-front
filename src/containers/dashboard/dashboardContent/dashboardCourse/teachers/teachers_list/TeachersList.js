@@ -7,28 +7,36 @@ const TeachersList = (props) => {
     return (
         <div className='row TeachersList'>
             {
-                props.teachersList.map(
-                    (item) => {
-                        return (
-                            <div className='col-12 cs_teacher_item'>
-                                <div className='row'>
-                                    <div className='col-6'>
-                                        <div className='row'>
-                                            <div className='col-12 cs_teacher_title'>{item.title}</div>
-                                            <div className='col-12 cs_teacher_name'>{item.name}</div>
+                props.hasTeacher ?
+                    props.teachersList.map(
+                        (item) => {
+                            return (
+                                <div className='col-12 cs_teacher_item' key={item._id}>
+                                    <div className='row'>
+                                        <div className='col-6'>
+                                            <div className='row'>
+                                                <div className='col-12 cs_teacher_title'>{item.title}</div>
+                                                <div className='col-12 cs_teacher_name'>{item.name}</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className='col-6 cs_teacher_rating'>
-                                        <div className='row'>
-                                            <div className='col-3'></div>
-                                            <Rating value={1.4} precision={0.5} readOnly/>
+                                        <div className='col-6 cs_teacher_rating'>
+                                            <div className='row'>
+                                                <div className='col-3'></div>
+                                                <Rating value={1.4} precision={0.5} readOnly />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        )
-                    }
-                )
+                            )
+                        }
+                    )
+                    :
+                    (
+                        <div className='col-12 cs_teacher_notfound'>
+                            Sorry, no such teacher founded.
+                        </div>
+                    )
+
             }
         </div>
     )

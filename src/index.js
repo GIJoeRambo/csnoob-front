@@ -6,7 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import './shared/css/bootstrap-clear.css';
-import '@fortawesome/fontawesome-free';
+
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

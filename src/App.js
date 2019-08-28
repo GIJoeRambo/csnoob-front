@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./containers/home/Home";
-import Dashboard from "./containers/dashboard/dashboard";
+import Dashboard from "./containers/dashboard/Dashboard";
 import NotFound from "./containers/NotFound/NotFound";
 import Teachers from './containers/dashboard/dashboardContent/dashboardCourse/teachers/Teachers';
 import MainLayout from "./components/layout/main_layout/main_layout";

@@ -1,6 +1,8 @@
 .TeachersList{
-    height: 54rem;
-    margin-top:3rem!important;
+    min-height: 4rem;
+    max-height: 54rem;
+    margin-top:1rem!important;
+    margin-bottom: 1rem!important;
     margin-left: 0.5rem!important;
     overflow: auto;
     border: 2px solid rgb(185, 181, 181);
@@ -19,10 +21,20 @@
     font-size:13px;
     font-style: italic;
     line-height: 2.3rem;
+    position: relative;
+    top:0.3rem;
 }
 .cs_teacher_name{
     font-weight: bold;
-    line-height: 0.2rem;
+    line-height: 1rem;
+}
+.cs_teacher_notfound{
+    color:rgb(224, 73, 73);
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    line-height: 4rem;
 }
 .MuiRating-icon{
     display: inline-block!important;
