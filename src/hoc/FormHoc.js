@@ -1,41 +1,36 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
-const FormHoc = (fileds) =>{
-    return WrappedForm =>{
-        return class extends Component{
-            state = {...fileds};
+const FormHoc = fileds => {
+  return WrappedForm => {
+    return class extends Component {
+      state = { ...fileds };
 
-            InputChangeHandler = (event) => {
-                this.setState({
-                    [event.target.name]: event.target.value
-                })
-            }
+      InputChangeHandler = event => {
+        this.setState({
+          [event.target.name]: event.target.value
+        });
+      };
 
-            SubmitHandler = (event, onSubmit) =>{
-                event.preventDefault();
-                onSubmit();
-            }
+      SubmitHandler = (event, onSubmit) => {
+        event.preventDefault();
+        onSubmit();
+      };
 
-
-
-
-            render(){
-                return (
-                    <WrappedForm
-                        {...this.props}
-                        onChange={this.InputChangeHandler.bind(this)}
-                        onSubmit={this.SubmitHandler.bind(this)}
-                        fields={{ ...this.state }}
-                    />
-                )
-            }
-
-        }
-    }
+      render() {
+        return (
+          <WrappedForm
+            {...this.props}
+            onChange={this.InputChangeHandler.bind(this)}
+            onSubmit={this.SubmitHandler.bind(this)}
+            fields={{ ...this.state }}
+          />
+        );
+      }
+    };
+  };
 };
 
-export default FormHoc
-
+export default FormHoc;
 
 // const Data = ({onSubmit,onChange,fields}) =>{
 //     const handleSubmit = event =>{

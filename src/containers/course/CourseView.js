@@ -5,6 +5,7 @@ import CourseComment from "./courseComment/courseComment";
 const CourseView = props => {
   const [tabIndex, setTabIndex] = useState(0);
   let course = props.location.state.course;
+  console.log(course);
 
   return (
     <div className="m-3">
@@ -30,7 +31,7 @@ const CourseView = props => {
         <Tab label={"Resource"}></Tab>
       </Tabs>
       <div hidden={tabIndex !== 0}>
-        <CourseComment />
+        <CourseComment course={course} />
       </div>
       <div hidden={tabIndex !== 1}>
         <Typography>Resource</Typography>
