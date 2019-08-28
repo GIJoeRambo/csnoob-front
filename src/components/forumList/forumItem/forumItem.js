@@ -1,7 +1,6 @@
 import React from 'react';
 
 const forumItem = (props) => {
-    console.log(props)
     return (
         <div className="forum-listing">
             <div className="forum-details">
