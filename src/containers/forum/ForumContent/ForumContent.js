@@ -1,33 +1,42 @@
-import React from 'react'
-import ForumContentList from "../../../components/forumContentList/forumContentList";
-import ForumContentItem from "../../../components/forumContentList/forumContentItem/forumContentItem";
+import React,{Component} from 'react'
+import ForumContentList from "./forumContentList/forumContentList";
+import ForumContentItem from "./forumContentList/forumContentItem/forumContentItem";
+import service from '../../../service/http'
+class ForumContent extends Component{
+    state = {
+        data: []
+    }
+    componentDidMount = () => {
+        service.getThreadsByForumId(this.props.location.state.forum._id,res=>{
+            this.setState({data:res.Data})
+        },err=>{
+            console.log(err)
+        })
+    }
 
-const ForumContent = () => {
-    return (
-        <ForumContentList
-            title="Cooking"
-            description="Discuss your passion for food and cooking"
-        >
-            <ForumContentItem
-                title="What is IT?"
-                postAuthor="Oliver Deng"
-                when="Yesterday"
-                replyNum="1"
-                LastReplyName="Richard Wang"
-                LastReplyTime="2 hours ago"
-            />
-            <ForumContentItem
-                title="What is IT?"
-                postAuthor="Oliver Deng"
-                when="Yesterday"
-                replyNum="1"
-                LastReplyName="Richard Wang"
-                LastReplyTime="2 hours ago"
-            />
-
-
-        </ForumContentList>
-    )
+    render(){
+        console.log(this.props.location.state)
+        return (
+            <ForumContentList
+                title={this.props.location.state.forum.title}
+                description={this.props.location.state.forum.subtitle}
+            >
+                {this.state.data.map((s,index)=>{
+                    return (
+                        <ForumContentItem
+                            key={index}
+                            title={s.title}
+                            postAuthor="Oliver Deng"
+                            when="Yesterday"
+                            replyNum="1"
+                            LastReplyName="Richard Wang"
+                            LastReplyTime="2 hours ago"
+                        />
+                    )
+                })}
+            </ForumContentList>
+        )
+    }
 }
 
 export default ForumContent

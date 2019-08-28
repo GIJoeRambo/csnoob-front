@@ -54,6 +54,13 @@ const service = {
         .then(response=>response.json())
         .then(result=>res(result))
         .catch(error=>err(error))
+  },
+
+  getThreadsByForumId: (forumId,res,err) =>{
+    fetch(hostUrl + "thread/" + forumId)
+        .then(response=>response.json())
+        .then(result=>res(result))
+        .catch(error=>err(error))
   }
 };
 export default service;

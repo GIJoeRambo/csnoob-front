@@ -1,6 +1,6 @@
 import React,{Component,Fragment} from 'react';
-import ForumList from "../../../components/forumList/forumList";
-import ForumItem from '../../../components/forumList/forumItem/forumItem'
+import ForumList from "./forumList/forumList";
+import ForumItem from './forumList/forumItem/forumItem'
 import service from '../../../service/http'
 class ForumIndex extends Component{
     state = {
@@ -15,10 +15,21 @@ class ForumIndex extends Component{
         })
     }
 
+    clickHandler = (forum) =>{
+        let {history} = this.props;
+        let path = {
+            pathname: "/forum/" + forum.title.split(" ").join(""),
+            state:{
+                forum: forum
+            }
+        }
+        history.push(path)
+    }
+
     render(){
         return (
             <Fragment>
-                <ForumList href="/forum" title="General">
+                <ForumList title="General">
                     {this.state.data.filter(s=>s.category === 0 ).map((s,index)=>{
                         return (
                             <ForumItem
@@ -26,12 +37,12 @@ class ForumIndex extends Component{
                                 title={s.title}
                                 subtitle={s.subtitle}
                                 threadNum={s.threadNum}
-                                href="/"
+                                click={()=> this.clickHandler(s)}
                             />
                         )
                     })}
                 </ForumList>
-                <ForumList href="/forum" title="Discussion">
+                <ForumList title="Discussion">
                     {this.state.data.filter(s=>s.category === 1 ).map((s,index)=>{
                         return (
                             <ForumItem
@@ -39,12 +50,12 @@ class ForumIndex extends Component{
                                 title={s.title}
                                 subtitle={s.subtitle}
                                 threadNum={s.threadNum}
-                                href="/"
+                                click={()=> this.clickHandler(s)}
                             />
                         )
                     })}
                 </ForumList>
-                <ForumList href="/forum" title="Activities">
+                <ForumList title="Activities">
                     {this.state.data.filter(s=>s.category === 2 ).map((s,index)=>{
                         return (
                             <ForumItem
@@ -52,7 +63,7 @@ class ForumIndex extends Component{
                                 title={s.title}
                                 subtitle={s.subtitle}
                                 threadNum={s.threadNum}
-                                href="/"
+                                click={()=> this.clickHandler(s)}
                             />
                         )
                     })}

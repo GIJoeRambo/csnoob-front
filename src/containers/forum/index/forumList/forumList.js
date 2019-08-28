@@ -5,7 +5,7 @@ const ForumList = (props) =>{
             <div className="forum-list">
 
                 <h2 className="list-title">
-                    <a href={props.href}>{props.title}</a>
+                    <div>{props.title}</div>
                 </h2>
                 {props.children}
             </div>
