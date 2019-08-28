@@ -1,0 +1,30 @@
+.TeachersList{
+    height: 54rem;
+    margin-top:3rem!important;
+    margin-left: 0.5rem!important;
+    overflow: auto;
+    border: 2px solid rgb(185, 181, 181);
+    border-radius: 5px;
+}
+.cs_teacher_item{
+    min-height: 4rem;
+    padding-left: 1rem!important;
+    line-height: 4rem;
+}
+.cs_teacher_item:hover{
+    cursor: pointer;
+    background: rgb(230, 227, 227);
+}
+.cs_teacher_title{
+    font-size:13px;
+    font-style: italic;
+    line-height: 2.3rem;
+}
+.cs_teacher_name{
+    font-weight: bold;
+    line-height: 0.2rem;
+}
+.MuiRating-icon{
+    display: inline-block!important;
+    /* line-height: 4rem!important; */
+}

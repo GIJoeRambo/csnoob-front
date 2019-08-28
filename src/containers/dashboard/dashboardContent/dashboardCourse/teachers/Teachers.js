@@ -1,29 +1,30 @@
 import React, { Component } from 'react';
+import TeachersList from './teachers_list/TeachersList';
 import service from '../../../../../service/http';
 import './Teachers.css';
 
 class Teachers extends Component {
-
-    state = {};
+    state = {
+        teachersList: []
+    };
 
     componentDidMount() {
         service.getTeachers(
-            res => {
-                console.log(res);
+            (res) => {
+                console.log(res.Data);
+                this.setState({ teachersList: res.Data })
             },
-            err => {
-                console.log(err);
-            }
-        )
+            err => console.log(err)
+        );
     }
 
     render() {
         return (
-            <div className='row'>
-                <div className='col-3'>
-                    111
+            <div className='row Teacher'>
+                <div className='col-5'>
+                    <TeachersList teachersList={this.state.teachersList}></TeachersList>
                 </div>
-                <div className='col-9'>
+                <div className='col-7'>
                     333
                 </div>
             </div>
