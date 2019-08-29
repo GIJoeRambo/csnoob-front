@@ -8,6 +8,7 @@ import ForumIndex from "./index/index";
 import ForumLayout from "../../components/layout/forum_layout/forum_layout";
 // import ForumNewThread from './newThread/newThread'
 import './forum.css'
+import BackButton from "./backButton/backButton";
 
 const Forum = (props) => {
     return (
