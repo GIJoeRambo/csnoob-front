@@ -10,6 +10,7 @@ const CourseComment = props => {
   const [semester, setSemester] = useState(1);
   const [year, setYear] = useState(new Date().getFullYear());
   const [grade, setGrade] = useState("Not Sure");
+  const [name, setName] = useState("");
 
   const semesterList = [
     { id: 1, name: "Semester One" },
@@ -30,9 +31,8 @@ const CourseComment = props => {
     { id: 9, name: "A+" }
   ];
 
-  const verifyData = () => {
-    console.log(comment, rate, semester, year, grade);
-    if (!comment || !rate || !semester || !year || !grade) {
+  const prepareData = () => {
+    if (!comment || !rate || !semester || !year) {
       alert("Please fill all the fields");
       return false;
     }
@@ -46,6 +46,7 @@ const CourseComment = props => {
       semester,
       year,
       grade,
+      name: name || "Anonymous",
       courseId: props.course._id
     };
     console.log(data);
@@ -108,6 +109,12 @@ const CourseComment = props => {
       </div>
 
       <TextField
+        label="Name(Optional)"
+        value={name}
+        onChange={e => setName(e.target.value)}
+      />
+
+      <TextField
         label="Comment"
         multiline
         rowsMax="10"
@@ -123,7 +130,7 @@ const CourseComment = props => {
           variant="contained"
           color="primary"
           onClick={() => {
-            if (verifyData()) {
+            if (prepareData()) {
               submitData();
             }
           }}
