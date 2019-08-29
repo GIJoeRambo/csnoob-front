@@ -1,11 +1,11 @@
 import React,{Component} from 'react'
 import FormHoc from "../../../../hoc/FormHoc";
-
+import service from '../../../../service/http'
 
 class NewThreadForm extends Component{
     handleSubmit = event =>{
         this.props.onSubmit(event,()=>{
-            console.log(this.props.fields,this.props.forumId)
+            // service.postNewThread()
         })
     }
     render() {
