@@ -6,9 +6,6 @@ class DashboardSummary extends Component {
     return (
       <Card>
         <CardContent>
-          {/* <Typography variant="h4" gutterBottom>
-            Summary
-          </Typography> */}
           <Typography variant="h5" gutterBottom>
             {this.props.location.state.university.name}
           </Typography>

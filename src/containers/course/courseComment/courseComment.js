@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { TextField, Button, Typography, Select } from "@material-ui/core";
+import { TextField, Button, Typography, Select, Card } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 import "./courseComment.css";
+import CommentConfirmDialog from "./CommentConfirmDialog";
 import service from "../../../service/http";
 
 const CourseComment = props => {
@@ -11,6 +12,7 @@ const CourseComment = props => {
   const [year, setYear] = useState(new Date().getFullYear());
   const [grade, setGrade] = useState("Not Sure");
   const [name, setName] = useState("");
+  const [dialog, setDialog] = useState(false);
 
   const semesterList = [
     { id: 1, name: "Semester One" },
@@ -39,6 +41,15 @@ const CourseComment = props => {
     return true;
   };
 
+  const clearData = () => {
+    setComment("");
+    setGrade("Not Sure");
+    setRate(0);
+    setSemester(1);
+    setYear(new Date().getFullYear());
+    setName("");
+  };
+
   const submitData = () => {
     let data = {
       comment,
@@ -49,18 +60,21 @@ const CourseComment = props => {
       name: name || "Anonymous",
       courseId: props.course._id
     };
-    console.log(data);
     service.postCourseRating(
-      res => console.log(res),
+      res => {
+        setDialog(true);
+        props.refreshcommentList();
+        clearData();
+      },
       err => console.log(err),
       data
     );
   };
 
   return (
-    <div className="course_comment_container mt-3">
+    <Card className="course_comment_container mx-3">
       <div className="row align-items-center">
-        <div className="d-inline-block ml-3 mt-3 col-2">
+        <div className="d-inline-block ml-3 mt-3 col-md-2">
           <Typography component="legend">Rating</Typography>
           <Rating
             name="courseRating"
@@ -68,15 +82,14 @@ const CourseComment = props => {
             onChange={(e, newValue) => setRate(newValue)}
           />
         </div>
-
         <TextField
-          className="col-2 mr-3 ml-3 mt-3"
+          className="col-md-2 mr-3 ml-3 mt-3"
           label="Year"
           value={year}
           onChange={e => setYear(e.target.value)}
         />
         <Select
-          className="col-3 mr-3 ml-3 mt-3"
+          className="col-md-3 mr-3 ml-3 mt-3"
           native
           autoWidth
           variant="filled"
@@ -92,7 +105,7 @@ const CourseComment = props => {
           ))}
         </Select>
         <Select
-          className="col-3 mr-3 ml-3 mt-3"
+          className="col-md-3 mr-3 ml-3 mt-3"
           native
           autoWidth
           value={grade}
@@ -111,19 +124,19 @@ const CourseComment = props => {
       <TextField
         label="Name(Optional)"
         value={name}
+        className="mx-3"
         onChange={e => setName(e.target.value)}
       />
 
       <TextField
         label="Comment"
         multiline
-        rowsMax="10"
+        rowsMax="100"
         value={comment}
-        className="my-4 justify-center d-flex"
+        className="my-4 mx-3 justify-center d-flex"
         onChange={e => {
           setComment(e.target.value);
         }}
-        variant="outlined"
       />
       <div className="justify-center d-flex my-3">
         <Button
@@ -138,7 +151,8 @@ const CourseComment = props => {
           submit
         </Button>
       </div>
-    </div>
+      <CommentConfirmDialog dialog={dialog} setDialog={setDialog} />
+    </Card>
   );
 };
 
