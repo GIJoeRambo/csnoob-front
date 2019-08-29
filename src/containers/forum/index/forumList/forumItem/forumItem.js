@@ -1,11 +1,10 @@
 import React from 'react';
-
 const forumItem = (props) => {
-    console.log(props)
     return (
         <div className="forum-listing">
             <div className="forum-details">
-                <a className="text-xlarge" href={props.href}>{props.title}</a>
+
+                <div className="text-xlarge forum-item" onClick={props.click}>{props.title}</div>
                 <p>{props.subtitle}</p>
             </div>
 

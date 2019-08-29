@@ -1,0 +1,36 @@
+.TeachersSearch{
+    height: 5rem;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+}
+.cs_ts_title{
+    margin-bottom: 0.2rem!important;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    color:rgb(110, 109, 109);
+}
+.cs_ts_input{
+    padding-left: 0.5rem!important;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    color:#272822;
+    border:none;
+    border: 2px solid rgb(185, 181, 181);
+    border-radius: 5px;
+}
+.cs_ts_input:focus{
+    outline: none;
+    border: 2px solid rgb(128, 175, 206);
+}
+.cs_ts_icon_search{
+    position: absolute;
+    right: 0.2rem;
+    top:0.4rem;
+    color:rgb(117, 115, 115);
+}
+.cs_ts_icon_search:hover{
+    cursor: pointer;
+    color:rgba(82, 147, 221, 0.664);
+}

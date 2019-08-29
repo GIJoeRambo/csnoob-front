@@ -17,9 +17,20 @@ const service = {
       .then(res => {
         resCallback(res);
       })
-      .then(err => {
+      .catch(err => {
         errCallback(err);
       });
+  },
+
+  getSpecificTeacher: (resCallback, errCallback, teacherName) =>{
+    fetch(hostUrl + 'teacher/' + teacherName)
+      .then(res => res.json())
+      .then(res => {
+        resCallback(res);
+      })
+      .catch(err => {
+        errCallback(err);
+      })
   },
 
   getCourseReview: (res, err, courseId) => {
@@ -47,6 +58,20 @@ const service = {
       .then(response => response.json())
       .then(result => res(result))
       .catch(error => err(error));
+  },
+
+  getForum: (res,err) =>{
+    fetch(hostUrl + "forum")
+        .then(response=>response.json())
+        .then(result=>res(result))
+        .catch(error=>err(error))
+  },
+
+  getThreadsByForumId: (forumId,res,err) =>{
+    fetch(hostUrl + "thread/" + forumId)
+        .then(response=>response.json())
+        .then(result=>res(result))
+        .catch(error=>err(error))
   }
 };
 export default service;
