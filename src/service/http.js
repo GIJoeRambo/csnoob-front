@@ -67,8 +67,8 @@ const service = {
         .catch(error=>err(error))
   },
 
-  getThreadsByForumId: (forumId,res,err) =>{
-    fetch(hostUrl + "thread/" + forumId)
+  getThreadsByForumId: (forumId,pageNum,res,err) =>{
+    fetch(hostUrl + "thread/" + forumId + '/' + pageNum)
         .then(response=>response.json())
         .then(result=>res(result))
         .catch(error=>err(error))

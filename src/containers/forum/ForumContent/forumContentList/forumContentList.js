@@ -3,7 +3,7 @@ import React, {Fragment} from 'react'
 const ForumContentList = (props) =>{
     return (
         <Fragment>
-            <div className="col-full push-top">
+            <div className="col-full">
                 <div className="forum-header">
                     <div className="forum-details">
                         <h1>{props.title}</h1>
