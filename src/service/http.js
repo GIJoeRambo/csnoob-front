@@ -72,6 +72,8 @@ const service = {
         .then(response=>response.json())
         .then(result=>res(result))
         .catch(error=>err(error))
-  }
+  },
+
+
 };
 export default service;

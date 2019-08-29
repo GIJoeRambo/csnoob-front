@@ -5,7 +5,7 @@ import FormHoc from "../../../../hoc/FormHoc";
 class NewThreadForm extends Component{
     handleSubmit = event =>{
         this.props.onSubmit(event,()=>{
-            console.log(this.props.fields)
+            console.log(this.props.fields,this.props.forumId)
         })
     }
     render() {
@@ -35,7 +35,7 @@ class NewThreadForm extends Component{
                     </div>
 
                     <div className="btn-group">
-                        <button className="btn btn-ghost">Cancel</button>
+                        <button type="button" className="btn btn-ghost">Cancel</button>
                         <button
                             onClick={this.handleSubmit}
                             className="btn btn-blue" type="submit" name="Publish">Publish</button>
