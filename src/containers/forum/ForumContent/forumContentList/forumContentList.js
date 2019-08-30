@@ -9,7 +9,7 @@ const ForumContentList = (props) =>{
                         <h1>{props.title}</h1>
                         <p className="text-lead">{props.description}</p>
                     </div>
-                    <a href="/" className="btn-green btn-small">Start a thread</a>
+                    <button onClick={props.PostThreadClick} className="btn-green btn-small">Post a thread</button>
                 </div>
             </div>
             <div className="col-full">

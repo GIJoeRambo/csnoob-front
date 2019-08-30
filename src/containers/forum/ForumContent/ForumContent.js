@@ -31,6 +31,15 @@ class ForumContent extends Component{
         document.body.scrollTop = 0;
     }
 
+    PostThreadClickHandler = () =>{
+        let {history,match} = this.props;
+        let path = {
+            pathname: `/forum/${match.params.forumName}/newThread`,
+            forum: this.props.location.state.forum
+        }
+        history.push(path)
+    }
+
     render(){
         return (
             <Fragment>
@@ -38,6 +47,7 @@ class ForumContent extends Component{
                 <ForumContentList
                     title={this.props.location.state.forum.title}
                     description={this.props.location.state.forum.subtitle}
+                    PostThreadClick={this.PostThreadClickHandler}
                 >
                     {this.state.data.map((s,index)=>{
                         return (

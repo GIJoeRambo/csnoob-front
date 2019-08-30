@@ -67,11 +67,26 @@ const service = {
       .catch(error => err(error));
   },
 
-  getThreadsByForumId: (forumId, pageNum, res, err) => {
-    fetch(hostUrl + "thread/" + forumId + "/" + pageNum)
-      .then(response => response.json())
-      .then(result => res(result))
-      .catch(error => err(error));
+  getThreadsByForumId: (forumId,pageNum,res,err) =>{
+    fetch(hostUrl + "thread/" + forumId + '/' + pageNum)
+        .then(response=>response.json())
+        .then(result=>res(result))
+        .catch(error=>err(error))
+  },
+
+  postNewThread: (data,res,err)=>{
+    fetch(hostUrl+"thread",{
+      method: "POST",
+      body: JSON.stringify(data),
+      headers:{
+        'content-type': 'application/json',
+      }
+    })
+        .then(response => response.json())
+        .then(result => res(result))
+        .catch(error => err(error));
   }
+
+
 };
 export default service;

@@ -1,11 +1,11 @@
 import React,{Component} from 'react'
 import FormHoc from "../../../../hoc/FormHoc";
-
+import service from '../../../../service/http'
 
 class NewThreadForm extends Component{
     handleSubmit = event =>{
         this.props.onSubmit(event,()=>{
-            console.log(this.props.fields)
+            // service.postNewThread()
         })
     }
     render() {
@@ -35,7 +35,7 @@ class NewThreadForm extends Component{
                     </div>
 
                     <div className="btn-group">
-                        <button className="btn btn-ghost">Cancel</button>
+                        <button type="button" className="btn btn-ghost">Cancel</button>
                         <button
                             onClick={this.handleSubmit}
                             className="btn btn-blue" type="submit" name="Publish">Publish</button>

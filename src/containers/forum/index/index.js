@@ -27,7 +27,6 @@ class ForumIndex extends Component{
     }
 
     render(){
-        console.log(this.props.match)
         return (
             <Fragment>
                 <div className="col-full">
