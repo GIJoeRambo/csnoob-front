@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f9cca90-c916-49c1-9afb-756660e5c898" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_comments/TeachersComments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_comments/TeachersComments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/forum/ForumContent/ForumContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/ForumContent/ForumContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/forum/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/forum/newThread/newThread.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/newThread/newThread.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/Teachers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="321">
-              <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+              <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -37,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_comments/TeachersComments.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+            <state relative-caret-position="294">
+              <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -319,12 +313,12 @@
       <workItem from="1567077416563" duration="279000" />
       <workItem from="1567083632648" duration="2884000" />
       <workItem from="1567087021170" duration="1000" />
-      <workItem from="1567169774927" duration="1109000" />
+      <workItem from="1567169774927" duration="1741000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54308000" />
+    <option name="totallyTimeSpent" value="54940000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -339,7 +333,7 @@
     <frame x="1779" y="44" width="1721" height="919" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.24478856" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.24478856" />
       <window_info id="Structure" order="1" sideWeight="0.5009009" side_tool="true" weight="0.1923077" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -353,7 +347,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32889965" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32889965" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -754,7 +748,7 @@
     <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/Teachers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
-          <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -763,8 +757,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_comments/TeachersComments.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="294">
+          <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

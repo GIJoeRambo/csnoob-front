@@ -16,11 +16,11 @@ class TeachersComments extends Component {
         teacherId: null
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
+    componentWillReceiveProps= async (nextProps, nextContext)=> {
         const teacherId = nextProps.location.state.teacherId;
-        service.getTeacherRating(
-            res => {
-                this.setState(() => {
+        await service.getTeacherRating(
+            async res => {
+                await this.setState(() => {
                         return (
                             {
                                 commentsList: res.Data.details,
@@ -41,15 +41,15 @@ class TeachersComments extends Component {
         )
     }
 
-    shouldComponentUpdate = (nextProps) => {
-        const teacherId = nextProps.location.state.teacherId;
-        if (teacherId !== this.props.location.state.teacherId) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
+    // shouldComponentUpdate = (nextProps) => {
+    //     const teacherId = nextProps.location.state.teacherId;
+    //     if (teacherId !== this.props.location.state.teacherId) {
+    //         return true;
+    //     }
+    //     else {
+    //         return false;
+    //     }
+    // }
 
     render() {
         return (
