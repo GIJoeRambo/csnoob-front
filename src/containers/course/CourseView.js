@@ -4,12 +4,15 @@ import {
   Divider,
   Tab,
   Tabs,
-  TablePagination
+  TablePagination,
 } from "@material-ui/core";
 import CourseComment from "./courseComment/courseComment";
 import CourseCommentList from "./courseCommentList/courseCommentList";
 import service from "../../service/http";
 import "./courseView.css";
+import { withRouter } from "react-router-dom";
+import { ColorButton } from "../../shared/styledComponent/styledComponent";
+
 
 class CourseView extends React.Component {
   state = {
@@ -37,7 +40,6 @@ class CourseView extends React.Component {
   getData = page => {
     service.getCourseRating(
       res => {
-        console.log(res);
         this.setState({
           commentList: res.Data.details,
           total: res.Data.total,
@@ -52,17 +54,31 @@ class CourseView extends React.Component {
     );
   };
 
+  handleReturnClick = () => {
+    this.props.history.push("/dashboard/" + this.props.match.params.uniName);
+  };
+
   render() {
     const { course } = this.props.location.state;
 
     return (
       <div className="m-3">
         <div className="mb-3">
-          <Typography variant="h4">{course.code}</Typography>
+          <Typography variant="h4" className="d-flex justify-content-between">
+            {course.code}
+            <ColorButton
+              variant="outlined"
+              onClick={() => this.handleReturnClick()}
+            >
+              Return
+            </ColorButton>
+          </Typography>
+
           <Typography variant="h4" className="mt-3">
             {course.name}
           </Typography>
         </div>
+
         <Typography className="my-3">{course.description}</Typography>
         <Divider className="mb-5"></Divider>
         <Tabs
@@ -87,6 +103,7 @@ class CourseView extends React.Component {
           <CourseCommentList commentList={this.state.commentList} />
           <div className="d-flex justify-content-center">
             <TablePagination
+              className="course_comment_pagination"
               rowsPerPageOptions={[]}
               component="div"
               count={this.state.total}
@@ -106,4 +123,4 @@ class CourseView extends React.Component {
   }
 }
 
-export default CourseView;
+export default withRouter(CourseView);

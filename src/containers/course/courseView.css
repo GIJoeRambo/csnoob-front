@@ -1,3 +1,8 @@
 .course_comment_panel {
-  background-color: #585c45;
+  background: linear-gradient(var(--primary-black), var(--primary-gray));
+}
+
+.course_comment_pagination span {
+  font-size: 1rem !important;
+  font-weight: bold;
 }

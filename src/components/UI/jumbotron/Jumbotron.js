@@ -1,26 +1,31 @@
 import React from "react";
 import "./Jumbotron.css";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import { ColorButton } from "../../../shared/styledComponent/styledComponent";
+import { Typography } from "@material-ui/core";
 
 const Jumbotron = props => {
+  console.log(props);
   return (
     <div className="col-12 Jumbotron">
-      <h1 className="display-4 jumbotron_title">Welcome, Noobs!</h1>
-      <p className="lead jumbotron_content">
+      <Typography variant="h1" className="jumbotron_title">
+        Welcome, Noobs!
+      </Typography>
+      <Typography className="mt-3 jumbotron_content">
         This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information.
-      </p>
-      <p className="jumbotron_content">
-        It uses utility classes for typography and spacing to space content out
-        within the larger container.
-      </p>
-      <p className="lead jumbtron_btn">
-        <Link className="btn btn-primary btn-lg" to="/dashboard">
-          Get Start
-        </Link>
-      </p>
+        calling extra attention to featured content or information. It uses
+        utility classes for typography and spacing to space content out within
+        the larger container.
+      </Typography>
+      <ColorButton
+        className="mt-3"
+        size="large"
+        onClick={() => props.history.push("/dashboard")}
+      >
+        <Typography>Get Start</Typography>
+      </ColorButton>
     </div>
   );
 };
 
-export default Jumbotron;
+export default withRouter(Jumbotron);

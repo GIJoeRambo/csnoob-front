@@ -1,6 +1,7 @@
 import React from "react";
-import { Tabs, Tab, Button, Typography } from "@material-ui/core";
+import { Tabs, Tab, Typography } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
+import { ColorButton } from "../../../../shared/styledComponent/styledComponent";
 
 class DashboardCourseTab extends React.Component {
   stageList = [
@@ -21,11 +22,7 @@ class DashboardCourseTab extends React.Component {
   handleClick = course => {
     let { history, match } = this.props;
     let path = {
-      pathname:
-        "/course/" +
-        match.params.uniName +
-        "/" +
-        course._id,
+      pathname: "/course/" + match.params.uniName + "/" + course._id,
       state: {
         course: course
       }
@@ -61,13 +58,12 @@ class DashboardCourseTab extends React.Component {
                   .map(course => {
                     return (
                       <div key={course._id} className="col-3 mt-3 text-center">
-                        <Button
+                        <ColorButton
                           variant="contained"
-                          color="primary"
                           onClick={() => this.handleClick(course)}
                         >
                           {course.code}
-                        </Button>
+                        </ColorButton>
                       </div>
                     );
                   })}
