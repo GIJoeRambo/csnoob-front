@@ -5,11 +5,16 @@ import service from '../../../service/http'
 import decoder from '../../../util/Decoder'
 import Pagination from "./pagination/pagination";
 import BackButton from "../backButton/backButton";
+import sessionstorage from 'sessionstorage'
 class ForumContent extends Component{
-    state = {
-        data: [],
-        total: 1,
-        currentPage: 1
+    constructor(props){
+        super(props);
+        this.state = {
+            data: [],
+            total: 1,
+            currentPage: 1
+        }
+
     }
     componentDidMount = () => {
         this.paginationHandler(this.state.currentPage)
@@ -35,7 +40,9 @@ class ForumContent extends Component{
         let {history,match} = this.props;
         let path = {
             pathname: `/forum/${match.params.forumName}/newThread`,
-            forum: this.props.location.state.forum
+            state: {
+                forum:this.props.location.state.forum
+            }
         }
         history.push(path)
     }

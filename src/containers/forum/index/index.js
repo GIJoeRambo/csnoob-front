@@ -18,13 +18,13 @@ class ForumIndex extends Component{
     clickHandler = (forum) =>{
         let {history} = this.props;
         let path = {
-            pathname: "/forum/" + forum.title.split(" ").join(""),
+            pathname: "/forum/" + forum.title,
             state:{
                 forum: forum
             }
-        }
+        };
         history.push(path)
-    }
+    };
 
     render(){
         return (

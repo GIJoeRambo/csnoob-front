@@ -16,12 +16,11 @@ class TeachersComments extends Component {
         teacherId: null
     }
 
-    shouldComponentUpdate = (nextProps) => {
+    componentWillReceiveProps(nextProps, nextContext) {
         const teacherId = nextProps.location.state.teacherId;
-        if (teacherId !== this.props.location.state.teacherId) {
-            service.getTeacherRating(
-                res => {
-                    this.setState(() => {
+        service.getTeacherRating(
+            res => {
+                this.setState(() => {
                         return (
                             {
                                 commentsList: res.Data.details,
@@ -29,18 +28,22 @@ class TeachersComments extends Component {
                             }
                         )
                     },
-                        () => {
-                            console.log(this.state.commentsList)
-                            this.commentsList = res.Data.details
-                        }
-                    )
-                },
-                err => {
-                    console.log(err);
-                },
-                teacherId, this.state.currentPage
-            )
+                    () => {
+                        console.log(this.state.commentsList)
+                        this.commentsList = res.Data.details
+                    }
+                )
+            },
+            err => {
+                console.log(err);
+            },
+            teacherId, this.state.currentPage
+        )
+    }
 
+    shouldComponentUpdate = (nextProps) => {
+        const teacherId = nextProps.location.state.teacherId;
+        if (teacherId !== this.props.location.state.teacherId) {
             return true;
         }
         else {
@@ -49,7 +52,6 @@ class TeachersComments extends Component {
     }
 
     render() {
-        console.log(this.commentsList)
         return (
             <div className='col-12 TeachersComments' >
                 <ExpansionPanel className='col-12'>

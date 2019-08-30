@@ -4,9 +4,9 @@ class NewThread extends Component{
     render() {
         return (
             <NewThreadForm
-                forumId={this.props.location.forum._id}
+                forumId={this.props.location.state.forum._id}
             >
-                <h1>Create new thread in <i>{this.props.location.forum.title}</i></h1>
+                <h1>Create new thread in <i>{this.props.location.state.forum.title}</i></h1>
             </NewThreadForm>
         )
     }
