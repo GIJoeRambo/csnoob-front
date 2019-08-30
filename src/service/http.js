@@ -22,6 +22,17 @@ const service = {
       });
   },
 
+  getTeacherRating: (resCallback, errCallback, teacherId, currentPage) => {
+    fetch(hostUrl + 'teacherRating/' + teacherId + '/' + currentPage)
+      .then(res => res.json())
+      .then(res => {
+        resCallback(res);
+      })
+      .catch(err => {
+        errCallback(err);
+      });
+  },
+
   getSpecificTeacher: (resCallback, errCallback, teacherName) => {
     fetch(hostUrl + "teacher/" + teacherName)
       .then(res => res.json())
@@ -67,24 +78,24 @@ const service = {
       .catch(error => err(error));
   },
 
-  getThreadsByForumId: (forumId,pageNum,res,err) =>{
+  getThreadsByForumId: (forumId, pageNum, res, err) => {
     fetch(hostUrl + "thread/" + forumId + '/' + pageNum)
-        .then(response=>response.json())
-        .then(result=>res(result))
-        .catch(error=>err(error))
+      .then(response => response.json())
+      .then(result => res(result))
+      .catch(error => err(error))
   },
 
-  postNewThread: (data,res,err)=>{
-    fetch(hostUrl+"thread",{
+  postNewThread: (data, res, err) => {
+    fetch(hostUrl + "thread", {
       method: "POST",
       body: JSON.stringify(data),
-      headers:{
+      headers: {
         'content-type': 'application/json',
       }
     })
-        .then(response => response.json())
-        .then(result => res(result))
-        .catch(error => err(error));
+      .then(response => response.json())
+      .then(result => res(result))
+      .catch(error => err(error));
   }
 
 
