@@ -9,6 +9,7 @@
     border-radius: 5px;
 }
 .cs_teacher_item{
+    color: #3e3f3e;
     min-height: 4rem;
     padding-left: 1rem!important;
     line-height: 4rem;
@@ -16,6 +17,7 @@
 .cs_teacher_item:hover{
     cursor: pointer;
     background: rgb(230, 227, 227);
+    text-decoration: none;
 }
 .cs_teacher_title{
     font-size:13px;

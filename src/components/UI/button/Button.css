@@ -1,0 +1,31 @@
+.Button{
+    background: white;
+    border: 1px solid #272822;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.Button:hover{
+    cursor: pointer;
+    background: #272822;
+    color:white;
+}
+
+.button_large{
+    height: 5rem;
+    width: 14rem;
+    line-height: 4.8rem;
+    font-size: 3rem;
+}
+.button_medium{
+    height: 3rem;
+    width: 6.5rem;
+    line-height: 3rem;
+    font-size: 2rem;
+}
+.button_small{
+    height: 3rem;
+    width: 6.5rem;
+    line-height: 3rem;
+    font-size: 2rem;
+}

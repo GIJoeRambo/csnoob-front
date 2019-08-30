@@ -1,0 +1,20 @@
+.TeachersSpecific{
+    margin-left: 3rem!important;
+    margin-right: 0.5rem!important;
+    margin-top:1rem!important
+}
+
+.cs_tsp_description{
+    height: 15rem;
+    border: 2px solid lightgrey;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+}
+.cs_tsp_comments{
+    height: 45rem;
+    border: 2px solid lightgrey;
+    border-radius: 0 0 5px 5px;
+}
+.cs_tsp_comment_btn:hover{
+    cursor: pointer;
+}
