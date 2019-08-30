@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { TextField, Button, Typography, Select, Card } from "@material-ui/core";
+import {
+  TextField,
+  Button,
+  Typography,
+  Select,
+  Card,
+  MenuItem,
+  InputLabel,
+  Input
+} from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 import "./courseComment.css";
 import CommentConfirmDialog from "./CommentConfirmDialog";
@@ -8,20 +17,21 @@ import service from "../../../service/http";
 const CourseComment = props => {
   const [comment, setComment] = useState("");
   const [rate, setRate] = useState(0);
-  const [semester, setSemester] = useState(1);
+  const [semester, setSemester] = useState(0);
   const [year, setYear] = useState(new Date().getFullYear());
-  const [grade, setGrade] = useState("Not Sure");
+  const [grade, setGrade] = useState("N/A");
   const [name, setName] = useState("");
   const [dialog, setDialog] = useState(false);
 
   const semesterList = [
+    { id: 0, name: "" },
     { id: 1, name: "Semester One" },
     { id: 2, name: "Semester Two" },
     { id: 3, name: "Summer School" }
   ];
 
   const gradeList = [
-    { id: 0, name: "Not Sure" },
+    { id: 0, name: "N/A" },
     { id: 1, name: "C-" },
     { id: 2, name: "C" },
     { id: 3, name: "C+" },
@@ -43,7 +53,7 @@ const CourseComment = props => {
 
   const clearData = () => {
     setComment("");
-    setGrade("Not Sure");
+    setGrade("N/A");
     setRate(0);
     setSemester(1);
     setYear(new Date().getFullYear());
@@ -88,43 +98,45 @@ const CourseComment = props => {
           value={year}
           onChange={e => setYear(e.target.value)}
         />
-        <Select
-          className="col-md-3 mr-3 ml-3 mt-3"
-          native
-          autoWidth
-          variant="filled"
-          value={semester}
-          onChange={e => {
-            setSemester(e.target.value);
-          }}
-        >
-          {semesterList.map(el => (
-            <option key={el.id} value={el.id}>
-              {el.name}
-            </option>
-          ))}
-        </Select>
-        <Select
-          className="col-md-3 mr-3 ml-3 mt-3"
-          native
-          autoWidth
-          value={grade}
-          onChange={e => {
-            setGrade(e.target.value);
-          }}
-        >
-          {gradeList.map(el => (
-            <option key={el.id} value={el.name}>
-              {el.name}
-            </option>
-          ))}
-        </Select>
+        <div className="col-md-3 mr-3 ml-3 mt-3">
+          <InputLabel shrink>Semester</InputLabel>
+          <Select
+            value={semester}
+            className="course_comment_selects"
+            onChange={e => {
+              setSemester(e.target.value);
+            }}
+          >
+            {semesterList.map(el => (
+              <MenuItem key={el.id} value={el.id}>
+                {el.name}
+              </MenuItem>
+            ))}
+          </Select>
+        </div>
+        <div className="col-md-3 mr-3 ml-3 mt-3">
+          <InputLabel shrink>Grade(optional)</InputLabel>
+          <Select
+            className="course_comment_selects"
+            name="age"
+            value={grade}
+            onChange={e => {
+              setGrade(e.target.value);
+            }}
+          >
+            {gradeList.map(el => (
+              <MenuItem key={el.id} value={el.name}>
+                {el.name}
+              </MenuItem>
+            ))}
+          </Select>
+        </div>
       </div>
 
       <TextField
         label="Name(Optional)"
         value={name}
-        className="mx-3"
+        className="mx-4 mt-3"
         onChange={e => setName(e.target.value)}
       />
 
@@ -133,7 +145,7 @@ const CourseComment = props => {
         multiline
         rowsMax="100"
         value={comment}
-        className="my-4 mx-3 justify-center d-flex"
+        className="my-4 mx-4 justify-center d-flex"
         onChange={e => {
           setComment(e.target.value);
         }}

@@ -15,40 +15,41 @@ class CourseView extends React.Component {
   state = {
     tabIndex: 0,
     commentList: [],
-    page: 0,
-    rowsPerPage: 5
+    page: 1,
+    total: 0
   };
 
+  courseId = this.props.match.params.courseId;
+  rowsPerPage = 10;
+
   componentDidMount = () => {
-    service.getCourseRating(
-      res => {
-        this.setState({ commentList: res.Data });
-      },
-      err => {
-        console.log(err);
-      },
-      this.props.location.state.course._id
-    );
+    this.getData(1);
   };
 
   refreshcommentList = () => {
+    this.getData(1);
+  };
+
+  handleChangePage = index => {
+    this.getData(index);
+  };
+
+  getData = page => {
     service.getCourseRating(
       res => {
-        this.setState({ commentList: res.Data });
+        console.log(res);
+        this.setState({
+          commentList: res.Data.details,
+          total: res.Data.total,
+          page: page
+        });
       },
       err => {
         console.log(err);
       },
-      this.props.location.state.course._id
+      this.courseId,
+      page
     );
-  };
-
-  handleChangePage = index => {
-    this.setState({ page: index });
-  };
-
-  handleChangeRowsPerPage = e => {
-    this.setState({ rowsPerPage: +e.target.value, page: 0 });
   };
 
   render() {
@@ -62,8 +63,8 @@ class CourseView extends React.Component {
             {course.name}
           </Typography>
         </div>
-        <Typography>{course.description}</Typography>
-        <Divider className="my-3"></Divider>
+        <Typography className="my-3">{course.description}</Typography>
+        <Divider className="mb-5"></Divider>
         <Tabs
           value={this.state.tabIndex}
           onChange={(e, newValue) => {
@@ -83,20 +84,19 @@ class CourseView extends React.Component {
             course={course}
             refreshcommentList={this.refreshcommentList}
           />
-          <CourseCommentList
-            commentList={this.state.commentList}
-            page={this.state.page}
-            rowsPerPage={this.state.rowsPerPage}
-          />
-          <TablePagination
-            rowsPerPageOptions={[5, 10, 25]}
-            component="div"
-            count={this.state.commentList.length}
-            rowsPerPage={this.state.rowsPerPage}
-            page={this.state.page}
-            onChangePage={(e, newIndex) => this.handleChangePage(newIndex)}
-            onChangeRowsPerPage={e => this.handleChangeRowsPerPage(e)}
-          />
+          <CourseCommentList commentList={this.state.commentList} />
+          <div className="d-flex justify-content-center">
+            <TablePagination
+              rowsPerPageOptions={[]}
+              component="div"
+              count={this.state.total}
+              rowsPerPage={this.rowsPerPage}
+              page={this.state.page - 1}
+              onChangePage={(e, newIndex) =>
+                this.handleChangePage(newIndex + 1)
+              }
+            />
+          </div>
         </div>
         <div hidden={this.state.tabIndex !== 1}>
           <Typography>Resource</Typography>

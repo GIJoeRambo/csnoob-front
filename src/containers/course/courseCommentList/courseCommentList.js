@@ -3,19 +3,9 @@ import { Card, Typography } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 
 const CourseCommentList = props => {
-  console.log(props);
-  const comments = props.commentList.slice(
-    props.page * props.rowsPerPage,
-    props.page * props.rowsPerPage + props.rowsPerPage
-  );
-  console.log(
-    comments,
-    props.page * props.rowsPerPage,
-    props.page * props.rowsPerPage + props.rowsPerPage
-  );
   return (
     <div>
-      {comments.map(el => (
+      {props.commentList.map(el => (
         <Card key={el._id} className="m-3">
           <div className="row mx-3">
             <Typography component="span" className="col-md-2 col-6 mt-3">
