@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import {
   TextField,
-  Button,
   Typography,
   Select,
   Card,
   MenuItem,
   InputLabel,
-  Input
+  FormControl,
+  OutlinedInput
 } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
-import "./courseComment.css";
 import CommentConfirmDialog from "./CommentConfirmDialog";
 import service from "../../../service/http";
+import { ColorButton } from "../../../shared/styledComponent/styledComponent";
 
 const CourseComment = props => {
   const [comment, setComment] = useState("");
@@ -55,7 +55,7 @@ const CourseComment = props => {
     setComment("");
     setGrade("N/A");
     setRate(0);
-    setSemester(1);
+    setSemester(0);
     setYear(new Date().getFullYear());
     setName("");
   };
@@ -82,9 +82,9 @@ const CourseComment = props => {
   };
 
   return (
-    <Card className="course_comment_container mx-3">
+    <Card className="mx-3">
       <div className="row align-items-center">
-        <div className="d-inline-block ml-3 mt-3 col-md-2">
+        <div className="d-inline-block ml-2 mt-3 col-md-2">
           <Typography component="legend">Rating</Typography>
           <Rating
             name="courseRating"
@@ -95,14 +95,22 @@ const CourseComment = props => {
         <TextField
           className="col-md-2 mr-3 ml-3 mt-3"
           label="Year"
+          variant="outlined"
           value={year}
           onChange={e => setYear(e.target.value)}
         />
-        <div className="col-md-3 mr-3 ml-3 mt-3">
-          <InputLabel shrink>Semester</InputLabel>
+        <FormControl variant="outlined" className="col-md-3 mr-3 ml-3 mt-3">
+          <InputLabel htmlFor="comment-semester">Semester</InputLabel>
           <Select
+            name="semester"
             value={semester}
-            className="course_comment_selects"
+            input={
+              <OutlinedInput
+                labelWidth={70}
+                name="semester"
+                id="comment-semester"
+              />
+            }
             onChange={e => {
               setSemester(e.target.value);
             }}
@@ -113,13 +121,15 @@ const CourseComment = props => {
               </MenuItem>
             ))}
           </Select>
-        </div>
-        <div className="col-md-3 mr-3 ml-3 mt-3">
-          <InputLabel shrink>Grade(optional)</InputLabel>
+        </FormControl>
+        <FormControl variant="outlined" className="col-md-3 mr-3 ml-3 mt-3">
+          <InputLabel htmlFor="comment-grade">Grade(optional)</InputLabel>
           <Select
-            className="course_comment_selects"
-            name="age"
+            name="grade"
             value={grade}
+            input={
+              <OutlinedInput labelWidth={120} name="grade" id="comment-grade" />
+            }
             onChange={e => {
               setGrade(e.target.value);
             }}
@@ -130,30 +140,31 @@ const CourseComment = props => {
               </MenuItem>
             ))}
           </Select>
-        </div>
+        </FormControl>
       </div>
 
       <TextField
         label="Name(Optional)"
         value={name}
-        className="mx-4 mt-3"
+        variant="outlined"
+        className="m-3"
         onChange={e => setName(e.target.value)}
       />
 
       <TextField
+        variant="outlined"
         label="Comment"
         multiline
         rowsMax="100"
         value={comment}
-        className="my-4 mx-4 justify-center d-flex"
+        className="m-3 justify-center d-flex"
         onChange={e => {
           setComment(e.target.value);
         }}
       />
-      <div className="justify-center d-flex my-3">
-        <Button
+      <div className="justify-center d-flex mb-3 mt-5">
+        <ColorButton
           variant="contained"
-          color="primary"
           onClick={() => {
             if (prepareData()) {
               submitData();
@@ -161,7 +172,7 @@ const CourseComment = props => {
           }}
         >
           submit
-        </Button>
+        </ColorButton>
       </div>
       <CommentConfirmDialog dialog={dialog} setDialog={setDialog} />
     </Card>
