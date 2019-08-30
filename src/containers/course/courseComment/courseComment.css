@@ -1,3 +1,7 @@
 .course_comment_container {
-  border: 1px solid #333;
+  background-color: #fff;
+}
+
+.course_comment_selects {
+  width: 12rem;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./containers/home/Home";
-import Dashboard from "./containers/dashboard/Dashboard";
+import Dashboard from "./containers/dashboard/dashboard";
 import NotFound from "./containers/NotFound/NotFound";
 import Teachers from './containers/dashboard/dashboardContent/dashboardCourse/teachers/Teachers';
 import MainLayout from "./components/layout/main_layout/main_layout";
@@ -22,7 +22,7 @@ const App = () => {
           <Route exact path="/404" component={NotFound} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/forum" component={Forum} />
-          <Route path="/course/:uniName/:courseCode" component={CourseView} />
+          <Route path="/course/:uniName/:courseId" component={CourseView} />
           <Route path="/" exact component={Home} />
           <Route path="/teachers" component={Teachers}></Route>
           <Redirect from={"*"} to={"/404"} />

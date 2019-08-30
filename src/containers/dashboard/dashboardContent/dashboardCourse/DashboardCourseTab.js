@@ -20,13 +20,12 @@ class DashboardCourseTab extends React.Component {
 
   handleClick = course => {
     let { history, match } = this.props;
-    console.log(this.props);
     let path = {
       pathname:
         "/course/" +
         match.params.uniName +
         "/" +
-        course.code.split(" ").join(""),
+        course._id,
       state: {
         course: course
       }

@@ -11,6 +11,7 @@
     border-radius: 5px 5px 0 0;
 }
 .cs_tsp_comments{
+    background: rgba(243, 243, 243, 0.972);
     height: 45rem;
     border: 2px solid lightgrey;
     border-radius: 0 0 5px 5px;

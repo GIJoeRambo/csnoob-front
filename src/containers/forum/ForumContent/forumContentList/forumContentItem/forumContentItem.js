@@ -6,7 +6,7 @@ const ForumContentItem = (props) =>{
         <div className="thread">
             <div>
                 <p>
-                    <a href="thread.html">{props.title}</a>
+                    <a href="/">{props.title}</a>
                 </p>
                 <p className="text-faded text-xsmall">
                     By <a href="/">{props.postAuthor}</a>, {props.when}.
@@ -24,7 +24,7 @@ const ForumContentItem = (props) =>{
 
                     <div>
                         <p className="text-xsmall">
-                            <a href="profile.html">{props.LastReplyName}</a>
+                            <a href="/">{props.LastReplyName}</a>
                         </p>
                         <p className="text-xsmall text-faded">{props.LastReplyTime}</p>
                     </div>

@@ -3,13 +3,13 @@ import React, {Fragment} from 'react'
 const ForumContentList = (props) =>{
     return (
         <Fragment>
-            <div className="col-full push-top">
+            <div className="col-full">
                 <div className="forum-header">
                     <div className="forum-details">
                         <h1>{props.title}</h1>
                         <p className="text-lead">{props.description}</p>
                     </div>
-                    <a href="/" className="btn-green btn-small">Start a thread</a>
+                    <button onClick={props.PostThreadClick} className="btn-green btn-small">Post a thread</button>
                 </div>
             </div>
             <div className="col-full">

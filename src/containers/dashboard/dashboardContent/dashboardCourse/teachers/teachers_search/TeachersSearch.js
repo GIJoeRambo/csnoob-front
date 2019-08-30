@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Search } from 'styled-icons/boxicons-regular';
-import service from '../../../../../../service/http';
 import './TeachersSearch.css';
 
 class TeachersSearch extends Component {

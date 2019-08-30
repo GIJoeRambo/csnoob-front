@@ -29,6 +29,14 @@ class ForumIndex extends Component{
     render(){
         return (
             <Fragment>
+                <div className="col-full">
+                    <div className="forum-header">
+                        <div className="forum-details">
+                            <h1>Forums</h1>
+                            <p className="text-lead">Find your favourite forum</p>
+                        </div>
+                    </div>
+                </div>
                 <ForumList title="General">
                     {this.state.data.filter(s=>s.category === 0 ).map((s,index)=>{
                         return (
