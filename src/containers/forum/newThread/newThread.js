@@ -27,6 +27,7 @@ class NewThread extends Component{
         return (
             <NewThreadForm
                 forumId={this.state.forumId}
+                goBack={()=>this.props.history.goBack()}
             >
                 <h1>Create new thread in <i>{this.state.title}</i></h1>
             </NewThreadForm>
