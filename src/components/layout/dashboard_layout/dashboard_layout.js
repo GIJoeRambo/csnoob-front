@@ -6,7 +6,7 @@ const DashboardLayout = props => {
   return (
     <div className="row DashboardLayout">
       <Sidebar />
-      <div className="pl-4 col-md col-12">{props.children}</div>
+      <div className="px-3 col-md col-12">{props.children}</div>
     </div>
   );
 };

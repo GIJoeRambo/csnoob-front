@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import DashboardCourse from "./dashboardCourse/DashboardCourse";
 import DashboardDescription from "./dashboardSummary/DashboardSummary";
 import DashboardForum from "./dashboardForum/DashboardForum";

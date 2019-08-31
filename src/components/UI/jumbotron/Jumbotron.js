@@ -7,10 +7,8 @@ import { Typography } from "@material-ui/core";
 const Jumbotron = props => {
   console.log(props);
   return (
-    <div className="col-12 Jumbotron">
-      <Typography variant="h1" className="jumbotron_title">
-        Welcome, Noobs!
-      </Typography>
+    <div className="col-12 Jumbotron text-center">
+      <p className="jumbotron_title">Welcome, Noobs!</p>
       <Typography className="mt-3 jumbotron_content">
         This is a simple hero unit, a simple jumbotron-style component for
         calling extra attention to featured content or information. It uses

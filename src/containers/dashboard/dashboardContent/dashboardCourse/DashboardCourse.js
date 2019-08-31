@@ -16,7 +16,8 @@ class DashboardCourse extends Component {
   state = {
     courseList: [],
     searchText: "",
-    uniId: this.props.uni.id
+    uniId: this.props.uni.id,
+    shouldUpdate: false
   };
 
   componentDidMount = () => {
@@ -25,14 +26,15 @@ class DashboardCourse extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.uni.id !== prevState.uniId) {
-      return { uniId: nextProps.uni.id, courseList: [] };
+      return { uniId: nextProps.uni.id, shouldUpdate: true, courseList: [] };
     }
     return null;
   }
 
   componentDidUpdate = (prevProps, prevState) => {
-    if (!this.state.courseList) {
+    if (this.state.courseList.length === 0 && this.state.shouldUpdate) {
       this.getData(this.state.uniId);
+      this.setState({ shouldUpdate: false });
     }
   };
 
