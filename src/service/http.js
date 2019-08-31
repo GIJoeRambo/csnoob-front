@@ -79,12 +79,17 @@ const service = {
   },
 
   getThreadsByForumId: (forumId, pageNum, res, err) => {
-    fetch(hostUrl + "thread/" + forumId + '/' + pageNum)
+    fetch(hostUrl + "thread/getThreadsByForumId/" + forumId + '/' + pageNum)
       .then(response => response.json())
       .then(result => res(result))
       .catch(error => err(error))
   },
-
+  getThreadByThreadId:(ThreadId,res,err)=>{
+    fetch(hostUrl+"thread/"+ThreadId)
+        .then(response => response.json())
+        .then(result => res(result))
+        .catch(error => err(error))
+  },
   postNewThread: (data, res, err) => {
     fetch(hostUrl + "thread", {
       method: "POST",
@@ -99,6 +104,12 @@ const service = {
   },
   getForumByForumId: (forumId,res,err)=>{
     fetch(hostUrl+"forum/"+forumId)
+        .then(response => response.json())
+        .then(result => res(result))
+        .catch(error => err(error))
+  },
+  getThreadNumAndPostNum: (res,err)=>{
+    fetch(hostUrl+"general/getThreadNumAndPostNum")
         .then(response => response.json())
         .then(result => res(result))
         .catch(error => err(error))
