@@ -18,11 +18,21 @@
 .cs_td_teacher_icons .cs_td_teacher_like{
     position: absolute;
     line-height: 1rem;
-    right:3rem;
+    right:6rem;
 }
 .cs_td_teacher_icons .cs_td_teacher_rating{
     position: absolute;
     right: 10rem;
     line-height: 1rem;
     /* font-size: 0.05rem!important; */
+}
+.cs_td_icon_comment{
+    position: absolute;
+    line-height: 1rem;
+    right:1.5rem;
+    color:grey;
+}
+.cs_td_icon_comment:hover{
+    cursor: pointer;
+    color:rgb(30, 197, 30);
 }

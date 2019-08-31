@@ -44,6 +44,7 @@ class Teachers extends Component {
                 <div className='col-md-7 col-sm-12'>
                     <Switch>
                         <Route
+                            a='a'
                             path={this.props.match.path + "/:teacherId"}
                             component={TeachersSpecific}
                         />

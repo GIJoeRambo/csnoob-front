@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import { CommentDots } from 'styled-icons/boxicons-regular/CommentDots';
 import './TeachersDescription.css'
 
 const TeachersDescription = (props) => {
@@ -40,8 +41,10 @@ const TeachersDescription = (props) => {
                             name="customized-color"
                             value={isLike?1:0}
                             max={1}
+                            title='like'
                             icon={<FavoriteIcon fontSize="inherit" />}
                         />
+                        <CommentDots size='26' className='cs_td_icon_comment' title='new comment'></CommentDots>
                     </div>
                 </div>
             </div>

@@ -16,18 +16,18 @@ class TeachersComments extends Component {
         teacherId: null
     }
 
-    componentWillReceiveProps= async (nextProps, nextContext)=> {
+    componentWillReceiveProps = async (nextProps, nextContext) => {
         const teacherId = nextProps.location.state.teacherId;
         await service.getTeacherRating(
             async res => {
                 await this.setState(() => {
-                        return (
-                            {
-                                commentsList: res.Data.details,
-                                teacherId: teacherId
-                            }
-                        )
-                    },
+                    return (
+                        {
+                            commentsList: res.Data.details,
+                            teacherId: teacherId
+                        }
+                    )
+                },
                     () => {
                         console.log(this.state.commentsList)
                         this.commentsList = res.Data.details
@@ -41,38 +41,36 @@ class TeachersComments extends Component {
         )
     }
 
-    // shouldComponentUpdate = (nextProps) => {
-    //     const teacherId = nextProps.location.state.teacherId;
-    //     if (teacherId !== this.props.location.state.teacherId) {
-    //         return true;
-    //     }
-    //     else {
-    //         return false;
-    //     }
-    // }
-
     render() {
         return (
             <div className='col-12 TeachersComments' >
-                <ExpansionPanel className='col-12'>
-                    <ExpansionPanelSummary className='col-12'>
-                        <div className='col-4'>ss</div>
-                        <div className='col-8'>
-                            <Rating
-                                className='cs_td_teacher_rating'
-                                // value={props.location.state.teacherRating}
-                                precision={0.5}
-                                readOnly
-                            />
-                        </div>
+                {
+                    this.state.commentsList.map(
+                        (item) => {
+                            return (
+                                <ExpansionPanel className='col-12' key={item._id}>
+                                    <ExpansionPanelSummary className='col-12'>
+                                        <div className='col-4'>ss</div>
+                                        <div className='col-8'>
+                                            <Rating
+                                                className='cs_td_teacher_rating'
+                                                value={item.rate}
+                                                precision={0.5}
+                                                readOnly
+                                            />
+                                        </div>
 
-                    </ExpansionPanelSummary>
-                    <ExpansionPanelDetails>
-                        <Typography>
-
-                        </Typography>
-                    </ExpansionPanelDetails>
-                </ExpansionPanel>
+                                    </ExpansionPanelSummary>
+                                    <ExpansionPanelDetails>
+                                        <Typography>
+                                            {item.comment}
+                                        </Typography>
+                                    </ExpansionPanelDetails>
+                                </ExpansionPanel>
+                            )
+                        }
+                    )
+                }
             </div>
         )
     }
