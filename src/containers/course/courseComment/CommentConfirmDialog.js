@@ -24,7 +24,7 @@ const CommentConfirmDialog = props => {
         <Button
           onClick={() => props.setDialog(false)}
           color="primary"
-          variant="outlined"
+          variant="contained"
         >
           Close
         </Button>

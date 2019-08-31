@@ -7,13 +7,11 @@ class DashboardSummary extends Component {
       <Card>
         <CardContent>
           <Typography variant="h5" gutterBottom>
-            {this.props.match.params.uniName}
+            {this.props.uni.name}
           </Typography>
           <Divider></Divider>
           <Typography variant="body1" color="textSecondary">
-            We are empirically mapping the variant prop to a range of different
-            DOM element types. If you wish to change that mapping, you can
-            provide your own. Alternatively, you can use the component prop.
+            {this.props.uni.description}
           </Typography>
         </CardContent>
       </Card>

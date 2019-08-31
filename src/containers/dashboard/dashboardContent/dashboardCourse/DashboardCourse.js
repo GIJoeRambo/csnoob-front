@@ -15,17 +15,34 @@ import DashboardCourseTab from "./DashboardCourseTab";
 class DashboardCourse extends Component {
   state = {
     courseList: [],
-    searchText: ""
+    searchText: "",
+    uniId: this.props.uni.id
   };
 
   componentDidMount = () => {
-    service.getCourse(
+    this.getData(this.props.uni.id);
+  };
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.uni.id !== prevState.uniId) {
+      return { uniId: nextProps.uni.id, courseList: [] };
+    }
+    return null;
+  }
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (!this.state.courseList) {
+      this.getData(this.state.uniId);
+    }
+  };
+
+  getData = id => {
+    service.getCoursesByUniId(
       res => {
-        this.setState({ courseList: res.Data }, () => {
-          console.log(this.state);
-        });
+        this.setState({ courseList: res.Data });
       },
-      err => console.log(err)
+      err => console.log(err),
+      id
     );
   };
 
@@ -33,14 +50,20 @@ class DashboardCourse extends Component {
     let course = this.state.courseList.find(el =>
       el.code.includes(this.state.searchText)
     );
-    let { history, match } = this.props;
-    let path = {
-      pathname: "/course/" + match.params.uniName + "/" + course._id,
-      state: {
-        course: course
-      }
-    };
-    history.push(path);
+    if (course) {
+      let { history, match } = this.props;
+      let path = {
+        pathname:
+          "/course/" +
+          match.params.uniName +
+          "/" +
+          course.code.split(" ").join(""),
+        search: "?id=" + course._id
+      };
+      history.push(path);
+    } else {
+      alert("No course found");
+    }
   };
 
   handleChange = e => {
