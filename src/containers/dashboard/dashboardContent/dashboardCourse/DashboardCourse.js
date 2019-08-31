@@ -11,6 +11,7 @@ import { withRouter } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import service from "../../../../service/http";
 import DashboardCourseTab from "./DashboardCourseTab";
+import Swal from "sweetalert2";
 
 class DashboardCourse extends Component {
   state = {
@@ -64,7 +65,11 @@ class DashboardCourse extends Component {
       };
       history.push(path);
     } else {
-      alert("No course found");
+      Swal.fire({
+        type: "error",
+        title: "Oops...",
+        text: "No course found"
+      });
     }
   };
 

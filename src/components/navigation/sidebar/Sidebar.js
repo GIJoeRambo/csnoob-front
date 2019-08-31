@@ -16,9 +16,9 @@ class Sidebar extends React.Component {
   };
 
   componentDidMount = () => {
-    if (this.props.location.state && this.props.location.state.university) {
-      this.setState({ selectedId: this.props.location.state.university.id });
-    }
+    const uniName = this.props.location.pathname.split("/")[2];
+    const uniId = univisityList.find(el => el.path === uniName).id;
+    this.setState({ selectedId: uniId });
   };
 
   render() {
@@ -26,10 +26,7 @@ class Sidebar extends React.Component {
       <List component="nav" className="row col-12 col-md-3 SideBar">
         {univisityList.map(item => {
           let path = {
-            pathname: this.props.match.path + "/" + item.path,
-            state: {
-              university: item
-            }
+            pathname: this.props.match.path + "/" + item.path
           };
           return (
             <NavLink
