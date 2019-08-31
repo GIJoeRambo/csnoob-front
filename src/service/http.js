@@ -1,7 +1,29 @@
 const hostUrl = "http://35.244.113.148:3000/api/";
 const service = {
-  getCourse: (res, err) => {
+  getCourses: (res, err) => {
     fetch(hostUrl + "course")
+      .then(res => res.json())
+      .then(result => {
+        res(result);
+      })
+      .catch(error => {
+        err(error);
+      });
+  },
+
+  getCourseById: (res, err, id) => {
+    fetch(hostUrl + "course/getCourseByCourseId/" + id)
+      .then(res => res.json())
+      .then(result => {
+        res(result);
+      })
+      .catch(error => {
+        err(error);
+      });
+  },
+
+  getCoursesByUniId: (res, err, id) => {
+    fetch(hostUrl + "course/getCourseBySchoolNum/" + id)
       .then(res => res.json())
       .then(result => {
         res(result);
@@ -23,7 +45,7 @@ const service = {
   },
 
   getTeacherRating: (resCallback, errCallback, teacherId, currentPage) => {
-    fetch(hostUrl + 'teacherRating/' + teacherId + '/' + currentPage)
+    fetch(hostUrl + "teacherRating/" + teacherId + "/" + currentPage)
       .then(res => res.json())
       .then(res => {
         resCallback(res);
@@ -82,7 +104,7 @@ const service = {
     fetch(hostUrl + "thread/getThreadsByForumId/" + forumId + '/' + pageNum)
       .then(response => response.json())
       .then(result => res(result))
-      .catch(error => err(error))
+      .catch(error => err(error));
   },
   getThreadByThreadId:(ThreadId,res,err)=>{
     fetch(hostUrl+"thread/"+ThreadId)
@@ -95,7 +117,7 @@ const service = {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json"
       }
     })
       .then(response => response.json())
@@ -114,7 +136,5 @@ const service = {
         .then(result => res(result))
         .catch(error => err(error))
   }
-
-
 };
 export default service;

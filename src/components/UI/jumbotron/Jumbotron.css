@@ -1,13 +1,13 @@
 .Jumbotron {
   height: 50%;
-  padding: 6rem!important;
+  padding: 4rem 3rem !important;
   background: rgba(255, 255, 255, 0.4) !important;
   user-select: none;
-  margin-top: 10rem!important;
+  margin-top: 10rem !important;
 }
 .jumbotron_title {
   color: black;
-  font-weight: bold;
+  font-size: 5rem;
 }
 .jumbotron_content {
   color: black;
