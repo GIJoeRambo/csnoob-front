@@ -96,6 +96,12 @@ const service = {
       .then(response => response.json())
       .then(result => res(result))
       .catch(error => err(error));
+  },
+  getForumByForumId: (forumId,res,err)=>{
+    fetch(hostUrl+"forum/"+forumId)
+        .then(response => response.json())
+        .then(result => res(result))
+        .catch(error => err(error))
   }
 
 

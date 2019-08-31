@@ -5,23 +5,40 @@ import service from '../../../service/http'
 import decoder from '../../../util/Decoder'
 import Pagination from "./pagination/pagination";
 import BackButton from "../backButton/backButton";
-import sessionstorage from 'sessionstorage'
+import queryString from 'query-string'
+import {Redirect,withRouter} from 'react-router-dom'
 class ForumContent extends Component{
     constructor(props){
         super(props);
         this.state = {
             data: [],
             total: 1,
-            currentPage: 1
+            currentPage: 1,
+            title: "",
+            subtitle: "",
+            PostThreadButtonDisabled: true,
+            isRedirect: false
         }
 
     }
     componentDidMount = () => {
-        this.paginationHandler(this.state.currentPage)
+        service.getForumByForumId(queryString.parse(this.props.location.search).id,res=>{
+            this.setState({
+                title:res.Data.title,
+                subtitle:res.Data.subtitle,
+                PostThreadButtonDisabled:false
+            },()=>{
+                this.paginationHandler(this.state.currentPage)
+            })
+        },err=>{
+            this.setState({isRedirect: true})
+        });
     };
 
+
+
     paginationHandler = (page) =>{
-        service.getThreadsByForumId(this.props.location.state.forum._id, page,res=>{
+        service.getThreadsByForumId(queryString.parse(this.props.location.search).id, page,res=>{
             this.setState({
                 data:res.Data.details,
                 total: res.Data.total,
@@ -41,20 +58,25 @@ class ForumContent extends Component{
         let path = {
             pathname: `/forum/${match.params.forumName}/newThread`,
             state: {
-                forum:this.props.location.state.forum
+                forumId: queryString.parse(this.props.location.search).id,
+                title: this.state.title
             }
         }
         history.push(path)
     }
 
     render(){
+        if (this.state.isRedirect){
+            return <Redirect to="/forum"/>
+        }
         return (
             <Fragment>
                 <BackButton/>
                 <ForumContentList
-                    title={this.props.location.state.forum.title}
-                    description={this.props.location.state.forum.subtitle}
+                    title={this.state.title}
+                    description={this.state.subtitle}
                     PostThreadClick={this.PostThreadClickHandler}
+                    PostThreadButtonDisabled={this.state.PostThreadButtonDisabled}
                 >
                     {this.state.data.map((s,index)=>{
                         return (
@@ -89,4 +111,4 @@ class ForumContent extends Component{
     }
 }
 
-export default ForumContent
+export default withRouter(ForumContent)
