@@ -23,13 +23,18 @@ class ForumContent extends Component{
     }
     componentDidMount = () => {
         this.backToTop()
+        const page = queryString.parse(this.props.location.search).page;
+        if (isNaN(page)){
+            this.paginationHandler(1)
+            return;
+        }
         service.getForumByForumId(queryString.parse(this.props.location.search).id,res=>{
             this.setState({
                 title:res.Data.title,
                 subtitle:res.Data.subtitle,
                 PostThreadButtonDisabled:false
             },()=>{
-                this.getThreadsHandler(queryString.parse(this.props.location.search).id,queryString.parse(this.props.location.search).page)
+                this.getThreadsHandler(queryString.parse(this.props.location.search).id,page)
             })
         },err=>{
             this.setState({isRedirect: true})
@@ -126,6 +131,12 @@ class ForumContent extends Component{
                         }}
                         next={()=>{
                             this.paginationHandler(Number(queryString.parse(this.props.location.search).page)+1)
+                        }}
+                        first={()=>{
+                            this.paginationHandler(1)
+                        }}
+                        last={()=>{
+                            this.paginationHandler(this.state.total)
                         }}
                     />
                 </ForumContentList>
