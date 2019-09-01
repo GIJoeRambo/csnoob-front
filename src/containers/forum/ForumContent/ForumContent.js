@@ -48,6 +48,12 @@ class ForumContent extends Component{
 
     getThreadsHandler = (forumId,page) =>{
         service.getThreadsByForumId(forumId, page,res=>{
+            if (res.Data.details.length ===0){
+                if (page !== "1"){
+                    this.paginationHandler(res.Data.total);
+                }
+                return;
+            }
             this.setState({
                 data:res.Data.details,
                 total: res.Data.total,
