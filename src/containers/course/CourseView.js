@@ -10,7 +10,7 @@ import CourseComment from "./courseComment/courseComment";
 import CourseCommentList from "./courseCommentList/courseCommentList";
 import service from "../../service/http";
 import "./courseView.css";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import { ColorButton } from "../../shared/styledComponent/styledComponent";
 
 class CourseView extends React.Component {
@@ -19,7 +19,8 @@ class CourseView extends React.Component {
     commentList: [],
     page: 1,
     total: 0,
-    course: {}
+    course: {},
+    shouldRedirect: false
   };
 
   courseId = this.props.location.search.split("=")[1];
@@ -41,7 +42,11 @@ class CourseView extends React.Component {
   getCourse = () => {
     service.getCourseById(
       res => {
-        this.setState({ course: res.Data });
+        if (res.Data) {
+          this.setState({ course: res.Data });
+        } else {
+          this.setState({ shouldRedirect: true });
+        }
       },
       err => {
         console.log(err);
@@ -73,6 +78,14 @@ class CourseView extends React.Component {
 
   render() {
     const { course, tabIndex, commentList } = this.state;
+
+    if (this.state.shouldRedirect) {
+      return (
+        <Redirect
+          to={"/dashboard/" + this.props.match.params.uniName}
+        ></Redirect>
+      );
+    }
 
     return (
       <div className="m-3">

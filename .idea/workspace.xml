@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f9cca90-c916-49c1-9afb-756660e5c898" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/forum/ForumContent/ForumContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/ForumContent/ForumContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/forum/Thread/Thread.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/Thread/Thread.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/forum/backButton/backButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/backButton/backButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/forum/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/index/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/background/coding.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/background/coding2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/background/coding3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/images/background/coding4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_modal/TeachersModal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_modal/TeachersModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UI/background/tellurion/tellurion.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/background/tellurion/tellurion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/sidebar/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/course/CourseView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/course/CourseView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/Teachers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/Teachers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_comments/TeachersComments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_comments/TeachersComments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_description/TeachersDescription.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_description/TeachersDescription.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_description/TeachersDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_description/TeachersDescription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/home/Home.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/Thread.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="45" column="57" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
+            <state relative-caret-position="239">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -256,12 +267,12 @@
       <workItem from="1567254533380" duration="1964000" />
       <workItem from="1567258700345" duration="2301000" />
       <workItem from="1567261820816" duration="143000" />
-      <workItem from="1567336918568" duration="2068000" />
+      <workItem from="1567336918568" duration="2121000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77699000" />
+    <option name="totallyTimeSpent" value="77752000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -276,7 +287,7 @@
     <frame x="1826" y="47" width="1721" height="919" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.24478856" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.24478856" />
       <window_info id="Structure" order="1" sideWeight="0.5009009" side_tool="true" weight="0.1923077" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -290,7 +301,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.286578" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.286578" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -709,8 +720,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/Thread.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="45" column="57" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="57" />
+        <state relative-caret-position="239">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
