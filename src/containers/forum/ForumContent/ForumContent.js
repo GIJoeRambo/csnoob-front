@@ -13,7 +13,6 @@ class ForumContent extends Component{
         this.state = {
             data: [],
             total: 1,
-            currentPage: 1,
             title: "",
             subtitle: "",
             PostThreadButtonDisabled: true,
@@ -29,30 +28,42 @@ class ForumContent extends Component{
                 subtitle:res.Data.subtitle,
                 PostThreadButtonDisabled:false
             },()=>{
-                this.paginationHandler(this.state.currentPage,false)
+                this.getThreadsHandler(queryString.parse(this.props.location.search).id,queryString.parse(this.props.location.search).page,()=>{})
             })
         },err=>{
             this.setState({isRedirect: true})
         });
     };
 
+    componentWillReceiveProps(nextProps, nextContext) {
+        this.getThreadsHandler(queryString.parse(nextProps.location.search).id,queryString.parse(nextProps.location.search).page,()=>{
+            this.backToTop()
+        })
+    }
 
 
-    paginationHandler = (page,isScrollToTop) =>{
-        service.getThreadsByForumId(queryString.parse(this.props.location.search).id, page,res=>{
+    getThreadsHandler = (forumId,page,fn) =>{
+        service.getThreadsByForumId(forumId, page,res=>{
             this.setState({
                 data:res.Data.details,
                 total: res.Data.total,
                 currentPage: res.Data.currentPage
             },()=>{
-                if (isScrollToTop){
-                    this.backToTop()
-                }
+                fn()
             })
         },err=>{
             console.log(err)
         })
     };
+
+    paginationHandler = (i)=>{
+        let {history,match} = this.props;
+        let path = {
+            pathname: `/forum/${match.params.forumName}`,
+            search: `id=${queryString.parse(this.props.location.search).id}&page=${i}`
+        }
+        history.push(path)
+    }
 
     backToTop = () =>{
         window.scrollTo(0, 0);
@@ -85,7 +96,9 @@ class ForumContent extends Component{
         }
         return (
             <Fragment>
-                <BackButton/>
+                <BackButton
+                    click={()=>this.props.history.push({pathname:"/forum"})}
+                />
                 <ForumContentList
                     title={this.state.title}
                     description={this.state.subtitle}
@@ -107,15 +120,15 @@ class ForumContent extends Component{
                         )
                     })}
                     <Pagination
-                        currentPage={this.state.currentPage}
+                        currentPage={queryString.parse(this.props.location.search).page}
                         totalPage={this.state.total}
-                        prevDisabled={this.state.currentPage===1}
-                        nextDisabled={this.state.total===this.state.currentPage}
+                        prevDisabled={Number(queryString.parse(this.props.location.search).page)===1}
+                        nextDisabled={this.state.total===Number(queryString.parse(this.props.location.search).page)}
                         prev={()=>{
-                            this.paginationHandler(this.state.currentPage-1,true)
+                            this.paginationHandler(Number(queryString.parse(this.props.location.search).page)-1)
                         }}
                         next={()=>{
-                            this.paginationHandler(this.state.currentPage+1,true)
+                            this.paginationHandler(Number(queryString.parse(this.props.location.search).page)+1)
                         }}
                     />
                 </ForumContentList>

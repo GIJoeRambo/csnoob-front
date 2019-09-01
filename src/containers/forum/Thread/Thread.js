@@ -42,7 +42,9 @@ class Thread extends Component{
                 <Helmet>
                     <style>{'body { background-color: #F6F8FF; }'}</style>
                 </Helmet>
-                <BackButton/>
+                <BackButton
+                    click={()=>this.props.history.goBack()}
+                />
                 <ThreadHeader
                     title={this.state.title}
                     author={this.state.author}

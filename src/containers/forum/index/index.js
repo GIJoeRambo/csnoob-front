@@ -19,7 +19,7 @@ class ForumIndex extends Component{
         let {history} = this.props;
         let path = {
                 pathname: "/forum/" + forum.title,
-                search: `id=${forum._id}`
+                search: `id=${forum._id}&page=1`
             }
         ;
         history.push(path)
