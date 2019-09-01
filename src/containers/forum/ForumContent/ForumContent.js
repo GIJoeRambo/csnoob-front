@@ -22,13 +22,14 @@ class ForumContent extends Component{
 
     }
     componentDidMount = () => {
+        this.backToTop()
         service.getForumByForumId(queryString.parse(this.props.location.search).id,res=>{
             this.setState({
                 title:res.Data.title,
                 subtitle:res.Data.subtitle,
                 PostThreadButtonDisabled:false
             },()=>{
-                this.paginationHandler(this.state.currentPage)
+                this.paginationHandler(this.state.currentPage,false)
             })
         },err=>{
             this.setState({isRedirect: true})
@@ -37,12 +38,16 @@ class ForumContent extends Component{
 
 
 
-    paginationHandler = (page) =>{
+    paginationHandler = (page,isScrollToTop) =>{
         service.getThreadsByForumId(queryString.parse(this.props.location.search).id, page,res=>{
             this.setState({
                 data:res.Data.details,
                 total: res.Data.total,
                 currentPage: res.Data.currentPage
+            },()=>{
+                if (isScrollToTop){
+                    this.backToTop()
+                }
             })
         },err=>{
             console.log(err)
@@ -50,7 +55,7 @@ class ForumContent extends Component{
     };
 
     backToTop = () =>{
-        document.body.scrollTop = 0;
+        window.scrollTo(0, 0);
     }
 
     PostThreadClickHandler = () =>{
@@ -61,6 +66,15 @@ class ForumContent extends Component{
                 forumId: queryString.parse(this.props.location.search).id,
                 title: this.state.title
             }
+        }
+        history.push(path)
+    }
+
+    ClickThreadHandler = (threadItem) =>{
+        let {history,match} = this.props;
+        let path ={
+            pathname: `/forum/${match.params.forumName}/${threadItem.title}`,
+            search: `id=${threadItem._id}`
         }
         history.push(path)
     }
@@ -88,6 +102,7 @@ class ForumContent extends Component{
                                 replyNum="1"
                                 LastReplyName="Richard Wang"
                                 LastReplyTime="2 hours ago"
+                                titleClick={()=>this.ClickThreadHandler(s)}
                             />
                         )
                     })}
@@ -97,12 +112,10 @@ class ForumContent extends Component{
                         prevDisabled={this.state.currentPage===1}
                         nextDisabled={this.state.total===this.state.currentPage}
                         prev={()=>{
-                            this.paginationHandler(this.state.currentPage-1)
-                            this.backToTop()
+                            this.paginationHandler(this.state.currentPage-1,true)
                         }}
                         next={()=>{
-                            this.paginationHandler(this.state.currentPage+1)
-                            this.backToTop()
+                            this.paginationHandler(this.state.currentPage+1,true)
                         }}
                     />
                 </ForumContentList>

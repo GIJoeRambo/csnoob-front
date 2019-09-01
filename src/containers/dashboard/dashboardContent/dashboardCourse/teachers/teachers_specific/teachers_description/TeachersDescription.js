@@ -25,7 +25,7 @@ class TeachersDescription extends Component {
         iconHover: {
             color: '#ff3d47',
         },
-    })(Rating);
+    })(Rating)
 
     likeThisTeacher = () => {
         this.setState(() => {

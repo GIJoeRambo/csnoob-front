@@ -5,9 +5,7 @@ const ForumContentItem = (props) =>{
     return (
         <div className="thread">
             <div>
-                <p>
-                    <a href="/">{props.title}</a>
-                </p>
+                <div onClick={props.titleClick} className="forum-item"><p>{props.title}</p></div>
                 <p className="text-faded text-xsmall">
                     By <a href="/">{props.postAuthor}</a>, {props.when}.
                 </p>

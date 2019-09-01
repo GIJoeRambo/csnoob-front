@@ -13,6 +13,7 @@ import { Rating } from "@material-ui/lab";
 import CommentConfirmDialog from "./CommentConfirmDialog";
 import service from "../../../service/http";
 import { ColorButton } from "../../../shared/styledComponent/styledComponent";
+import Swal from "sweetalert2";
 
 const CourseComment = props => {
   const [comment, setComment] = useState("");
@@ -45,7 +46,11 @@ const CourseComment = props => {
 
   const prepareData = () => {
     if (!comment || !rate || !semester || !year) {
-      alert("Please fill all the fields");
+      Swal.fire({
+        type: "error",
+        title: "Oops...",
+        text: "Please fill all the fields"
+      });
       return false;
     }
     return true;

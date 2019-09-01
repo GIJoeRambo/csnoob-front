@@ -4,28 +4,30 @@ import {
   Divider,
   Tab,
   Tabs,
-  TablePagination,
+  TablePagination
 } from "@material-ui/core";
 import CourseComment from "./courseComment/courseComment";
 import CourseCommentList from "./courseCommentList/courseCommentList";
 import service from "../../service/http";
 import "./courseView.css";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import { ColorButton } from "../../shared/styledComponent/styledComponent";
-
 
 class CourseView extends React.Component {
   state = {
     tabIndex: 0,
     commentList: [],
     page: 1,
-    total: 0
+    total: 0,
+    course: {},
+    shouldRedirect: false
   };
 
-  courseId = this.props.match.params.courseId;
+  courseId = this.props.location.search.split("=")[1];
   rowsPerPage = 10;
 
   componentDidMount = () => {
+    this.getCourse();
     this.getData(1);
   };
 
@@ -35,6 +37,22 @@ class CourseView extends React.Component {
 
   handleChangePage = index => {
     this.getData(index);
+  };
+
+  getCourse = () => {
+    service.getCourseById(
+      res => {
+        if (res.Data) {
+          this.setState({ course: res.Data });
+        } else {
+          this.setState({ shouldRedirect: true });
+        }
+      },
+      err => {
+        console.log(err);
+      },
+      this.courseId
+    );
   };
 
   getData = page => {
@@ -59,7 +77,15 @@ class CourseView extends React.Component {
   };
 
   render() {
-    const { course } = this.props.location.state;
+    const { course, tabIndex, commentList } = this.state;
+
+    if (this.state.shouldRedirect) {
+      return (
+        <Redirect
+          to={"/dashboard/" + this.props.match.params.uniName}
+        ></Redirect>
+      );
+    }
 
     return (
       <div className="m-3">
@@ -82,25 +108,22 @@ class CourseView extends React.Component {
         <Typography className="my-3">{course.description}</Typography>
         <Divider className="mb-5"></Divider>
         <Tabs
-          value={this.state.tabIndex}
+          value={tabIndex}
           onChange={(e, newValue) => {
             this.setState({ tabIndex: newValue });
           }}
-          indicatorColor="primary"
           variant="fullWidth"
+          indicatorColor="primary"
         >
           <Tab label={"Comment"}></Tab>
           <Tab label={"Resource"}></Tab>
         </Tabs>
-        <div
-          hidden={this.state.tabIndex !== 0}
-          className="course_comment_panel"
-        >
+        <div hidden={tabIndex !== 0} className="course_comment_panel">
           <CourseComment
             course={course}
             refreshcommentList={this.refreshcommentList}
           />
-          <CourseCommentList commentList={this.state.commentList} />
+          <CourseCommentList commentList={commentList} />
           <div className="d-flex justify-content-center">
             <TablePagination
               className="course_comment_pagination"
@@ -115,7 +138,7 @@ class CourseView extends React.Component {
             />
           </div>
         </div>
-        <div hidden={this.state.tabIndex !== 1}>
+        <div hidden={tabIndex !== 1}>
           <Typography>Resource</Typography>
         </div>
       </div>
