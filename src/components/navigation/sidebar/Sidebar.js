@@ -17,8 +17,8 @@ class Sidebar extends React.Component {
 
   componentDidMount = () => {
     const uniName = this.props.location.pathname.split("/")[2];
-    const uni = univisityList.find(el => el.path === uniName);
-    if (uni) {
+    if (uniName) {
+      const uni = univisityList.find(el => el.path === uniName);
       this.setState({ selectedId: uni.id });
     }
   };
