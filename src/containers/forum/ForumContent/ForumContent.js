@@ -7,6 +7,7 @@ import Pagination from "./pagination/pagination";
 import BackButton from "../backButton/backButton";
 import queryString from 'query-string'
 import {Redirect,withRouter} from 'react-router-dom'
+
 class ForumContent extends Component{
     constructor(props){
         super(props);
@@ -28,7 +29,7 @@ class ForumContent extends Component{
                 subtitle:res.Data.subtitle,
                 PostThreadButtonDisabled:false
             },()=>{
-                this.getThreadsHandler(queryString.parse(this.props.location.search).id,queryString.parse(this.props.location.search).page,()=>{})
+                this.getThreadsHandler(queryString.parse(this.props.location.search).id,queryString.parse(this.props.location.search).page)
             })
         },err=>{
             this.setState({isRedirect: true})
@@ -36,20 +37,16 @@ class ForumContent extends Component{
     };
 
     componentWillReceiveProps(nextProps, nextContext) {
-        this.getThreadsHandler(queryString.parse(nextProps.location.search).id,queryString.parse(nextProps.location.search).page,()=>{
-            this.backToTop()
-        })
+        this.getThreadsHandler(queryString.parse(nextProps.location.search).id,queryString.parse(nextProps.location.search).page)
     }
 
 
-    getThreadsHandler = (forumId,page,fn) =>{
+    getThreadsHandler = (forumId,page) =>{
         service.getThreadsByForumId(forumId, page,res=>{
             this.setState({
                 data:res.Data.details,
                 total: res.Data.total,
                 currentPage: res.Data.currentPage
-            },()=>{
-                fn()
             })
         },err=>{
             console.log(err)
