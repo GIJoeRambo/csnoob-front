@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-const FormHoc = fileds => {
+const FormHoc = fields => {
   return WrappedForm => {
     return class extends Component {
-      state = { ...fileds };
+      state = { ...fields };
 
       InputChangeHandler = event => {
         this.setState({

@@ -135,6 +135,24 @@ const service = {
         .then(response => response.json())
         .then(result => res(result))
         .catch(error => err(error))
+  },
+  PostThreadComment: (data,res,err)=>{
+    fetch(hostUrl + "threadComment", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "content-type": "application/json"
+      }
+    })
+        .then(response => response.json())
+        .then(result => res(result))
+        .catch(error => err(error));
+  },
+  getThreadCommentByThreadId: (threadId,res,err)=>{
+    fetch(hostUrl+"threadComment/getThreadCommentByThreadId/"+threadId)
+        .then(response => response.json())
+        .then(result => res(result))
+        .catch(error => err(error))
   }
 };
 export default service;

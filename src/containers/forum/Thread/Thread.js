@@ -7,6 +7,8 @@ import BackButton from "../backButton/backButton";
 import queryString from 'query-string'
 import {Redirect} from 'react-router-dom'
 import service from '../../../service/http'
+import ThreadCommentTextPane from "./ThreadCommentTextPane/ThreadCommentTextPane";
+import decoder from '../../../util/Decoder'
 
 class Thread extends Component{
     constructor(props) {
@@ -15,7 +17,8 @@ class Thread extends Component{
             title: "",
             author: "",
             content:"",
-            isRedirect: false
+            isRedirect: false,
+            comments:[]
         }
     }
 
@@ -30,6 +33,13 @@ class Thread extends Component{
             this.setState({
                 isRedirect:true
             })
+        })
+        service.getThreadCommentByThreadId(queryString.parse(this.props.location.search).id,res=>{
+            this.setState({
+                comments:res.Data
+            })
+        },err=>{
+            console.log(err)
         })
     }
 
@@ -53,7 +63,25 @@ class Thread extends Component{
                     <ThreadContent
                         content={this.state.content}
                     />
-                    <ThreadComment/>
+                    <h2>Comments</h2>
+                    {this.state.comments.map((s,index)=>{
+                        return (
+                            <ThreadComment
+                                floor={index+1}
+                                name={s.name}
+                                key={index}
+                                content={s.comment}
+                                postDate={decoder(s._id).toTimeString()}
+                            />
+                        )
+                    })}
+
+                    <div>
+                        <h2>Write the comment</h2>
+                        <ThreadCommentTextPane
+                            threadId={queryString.parse(this.props.location.search).id}
+                        />
+                    </div>
                 </div>
             </div>
         )
