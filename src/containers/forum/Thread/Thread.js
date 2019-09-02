@@ -7,6 +7,10 @@ import BackButton from "../backButton/backButton";
 import queryString from 'query-string'
 import {Redirect} from 'react-router-dom'
 import service from '../../../service/http'
+import ThreadCommentTextPane from "./ThreadCommentTextPane/ThreadCommentTextPane";
+import decoder from '../../../util/Decoder'
+import { connect } from "react-redux";
+import moment from 'moment'
 
 class Thread extends Component{
     constructor(props) {
@@ -15,8 +19,25 @@ class Thread extends Component{
             title: "",
             author: "",
             content:"",
-            isRedirect: false
+            isRedirect: false,
+            comments:[]
         }
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        if (nextProps.IsPosted !== this.props.IsPosted){
+            this.getThreadCommentsHandler(queryString.parse(this.props.location.search).id)
+        }
+    }
+
+    getThreadCommentsHandler = (ThreadId) =>{
+        service.getThreadCommentByThreadId(ThreadId,res=>{
+            this.setState({
+                comments:res.Data
+            })
+        },err=>{
+            console.log(err)
+        })
     }
 
     componentDidMount = ()=> {
@@ -31,6 +52,7 @@ class Thread extends Component{
                 isRedirect:true
             })
         })
+        this.getThreadCommentsHandler(queryString.parse(this.props.location.search).id)
     }
 
     render() {
@@ -48,16 +70,40 @@ class Thread extends Component{
                 <ThreadHeader
                     title={this.state.title}
                     author={this.state.author}
+                    replies={this.state.comments.length}
+                    PostDate={moment(decoder(queryString.parse(this.props.location.search).id)).fromNow()}
                 />
                 <div className="post-list">
                     <ThreadContent
                         content={this.state.content}
                     />
-                    <ThreadComment/>
+                    <h2>Comments</h2>
+                    {this.state.comments.map((s,index)=>{
+                        return (
+                            <ThreadComment
+                                floor={index+1}
+                                name={s.name}
+                                key={index}
+                                content={s.comment}
+                                postDate={moment(decoder(s._id)).fromNow()}
+                            />
+                        )
+                    })}
+
+                    <div>
+                        <h2>Write the comment</h2>
+                        <ThreadCommentTextPane
+                            threadId={queryString.parse(this.props.location.search).id}
+                        />
+                    </div>
                 </div>
             </div>
         )
     }
 }
 
-export default Thread
+const mapStateToProps = state => ({
+    IsPosted: state.ThreadCommentIsPosted
+});
+
+export default connect(mapStateToProps)(Thread)

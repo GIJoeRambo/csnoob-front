@@ -18,8 +18,8 @@ const ThreadContent = (props) =>{
 
             </div>
 
-            <div style={{whiteSpace: 'pre-line'}} className="post-content">
-                <div>
+            <div className="post-content">
+                <div style={{whiteSpace: 'pre-line'}}>
                     {props.content}
                 </div>
             </div>
