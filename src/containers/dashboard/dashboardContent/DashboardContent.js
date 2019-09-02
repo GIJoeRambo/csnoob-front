@@ -48,7 +48,7 @@ class DashboardContent extends React.Component {
           <div className="dashboard_content_container">
             <DashboardDescription uni={this.state.uni} />
             <DashboardCourse uni={this.state.uni} />
-            <DashboardForum uni={this.state.uni} />
+            {/*<DashboardForum uni={this.state.uni} />*/}
           </div>
         ) : (
           <Redirect to="/"></Redirect>
