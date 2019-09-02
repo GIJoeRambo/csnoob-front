@@ -1,7 +1,7 @@
 import React from "react";
 import DashboardCourse from "./dashboardCourse/DashboardCourse";
 import DashboardDescription from "./dashboardSummary/DashboardSummary";
-import DashboardForum from "./dashboardForum/DashboardForum";
+import DashboardTeachers from "./dashboardTeachers/DashboardTeachers";
 import "./DashboardContent.css";
 import { univisityList } from "../../../shared/sharedData";
 import { Redirect } from "react-router-dom";

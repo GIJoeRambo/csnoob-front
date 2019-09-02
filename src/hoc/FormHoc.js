@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-const FormHoc = fileds => {
+const FormHoc = fields => {
   return WrappedForm => {
     return class extends Component {
-      state = { ...fileds };
+      state = { ...fields };
 
       InputChangeHandler = event => {
         this.setState({
@@ -16,12 +16,19 @@ const FormHoc = fileds => {
         onSubmit();
       };
 
+      reset = () =>{
+        Object.keys(this.state).forEach(async key=>{
+          await this.setState({[key]:""})
+        })
+      }
+
       render() {
         return (
           <WrappedForm
             {...this.props}
             onChange={this.InputChangeHandler.bind(this)}
             onSubmit={this.SubmitHandler.bind(this)}
+            reset={this.reset.bind(this)}
             fields={{ ...this.state }}
           />
         );

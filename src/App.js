@@ -2,7 +2,6 @@ import React from "react";
 import Home from "./containers/home/Home";
 import Dashboard from "./containers/dashboard/dashboard";
 import NotFound from "./containers/NotFound/NotFound";
-import Teachers from "./containers/dashboard/dashboardContent/dashboardCourse/teachers/Teachers";
 import MainLayout from "./components/layout/main_layout/main_layout";
 import CourseView from "./containers/course/CourseView";
 import "./App.css";
@@ -34,7 +33,7 @@ const App = () => {
             <Route path="/forum" component={Forum} />
             <Route path="/course/:uniName/:courseName" component={CourseView} />
             <Route path="/" exact component={Home} />
-            <Route path="/teachers" component={Teachers}></Route>
+            {/* <Route path="/teachers" component={Teachers}></Route> */}
             <Redirect from={"*"} to={"/404"} />
           </Switch>
         </MainLayout>
