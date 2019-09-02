@@ -1,7 +1,7 @@
 import React from "react";
 import DashboardCourse from "./dashboardCourse/DashboardCourse";
 import DashboardDescription from "./dashboardSummary/DashboardSummary";
-import DashboardForum from "./dashboardForum/DashboardForum";
+import DashboardTeachers from "./dashboardTeachers/DashboardTeachers";
 import "./DashboardContent.css";
 import { univisityList } from "../../../shared/sharedData";
 
@@ -26,7 +26,7 @@ class DashboardContent extends React.Component {
       <div className="dashboard_content_container">
         <DashboardDescription {...this.props} uni={this.state.uni} />
         <DashboardCourse uni={this.state.uni} />
-        <DashboardForum uni={this.state.uni} />
+        <DashboardTeachers uni={this.state.uni} />
       </div>
     );
   }
