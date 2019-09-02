@@ -1,4 +1,8 @@
 .DashboardTeachers{
     margin-top:1rem;
     min-height: 50rem;
+    margin-bottom: 0.5rem!important;
+}
+.cs_dt_content{
+    padding-bottom: 0rem!important;
 }

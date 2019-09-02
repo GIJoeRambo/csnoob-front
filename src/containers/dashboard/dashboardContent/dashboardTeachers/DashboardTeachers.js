@@ -18,18 +18,20 @@ class DashboardTeachers extends Component {
   state = {
     teachersListByRow: [],
     searchText: '',
+    rowsPerPage: 10,
+    count: 0,
+    page: 0
   }
 
   componentDidMount = () => {
     httpService.getTeachers(
       (res) => {
         this.isTeachersListDisplayed = true;
-        this.teachersList =  res.Data;
+        this.teachersList = res.Data;
         this.setState(() => {
           return (
             {
-              teachersListByRow: this.teachersList.slice(0,10),
-              rowsPerPage: 10,
+              teachersListByRow: this.teachersList.slice(0, 10),
               count: res.Data.length,
               page: 0,
             }
@@ -45,7 +47,7 @@ class DashboardTeachers extends Component {
   render() {
     return (
       <Card className='DashboardTeachers'>
-        <CardContent>
+        <CardContent className='cs_dt_content'>
           <div className="d-flex justify-content-between">
             <Typography variant="h5" component="span" gutterBottom>
               Teachers List
@@ -88,8 +90,17 @@ class DashboardTeachers extends Component {
     })
   }
 
-  changePage = () => {
-    console.log('aaa')
+  changePage = (nextPage) => {
+    const startIndex = this.state.rowsPerPage * nextPage;
+    const endInde = startIndex + this.state.rowsPerPage;
+    this.setState(() => {
+      return (
+        {
+          page: nextPage,
+          teachersListByRow: this.teachersList.slice(startIndex, endInde)
+        }
+      )
+    })
   }
 }
 
