@@ -5,10 +5,8 @@ import "./Sidebar.css";
 import { univisityList } from "../../../shared/sharedData";
 
 class Sidebar extends React.Component {
-  imgPath = "../../../assets/images/university/";
-
   state = {
-    selectedId: -1
+    selectedId: 1
   };
 
   handleClick = item => {
@@ -17,8 +15,8 @@ class Sidebar extends React.Component {
 
   componentDidMount = () => {
     const uniName = this.props.location.pathname.split("/")[2];
-    if (uniName) {
-      const uni = univisityList.find(el => el.path === uniName);
+    const uni = uniName && univisityList.find(el => el.path === uniName);
+    if (uni) {
       this.setState({ selectedId: uni.id });
     }
   };

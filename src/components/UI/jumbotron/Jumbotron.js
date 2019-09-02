@@ -5,7 +5,6 @@ import { ColorButton } from "../../../shared/styledComponent/styledComponent";
 import { Typography } from "@material-ui/core";
 
 const Jumbotron = props => {
-  console.log(props);
   return (
     <div className="col-12 Jumbotron text-center">
       <p className="jumbotron_title">Welcome, Noobs!</p>
@@ -18,7 +17,7 @@ const Jumbotron = props => {
       <ColorButton
         className="mt-3"
         size="large"
-        onClick={() => props.history.push("/dashboard")}
+        onClick={() => props.history.push("/dashboard/uoa")}
       >
         <Typography>Get Start</Typography>
       </ColorButton>

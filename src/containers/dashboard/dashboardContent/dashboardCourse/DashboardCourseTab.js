@@ -27,7 +27,7 @@ class DashboardCourseTab extends React.Component {
         match.params.uniName +
         "/" +
         course.code.split(" ").join(""),
-      search: "?id=" + course._id
+      search: "?id=" + course._id + "&page=1"
     };
     history.push(path);
   };

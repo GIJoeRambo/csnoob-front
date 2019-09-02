@@ -4,10 +4,12 @@ import DashboardDescription from "./dashboardSummary/DashboardSummary";
 import DashboardTeachers from "./dashboardTeachers/DashboardTeachers";
 import "./DashboardContent.css";
 import { univisityList } from "../../../shared/sharedData";
+import { Redirect } from "react-router-dom";
 
 class DashboardContent extends React.Component {
   state = {
-    uni: univisityList.find(el => el.path === this.props.match.params.uniName)
+    uni: {},
+    shouldRedirect: false
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -21,13 +23,37 @@ class DashboardContent extends React.Component {
     return null;
   }
 
+  componentDidMount = () => {
+    let uni = univisityList.find(
+      el => el.path === this.props.match.params.uniName
+    );
+    if (uni) {
+      this.setState({
+        uni: uni
+      });
+    } else {
+      this.setState({
+        shouldRedirect: true
+      });
+    }
+  };
+
   render() {
+    if (this.state.shouldRedirect) {
+      return <Redirect to="/"></Redirect>;
+    }
     return (
-      <div className="dashboard_content_container">
-        <DashboardDescription {...this.props} uni={this.state.uni} />
-        <DashboardCourse uni={this.state.uni} />
-        <DashboardTeachers uni={this.state.uni} />
-      </div>
+      <React.Fragment>
+        {this.state.uni ? (
+          <div className="dashboard_content_container">
+            <DashboardDescription uni={this.state.uni} />
+            <DashboardCourse uni={this.state.uni} />
+            <DashboardForum uni={this.state.uni} />
+          </div>
+        ) : (
+          <Redirect to="/"></Redirect>
+        )}
+      </React.Fragment>
     );
   }
 }
