@@ -10,6 +10,7 @@ import service from '../../../service/http'
 import ThreadCommentTextPane from "./ThreadCommentTextPane/ThreadCommentTextPane";
 import decoder from '../../../util/Decoder'
 import { connect } from "react-redux";
+import moment from 'moment'
 
 class Thread extends Component{
     constructor(props) {
@@ -69,6 +70,8 @@ class Thread extends Component{
                 <ThreadHeader
                     title={this.state.title}
                     author={this.state.author}
+                    replies={this.state.comments.length}
+                    PostDate={moment(decoder(queryString.parse(this.props.location.search).id)).fromNow()}
                 />
                 <div className="post-list">
                     <ThreadContent
@@ -82,7 +85,7 @@ class Thread extends Component{
                                 name={s.name}
                                 key={index}
                                 content={s.comment}
-                                postDate={decoder(s._id).toTimeString()}
+                                postDate={moment(decoder(s._id)).fromNow()}
                             />
                         )
                     })}

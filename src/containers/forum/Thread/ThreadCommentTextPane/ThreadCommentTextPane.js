@@ -56,6 +56,7 @@ class ThreadCommentTextPane extends Component{
         }
         return true
     }
+
     render(){
         return (
             <div>
