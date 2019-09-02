@@ -17,26 +17,44 @@ class CourseView extends React.Component {
   state = {
     tabIndex: 0,
     commentList: [],
-    page: 1,
     total: 0,
     course: {},
-    shouldRedirect: false
+    shouldRedirect: false,
+    page:
+      this.props.location.search &&
+      +this.props.location.search
+        .split("?")[1]
+        .split("&")[1]
+        .split("=")[1]
   };
 
-  courseId = this.props.location.search.split("=")[1];
+  courseId =
+    this.props.location.search &&
+    this.props.location.search
+      .split("?")[1]
+      .split("&")[0]
+      .split("=")[1];
   rowsPerPage = 10;
 
   componentDidMount = () => {
+    console.log(this.props);
     this.getCourse();
-    this.getData(1);
+    this.getData(this.state.page);
   };
 
   refreshcommentList = () => {
-    this.getData(1);
+    this.getData(this.state.page);
   };
 
   handleChangePage = index => {
-    this.getData(index);
+    this.getData(index, () => {
+      this.props.history.push(
+        this.props.location.pathname +
+          this.props.location.search.split("&")[0] +
+          "&page=" +
+          index
+      );
+    });
   };
 
   getCourse = () => {
@@ -55,14 +73,21 @@ class CourseView extends React.Component {
     );
   };
 
-  getData = page => {
+  getData = (page, callback) => {
     service.getCourseRating(
       res => {
-        this.setState({
-          commentList: res.Data.details,
-          total: res.Data.total,
-          page: page
-        });
+        if (res.Data.details.length) {
+          this.setState(
+            {
+              commentList: res.Data.details,
+              total: res.Data.total,
+              page: page
+            },
+            callback
+          );
+        } else {
+          this.handleChangePage(1);
+        }
       },
       err => {
         console.log(err);
@@ -78,7 +103,7 @@ class CourseView extends React.Component {
 
   render() {
     const { course, tabIndex, commentList } = this.state;
-
+    console.log(this.state);
     if (this.state.shouldRedirect) {
       return (
         <Redirect

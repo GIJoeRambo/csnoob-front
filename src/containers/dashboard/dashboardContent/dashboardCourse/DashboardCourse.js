@@ -50,26 +50,34 @@ class DashboardCourse extends Component {
   };
 
   handleClick = () => {
-    let course = this.state.courseList.find(el =>
-      el.code.includes(this.state.searchText)
-    );
-    if (course) {
-      let { history, match } = this.props;
-      let path = {
-        pathname:
-          "/course/" +
-          match.params.uniName +
-          "/" +
-          course.code.split(" ").join(""),
-        search: "?id=" + course._id
-      };
-      history.push(path);
-    } else {
+    if (this.state.searchText.length < 3) {
       Swal.fire({
         type: "error",
         title: "Oops...",
-        text: "No course found"
+        text: "Please enter at least three number"
       });
+    } else {
+      let course = this.state.courseList.filter(el =>
+        el.code.includes(this.state.searchText)
+      );
+      if (course) {
+        let { history, match } = this.props;
+        let path = {
+          pathname:
+            "/course/" +
+            match.params.uniName +
+            "/" +
+            course.code.split(" ").join(""),
+          search: "?id=" + course._id
+        };
+        history.push(path);
+      } else {
+        Swal.fire({
+          type: "error",
+          title: "Oops...",
+          text: "No course found"
+        });
+      }
     }
   };
 
@@ -87,7 +95,7 @@ class DashboardCourse extends Component {
             </Typography>
             <span>
               <InputBase
-                placeholder="Search Course"
+                placeholder="Enter Number eg. 120"
                 value={this.state.searchText}
                 onChange={e => this.handleChange(e)}
               />
