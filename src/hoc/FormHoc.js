@@ -16,12 +16,19 @@ const FormHoc = fields => {
         onSubmit();
       };
 
+      reset = () =>{
+        Object.keys(this.state).forEach(async key=>{
+          await this.setState({[key]:""})
+        })
+      }
+
       render() {
         return (
           <WrappedForm
             {...this.props}
             onChange={this.InputChangeHandler.bind(this)}
             onSubmit={this.SubmitHandler.bind(this)}
+            reset={this.reset.bind(this)}
             fields={{ ...this.state }}
           />
         );

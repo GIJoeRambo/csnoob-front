@@ -9,6 +9,7 @@ import {Redirect} from 'react-router-dom'
 import service from '../../../service/http'
 import ThreadCommentTextPane from "./ThreadCommentTextPane/ThreadCommentTextPane";
 import decoder from '../../../util/Decoder'
+import { connect } from "react-redux";
 
 class Thread extends Component{
     constructor(props) {
@@ -20,6 +21,22 @@ class Thread extends Component{
             isRedirect: false,
             comments:[]
         }
+    }
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        if (nextProps.IsPosted !== this.props.IsPosted){
+            this.getThreadCommentsHandler(queryString.parse(this.props.location.search).id)
+        }
+    }
+
+    getThreadCommentsHandler = (ThreadId) =>{
+        service.getThreadCommentByThreadId(ThreadId,res=>{
+            this.setState({
+                comments:res.Data
+            })
+        },err=>{
+            console.log(err)
+        })
     }
 
     componentDidMount = ()=> {
@@ -34,13 +51,7 @@ class Thread extends Component{
                 isRedirect:true
             })
         })
-        service.getThreadCommentByThreadId(queryString.parse(this.props.location.search).id,res=>{
-            this.setState({
-                comments:res.Data
-            })
-        },err=>{
-            console.log(err)
-        })
+        this.getThreadCommentsHandler(queryString.parse(this.props.location.search).id)
     }
 
     render() {
@@ -88,4 +99,8 @@ class Thread extends Component{
     }
 }
 
-export default Thread
+const mapStateToProps = state => ({
+    IsPosted: state.ThreadCommentIsPosted
+});
+
+export default connect(mapStateToProps)(Thread)

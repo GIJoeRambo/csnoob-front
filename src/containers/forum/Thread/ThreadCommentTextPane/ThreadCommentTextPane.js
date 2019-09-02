@@ -2,8 +2,15 @@ import React,{Component} from 'react'
 import FormHoc from '../../../../hoc/FormHoc'
 import service from '../../../../service/http'
 import Swal from 'sweetalert2';
+import {IsPostedHandler} from '../../../../redux/actions/ThreadCommentIsPostedAction'
+import { connect } from "react-redux";
 
 class ThreadCommentTextPane extends Component{
+
+    IsPostedHandler = () =>{
+        this.props.IsPostedHandler()
+    }
+
     handleSubmit = event =>{
         if (!this.ValidatedHandler()){
             Swal.fire({
@@ -28,7 +35,8 @@ class ThreadCommentTextPane extends Component{
                     showConfirmButton: true,
                 }).then(result=>{
                     if (result.value){
-
+                        this.IsPostedHandler()
+                        this.props.reset()
                     }
                 })
             },err=>{
@@ -73,4 +81,19 @@ class ThreadCommentTextPane extends Component{
     }
 }
 
-export default FormHoc({name:"",comment:""})(ThreadCommentTextPane)
+const mapStateToProps = state => ({
+    IsPosted: state.ThreadCommentIsPosted
+});
+
+const mapDispatchToProps = dispatch => {
+    return {
+        IsPostedHandler: () => {
+            dispatch(IsPostedHandler());
+        }
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(FormHoc({name:"",comment:""})(ThreadCommentTextPane))

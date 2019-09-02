@@ -3,11 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0f9cca90-c916-49c1-9afb-756660e5c898" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/forum/Thread/Thread.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/Thread/Thread.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/forum/Thread/ThreadComment/ThreadComment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/Thread/ThreadComment/ThreadComment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/forum/Thread/ThreadContent/ThreadContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/Thread/ThreadContent/ThreadContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/forum/Thread/ThreadCommentTextPane/ThreadCommentTextPane.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/Thread/ThreadCommentTextPane/ThreadCommentTextPane.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hoc/FormHoc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/FormHoc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/http.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/http.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/Thread.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/ThreadCommentTextPane/ThreadCommentTextPane.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="68" column="42" lean-forward="true" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
+            <state relative-caret-position="341">
+              <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -33,14 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/ThreadCommentTextPane/ThreadCommentTextPane.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hoc/FormHoc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="462">
+              <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -86,11 +84,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/navigation/sidebar/Sidebar.css" />
-        <option value="$PROJECT_DIR$/src/components/layout/dashboard_layout/dashboard_layout.js" />
-        <option value="$PROJECT_DIR$/src/hoc/Form.js" />
-        <option value="$PROJECT_DIR$/src/hoc/SchoolHoc.js" />
-        <option value="$PROJECT_DIR$/src/components/forumList/forumList.css" />
         <option value="$PROJECT_DIR$/src/containers/dashboard/dashboard.js" />
         <option value="$PROJECT_DIR$/src/components/navigation/header/Header.js" />
         <option value="$PROJECT_DIR$/src/components/forumList/forumList.js" />
@@ -132,10 +125,15 @@
         <option value="$PROJECT_DIR$/src/containers/forum/ForumContent/pagination/pagination.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/ForumContent/ForumContent.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/Thread/ThreadContent/ThreadContent.js" />
-        <option value="$PROJECT_DIR$/src/hoc/FormHoc.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/Thread/ThreadComment/ThreadComment.js" />
         <option value="$PROJECT_DIR$/src/service/http.js" />
+        <option value="$PROJECT_DIR$/src/redux/store.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/redux/reducers/ThreadCommentIsPostedReducer.js" />
+        <option value="$PROJECT_DIR$/src/redux/actions/ThreadCommentIsPostedAction.js" />
+        <option value="$PROJECT_DIR$/src/redux/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/Thread/Thread.js" />
+        <option value="$PROJECT_DIR$/src/hoc/FormHoc.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/Thread/ThreadCommentTextPane/ThreadCommentTextPane.js" />
       </list>
     </option>
@@ -151,7 +149,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -168,27 +165,6 @@
               <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="UI" type="462c0819:PsiDirectoryNode" />
-              <item name="form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -210,21 +186,13 @@
               <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="forum" type="462c0819:PsiDirectoryNode" />
-              <item name="Thread" type="462c0819:PsiDirectoryNode" />
-              <item name="ThreadCommentTextPane" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="hoc" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,11 +275,12 @@
       <workItem from="1567339676503" duration="2496000" />
       <workItem from="1567378850407" duration="7983000" />
       <workItem from="1567395432900" duration="1077000" />
+      <workItem from="1567416064767" duration="3136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89340000" />
+    <option name="totallyTimeSpent" value="92476000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -372,48 +341,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/layout/main_layout/main_layout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/layout/main_layout/main_layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/css/bootstrap-clear.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardForum/DashboardForum.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardSummary/DashboardSummary.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/forum/index/forumList/forumList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/DashboardContent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -686,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hoc/FormHoc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="56" column="2" lean-forward="true" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/forum/newThread/newThread.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -740,16 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/Thread.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="68" column="42" lean-forward="true" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/ThreadComment/ThreadComment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -760,10 +670,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-redux/es/connect/mapDispatchToProps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/reducers/ThreadCommentIsPostedReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/actions/ThreadCommentIsPostedAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/Thread.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-597">
+          <caret line="27" column="91" selection-start-line="27" selection-start-column="91" selection-end-line="27" selection-end-column="91" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hoc/FormHoc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/ThreadCommentTextPane/ThreadCommentTextPane.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        <state relative-caret-position="341">
+          <caret line="39" column="21" lean-forward="true" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
