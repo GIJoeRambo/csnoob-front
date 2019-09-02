@@ -1,5 +1,39 @@
-
-
+.cs_tl_teachers_lists{
+    margin-top: 0.5rem!important;
+}
 .cs_tl_pagination{
     margin: 0 auto!important;
+}
+.cs_tl_teachers_lists_item{
+    margin-bottom: 0.4rem;
+}
+.cs_tl_teachers_lists_item .MuiPaper-root{
+    background: rgb(245, 244, 244)!important;
+}
+.cs_tl_teachers_lists_item:hover{
+    cursor: pointer;
+}
+.cs_tl_teachers_lists_item:hover .cs_tl_teachers_lists_item{
+    background: rgb(240, 239, 239)!important;
+    transition: 0.5s;
+}
+.cs_tl_teachers_lists_item:hover .cs_tl_teachers_hover{
+    color:rgb(56, 119, 56)!important;
+    transition: 0.5s;
+}
+.cs_tl_teachers_title{
+    font-size: 0.8rem!important;
+    font-style: italic;
+    font-weight: bold!important;
+}
+.cs_tl_teachers_name{
+    font-size:1.1rem;
+    color:#272822;
+    font-weight: bold!important;
+    font-style: normal!important;
+}
+.cs_tl_teachers_like{
+    color:rgb(109, 106, 106);
+    font-style: italic;
+    font-weight: bold;
 }
