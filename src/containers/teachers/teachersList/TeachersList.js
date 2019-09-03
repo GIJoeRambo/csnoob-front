@@ -33,7 +33,7 @@ const TeachersList = (props) => {
         setLike(!isLike)
     }
 
-    const openTeacherModal = (teacherName) => {
+    const openTeacherModal = (teacherName,teacherId) => {
         console.log(props)
         let { history, match } = props;
         let path = {
@@ -42,8 +42,7 @@ const TeachersList = (props) => {
                 match.params.uniName +
                 "/" +
                 teacherName,
-            // search: "?id=" + course._id + "&page=1"
-            search:'?id=1'
+            search:'?id=' + teacherId + "&page=1"
         };
         history.push(path);
     }
@@ -58,7 +57,7 @@ const TeachersList = (props) => {
                             return (
                                 <div className='cs_tl_teachers_lists_item' key={item._id} 
                                     onClick={()=>{
-                                        openTeacherModal(item.name)
+                                        openTeacherModal(item.name,item._id)
                                     }
                                 }>
                                     <Paper className={classes.root}>
