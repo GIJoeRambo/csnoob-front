@@ -8,13 +8,13 @@
     margin-bottom: 0.4rem;
 }
 .cs_tl_teachers_lists_item .MuiPaper-root{
-    background: rgb(245, 244, 244)!important;
+    background: rgb(250, 250, 250)!important;
 }
 .cs_tl_teachers_lists_item:hover{
     cursor: pointer;
 }
-.cs_tl_teachers_lists_item:hover .cs_tl_teachers_lists_item{
-    background: rgb(240, 239, 239)!important;
+.cs_tl_teachers_lists_item:hover .MuiPaper-root{
+    background: rgb(235, 233, 233)!important;
     transition: 0.5s;
 }
 .cs_tl_teachers_lists_item:hover .cs_tl_teachers_hover{
