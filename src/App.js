@@ -33,7 +33,6 @@ const App = () => {
             <Route path="/forum" component={Forum} />
             <Route path="/course/:uniName/:courseName" component={CourseView} />
             <Route path="/" exact component={Home} />
-            {/* <Route path="/teachers" component={Teachers}></Route> */}
             <Redirect from={"*"} to={"/404"} />
           </Switch>
         </MainLayout>

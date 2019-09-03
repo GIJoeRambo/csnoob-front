@@ -11,6 +11,7 @@ import ThreadCommentTextPane from "./ThreadCommentTextPane/ThreadCommentTextPane
 import decoder from '../../../util/Decoder'
 import { connect } from "react-redux";
 import moment from 'moment'
+import Pagination from '../../../components/navigation/pagination/ForumPagination/pagination'
 
 class Thread extends Component{
     constructor(props) {
@@ -20,20 +21,27 @@ class Thread extends Component{
             author: "",
             content:"",
             isRedirect: false,
+            total: 1,
+            skip: 0,
             comments:[]
         }
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
         if (nextProps.IsPosted !== this.props.IsPosted){
-            this.getThreadCommentsHandler(queryString.parse(this.props.location.search).id)
+            this.getThreadCommentsHandler(queryString.parse(this.props.location.search).id,queryString.parse(this.props.location.search).page)
+        }
+        if (this.props.location.search !== nextProps.location.search){
+            this.getThreadCommentsHandler(queryString.parse(nextProps.location.search).id,queryString.parse(nextProps.location.search).page)
         }
     }
 
-    getThreadCommentsHandler = (ThreadId) =>{
-        service.getThreadCommentByThreadId(ThreadId,res=>{
+    getThreadCommentsHandler = (ThreadId,page) =>{
+        service.getThreadCommentByThreadId(ThreadId,page,res=>{
             this.setState({
-                comments:res.Data
+                comments:res.Data.details,
+                total:res.Data.total,
+                skip: res.Data.skip
             })
         },err=>{
             console.log(err)
@@ -52,7 +60,16 @@ class Thread extends Component{
                 isRedirect:true
             })
         })
-        this.getThreadCommentsHandler(queryString.parse(this.props.location.search).id)
+        this.getThreadCommentsHandler(queryString.parse(this.props.location.search).id,queryString.parse(this.props.location.search).page)
+    }
+
+    paginationHandler = (i)=>{
+        let {history,match} = this.props;
+        let path = {
+            pathname: `/forum/${match.params.forumName}/${match.params.ThreadName}`,
+            search: `id=${queryString.parse(this.props.location.search).id}&page=${i}`
+        }
+        history.push(path)
     }
 
     render() {
@@ -81,7 +98,7 @@ class Thread extends Component{
                     {this.state.comments.map((s,index)=>{
                         return (
                             <ThreadComment
-                                floor={index+1}
+                                floor={this.state.skip+1+index}
                                 name={s.name}
                                 key={index}
                                 content={s.comment}
@@ -89,6 +106,23 @@ class Thread extends Component{
                             />
                         )
                     })}
+                    <Pagination
+                        currentPage={queryString.parse(this.props.location.search).page}
+                        totalPage={this.state.total}
+                        prevDisabled={Number(queryString.parse(this.props.location.search).page)===1}
+                        nextDisabled={this.state.total===Number(queryString.parse(this.props.location.search).page)}
+                        prev={()=>{
+                            this.paginationHandler(Number(queryString.parse(this.props.location.search).page)-1)
+                        }}
+                        next={()=>{this.paginationHandler(Number(queryString.parse(this.props.location.search).page)+1)
+                        }}
+                        first={()=>{
+                            this.paginationHandler(1)
+                        }}
+                        last={()=>{
+                            this.paginationHandler(this.state.total)
+                        }}
+                    />
 
                     <div>
                         <h2>Write the comment</h2>
