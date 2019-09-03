@@ -14,7 +14,9 @@ import './DashboardTeachers.css';
 
 class DashboardTeachers extends Component {
   isTeachersListDisplayed = false;
+  isReSearch = true;
   teachersList = [];
+
   state = {
     teachersListByRow: [],
     searchText: '',
@@ -54,12 +56,12 @@ class DashboardTeachers extends Component {
             </Typography>
             <span>
               <InputBase
-                placeholder="Search Teacher"
+                placeholder="Search Teacher by name"
                 value={this.state.searchText}
                 onChange={e => this.handleChange(e)}
               />
-              <IconButton >
-                <SearchIcon />
+              <IconButton onClick={this.searchTeacher}>
+                <SearchIcon/>
               </IconButton>
             </span>
           </div>
@@ -83,11 +85,39 @@ class DashboardTeachers extends Component {
 
   handleChange = (event) => {
     const searchText = event.target.value;
+    if(this.state.searchText === searchText){
+      this.isReSearch = false;
+      return;
+    }
     this.setState(() => {
       return (
         { searchText: searchText }
       )
     })
+  }
+
+  searchTeacher = () => {
+    if(!this.isReSearch){
+      return
+    }
+    const searchText = this.state.searchText;
+    httpService.getSpecificTeacher(
+      (res)=>{
+        this.teachersListAfterSearch = res.Data;
+        this.setState(()=>{
+          return (
+            {
+              teachersListByRow: res.Data.slice(0,this.state.rowsPerPage),
+              count: res.Data.length
+            }
+          )
+        })
+      },
+      (err)=>{
+
+      },
+      searchText
+    )
   }
 
   changePage = (nextPage) => {

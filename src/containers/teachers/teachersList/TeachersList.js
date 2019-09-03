@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { TablePagination, Paper, makeStyles, withStyles, Typography } from "@material-ui/core";
+import { TablePagination, Paper, makeStyles, withStyles } from "@material-ui/core";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Rating from '@material-ui/lab/Rating';
+import { withRouter } from "react-router-dom";
 import './TeachersList.css';
 
 
@@ -32,6 +33,21 @@ const TeachersList = (props) => {
         setLike(!isLike)
     }
 
+    const openTeacherModal = (teacherName) => {
+        console.log(props)
+        let { history, match } = props;
+        let path = {
+            pathname:
+                "/teacher/" +
+                match.params.uniName +
+                "/" +
+                teacherName,
+            // search: "?id=" + course._id + "&page=1"
+            search:'?id=1'
+        };
+        history.push(path);
+    }
+
     //return
     return (
         <div className='row TeachersList'>
@@ -40,7 +56,11 @@ const TeachersList = (props) => {
                     props.teachersList.map(
                         (item) => {
                             return (
-                                <div className='cs_tl_teachers_lists_item' key={item._id}>
+                                <div className='cs_tl_teachers_lists_item' key={item._id} 
+                                    onClick={()=>{
+                                        openTeacherModal(item.name)
+                                    }
+                                }>
                                     <Paper className={classes.root}>
                                         <div className='cs_tl_teachers_title cs_tl_teachers_hover'>
                                             {item.title}
@@ -99,4 +119,4 @@ const TeachersList = (props) => {
 
 }
 
-export default TeachersList;
+export default withRouter(TeachersList);
