@@ -7,6 +7,7 @@ import Pagination from "../../../components/navigation/pagination/ForumPaginatio
 import BackButton from "../backButton/backButton";
 import queryString from 'query-string'
 import {Redirect,withRouter} from 'react-router-dom'
+import moment from 'moment'
 
 class ForumContent extends Component{
     constructor(props){
@@ -120,9 +121,9 @@ class ForumContent extends Component{
                                 title={s.title}
                                 postAuthor={s.author}
                                 when={decoder(s._id).toDateString()}
-                                replyNum="1"
-                                LastReplyName="Richard Wang"
-                                LastReplyTime="2 hours ago"
+                                replyNum={s.replyNum}
+                                LastReplyName={s.lastThread.name}
+                                LastReplyTime={s.lastThread._id===""?"No reply now":moment(decoder(s.lastThread._id)).fromNow()}
                                 titleClick={()=>this.ClickThreadHandler(s)}
                             />
                         )
