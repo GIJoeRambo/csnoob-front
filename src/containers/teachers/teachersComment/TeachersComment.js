@@ -12,11 +12,11 @@ import {
 import { Rating } from "@material-ui/lab";
 import service from "../../../service/http";
 import { ColorButton } from "../../../shared/styledComponent/styledComponent";
+import CommentConfirmDialog from "../../course/courseComment/CommentConfirmDialog";
 import Swal from "sweetalert2";
 import './TeachersComment.css'
 
 class TeacherComment extends Component {
-  isInputValid = true;
   currentYear = new Date().getFullYear();
 
   state = {
@@ -24,13 +24,15 @@ class TeacherComment extends Component {
     year: 2019,
     name: '',
     rate: 0,
-    comment: ''
+    comment: '',
+    isInputValid: true,
+    isSubmitSuccess: false
   }
 
   semesterList = [
-    { id: 0, name: "Semester One" },
-    { id: 1, name: "Semester Two" },
-    { id: 2, name: "Summer School" }
+    { id: 1, name: "Semester One" },
+    { id: 2, name: "Semester Two" },
+    { id: 3, name: "Summer School" }
   ];
 
   changeSemester = (event) => {
@@ -76,13 +78,80 @@ class TeacherComment extends Component {
 
   checkInputValid = (e) => {
     const value = this.state.year;
-    console.log(Number(value))
-    if (Number(value)) {
-      this.isInputValid = false;
+    if (isNaN(Number(value)) ||
+      !(Number(value) >= 2000 && Number(value) <= this.currentYear)) {
+      this.setState(
+        () => {
+          return { isInputValid: false }
+        }
+      )
     }
     else {
-      this.isInputValid = true;
+      this.setState(
+        () => {
+          return { isInputValid: true }
+        }
+      )
     }
+  }
+
+  clearData = () => {
+    this.setState(
+      () => {
+        return ({
+          semester: '',
+          year: 2019,
+          name: '',
+          rate: 0,
+          comment: '',
+          isSubmitSuccess: true
+        })
+      }
+    )
+  }
+
+  setDialog = (e) => {
+    this.setState(
+      () => {
+        return (
+          { isSubmitSuccess: e }
+        )
+      }
+    )
+  }
+
+  prepareData = () => {
+    if (!this.state.comment || !this.state.rate || !this.state.semester || !this.state.year) {
+      Swal.fire({
+        type: "error",
+        title: "Oops...",
+        text: "Please fill all the fields"
+      });
+      return;
+    }
+    else {
+      this.submitToServer();
+    }
+  };
+
+  submitToServer = () => {
+    console.log(this.props)
+    let data = {
+      comment: this.state.comment,
+      rate: this.state.rate,
+      semester: this.state.semester,
+      year: this.state.year,
+      name: this.state.name || "Anonymous",
+      teacherId: this.props.teacherId
+    };
+    service.postTeacherRating(
+      res => {
+        this.clearData();
+        this.props.refreshPage();
+      },
+      err => console.log(err),
+      data
+    );
   }
 
   render = () => {
@@ -91,11 +160,11 @@ class TeacherComment extends Component {
         <div className='row'>
           <div className='col-md-3'></div>
           {
-            this.isInputValid ?
+            this.state.isInputValid ?
               null
               :
               (<div className='col-md-2 cs_tc_error_message'>
-                Year must be a number
+                Year is not valid.
         </div>)
           }
         </div>
@@ -111,7 +180,7 @@ class TeacherComment extends Component {
 
           <div className='col-md-2 mt-3'>
             <TextField
-              className="row"
+              className="col-12"
               label="Year"
               variant="outlined"
               value={this.state.year}
@@ -169,22 +238,17 @@ class TeacherComment extends Component {
           </div>
         </div>
 
-        <div className="justify-center d-flex mb-3 mt-5">
+        <div className="justify-center d-flex mb-3 mt-3">
           <ColorButton
             variant="contained"
-          // onClick={() => {
-          //   if (prepareData()) {
-          //     submitData();
-          //   }
-          // }}
+            onClick={() => { this.prepareData() }}
           >
             submit
         </ColorButton>
         </div>
-        {/* <CommentConfirmDialog dialog={dialog} setDialog={setDialog} /> */}
+        <CommentConfirmDialog dialog={this.state.isSubmitSuccess} setDialog={(e)=>{this.setDialog(e)}} />
       </Card>
     )
   }
 }
-
 export default TeacherComment;

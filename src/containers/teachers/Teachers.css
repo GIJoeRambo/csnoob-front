@@ -1,0 +1,5 @@
+.cs_t_teacher_comment_panel {
+  padding-top: 1px;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(var(--primary-black), var(--primary-gray));
+}
