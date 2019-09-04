@@ -16,10 +16,15 @@ import Swal from "sweetalert2";
 import './TeachersComment.css'
 
 class TeacherComment extends Component {
+  isInputValid = true;
+  currentYear = new Date().getFullYear();
 
   state = {
     semester: '',
     year: 2019,
+    name: '',
+    rate: 0,
+    comment: ''
   }
 
   semesterList = [
@@ -28,27 +33,80 @@ class TeacherComment extends Component {
     { id: 2, name: "Summer School" }
   ];
 
-
   changeSemester = (event) => {
+    this.setState(() => {
+      return (
+        { semester: event.target.value }
+      )
+    }
+    )
+  }
+
+  changeYear = (event) => {
+    const year = event.target.value;
     this.setState(
       () => {
-        return (
-          { semester: event.target.value }
-        )
+        return { year: year }
+
       }
     )
+  }
+
+  changeName = (event) => {
+    const name = event.target.value
+    this.setState({ name: event.target.value })
+  }
+
+  changeRate = (event, newValue) => {
+    this.setState(
+      () => {
+        return { rate: newValue }
+      }
+    )
+  }
+
+  changeComment = (event) => {
+    const comment = event.target.value;
+    this.setState(
+      () => {
+        return { comment: comment }
+      }
+    )
+  }
+
+  checkInputValid = (e) => {
+    const value = this.state.year;
+    console.log(Number(value))
+    if (Number(value)) {
+      this.isInputValid = false;
+    }
+    else {
+      this.isInputValid = true;
+    }
   }
 
   render = () => {
     return (
       <Card>
+        <div className='row'>
+          <div className='col-md-3'></div>
+          {
+            this.isInputValid ?
+              null
+              :
+              (<div className='col-md-2 cs_tc_error_message'>
+                Year must be a number
+        </div>)
+          }
+        </div>
+
         <div className="row align-items-center align-center TeacherComment">
-          <Typography component="legend" className="col-md-1 mt-2">Rating</Typography>
+          <Typography component="legend" className="col-md-1 mt2">Rating</Typography>
           <Rating
             className='col-md-2 mt-2'
             name="courseRating"
-            value={1}
-          // onChange={(e, newValue) => setRate(newValue)}
+            value={this.state.rate}
+            onChange={(e, newValue) => this.changeRate(e, newValue)}
           />
 
           <div className='col-md-2 mt-3'>
@@ -57,7 +115,8 @@ class TeacherComment extends Component {
               label="Year"
               variant="outlined"
               value={this.state.year}
-            // onChange={e => setYear(e.target.value)}
+              onChange={e => this.changeYear(e)}
+              onBlur={e => this.checkInputValid()}
             />
           </div>
 
@@ -74,7 +133,7 @@ class TeacherComment extends Component {
                     id="comment-semester"
                   />
                 }
-                onChange={e => { this.changeSemester(e) }}
+                onChange={e => this.changeSemester(e)}
               >
                 {this.semesterList.map(el => (
                   <MenuItem key={el.id} value={el.id}>
@@ -88,10 +147,10 @@ class TeacherComment extends Component {
           <div className='col-md-5 mt-3'>
             <TextField
               label="Name(Optional)"
-              value={1}
+              value={this.state.name}
               variant="outlined"
               className="col-md-12"
-            // onChange={e => setName(e.target.value)}
+              onChange={e => this.changeName(e)}
             />
           </div>
         </div>
@@ -103,11 +162,9 @@ class TeacherComment extends Component {
               label="Comment"
               multiline
               rows='5'
-              value={''}
+              value={this.state.comment}
               className="col-md-12"
-            // onChange={e => {
-            //   setComment(e.target.value);
-            // }}
+              onChange={e => { this.changeComment(e) }}
             />
           </div>
         </div>
