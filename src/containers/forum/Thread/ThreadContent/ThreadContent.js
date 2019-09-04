@@ -5,7 +5,7 @@ const ThreadContent = (props) =>{
         <div className="post">
 
             <div className="user-info">
-                <div style={{color:"#57AD8D"}} className="user-name">Robin</div>
+                <div style={{color:"#57AD8D"}} className="user-name">{props.Author}</div>
 
                 <div>
                     <img className="avatar-large" src={personLogo} alt="lego"/>
