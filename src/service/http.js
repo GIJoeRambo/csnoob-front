@@ -55,6 +55,19 @@ const service = {
       });
   },
 
+  postTeacherRating: (res, err, data) => {
+    fetch(hostUrl + "teacherRating", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "content-type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(result => res(result))
+      .catch(error => err(error));
+  },
+
   getSpecificTeacher: (resCallback, errCallback, teacherName) => {
     fetch(hostUrl + "teacher/" + teacherName)
       .then(res => res.json())
