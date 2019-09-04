@@ -148,8 +148,8 @@ const service = {
         .then(result => res(result))
         .catch(error => err(error));
   },
-  getThreadCommentByThreadId: (threadId,res,err)=>{
-    fetch(hostUrl+"threadComment/getThreadCommentByThreadId/"+threadId)
+  getThreadCommentByThreadId: (threadId,pageNum,res,err)=>{
+    fetch(hostUrl+"threadComment/getThreadCommentByThreadId/"+threadId+"/"+pageNum)
         .then(response => response.json())
         .then(result => res(result))
         .catch(error => err(error))

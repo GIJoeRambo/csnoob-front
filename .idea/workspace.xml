@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f9cca90-c916-49c1-9afb-756660e5c898" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/DashboardContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/DashboardContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/forum/ForumContent/ForumContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/ForumContent/ForumContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/forum/ForumContent/pagination/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/pagination/ForumPagination/pagination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/forum/Thread/Thread.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/Thread/Thread.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/http.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/http.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,25 +22,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/ThreadCommentTextPane/ThreadCommentTextPane.js">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="78" column="74" selection-start-line="78" selection-start-column="74" selection-end-line="78" selection-end-column="74" />
+            <state relative-caret-position="405">
+              <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
               <folding>
-                <element signature="e#0#37#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/DashboardContent.js">
+        <entry file="file://$PROJECT_DIR$/src/service/http.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="50" column="12" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="261">
+              <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="88" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -81,9 +83,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/forumList/forumList.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/components/forumContentList/forumContentList.js" />
         <option value="$PROJECT_DIR$/src/components/navigation/sidebar/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/components/forumContentList/forumContentItem/forumContentItem.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/content/content.js" />
@@ -99,7 +98,6 @@
         <option value="$PROJECT_DIR$/src/containers/forum/forumList/forumItem/forumItem.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/forum.css" />
         <option value="$PROJECT_DIR$/src/containers/forum/index/forumList/forumItem/forumItem.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/util/Decoder.js" />
         <option value="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_list/TeachersList.js" />
         <option value="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_search/TeachersSearch.js" />
@@ -112,15 +110,12 @@
         <option value="$PROJECT_DIR$/src/containers/forum/Thread/ThreadHeader.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/ForumContent/forumContentList/forumContentItem/forumContentItem.js" />
         <option value="$PROJECT_DIR$/src/components/layout/forum_layout/forum_layout.js" />
-        <option value="$PROJECT_DIR$/src/containers/forum/forum.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/index/index.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/backButton/backButton.js" />
         <option value="$PROJECT_DIR$/src/util/Debounce.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/ForumContent/pagination/pagination.js" />
-        <option value="$PROJECT_DIR$/src/containers/forum/ForumContent/ForumContent.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/Thread/ThreadContent/ThreadContent.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/Thread/ThreadComment/ThreadComment.js" />
-        <option value="$PROJECT_DIR$/src/service/http.js" />
         <option value="$PROJECT_DIR$/src/redux/store.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/redux/reducers/ThreadCommentIsPostedReducer.js" />
@@ -128,16 +123,23 @@
         <option value="$PROJECT_DIR$/src/redux/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/hoc/FormHoc.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/Thread/ThreadHeader/ThreadHeader.js" />
-        <option value="$PROJECT_DIR$/src/containers/forum/Thread/Thread.js" />
         <option value="$PROJECT_DIR$/src/containers/teachers/teachersList/TeachersList.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/Thread/ThreadCommentTextPane/ThreadCommentTextPane.js" />
         <option value="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/DashboardContent.js" />
+        <option value="$PROJECT_DIR$/src/service/http.js" />
+        <option value="$PROJECT_DIR$/src/containers/forum/ForumContent/ForumContent.js" />
+        <option value="$PROJECT_DIR$/src/containers/forum/forum.js" />
+        <option value="$PROJECT_DIR$/src/containers/forum/Thread/Thread.js" />
+        <option value="$PROJECT_DIR$/src/containers/testQuiz/testQuiz.js" />
+        <option value="$PROJECT_DIR$/src/containers/test.js" />
+        <option value="$PROJECT_DIR$/src/containers/test/test.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1929" />
-    <option name="y" value="75" />
+    <option name="x" value="1801" />
+    <option name="y" value="36" />
     <option name="width" value="1502" />
     <option name="height" value="919" />
   </component>
@@ -158,27 +160,6 @@
               <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboardContent" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -197,11 +178,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/navigation/pagination" />
       <recent name="$PROJECT_DIR$/src/assets/images/forum_thread" />
       <recent name="$PROJECT_DIR$/src/containers/forum/Thread/ThreadHeader" />
       <recent name="$PROJECT_DIR$/src/containers/forum/ForumContent" />
       <recent name="$PROJECT_DIR$/src/containers/forum/index" />
-      <recent name="$PROJECT_DIR$/src/containers/forum" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -266,12 +247,19 @@
       <workItem from="1567339676503" duration="2496000" />
       <workItem from="1567378850407" duration="7983000" />
       <workItem from="1567395432900" duration="1077000" />
-      <workItem from="1567416064767" duration="5289000" />
+      <workItem from="1567416064767" duration="5432000" />
+      <workItem from="1567466217327" duration="41000" />
+      <workItem from="1567467233713" duration="4005000" />
+      <workItem from="1567474702555" duration="164000" />
+      <workItem from="1567511186124" duration="105000" />
+      <workItem from="1567511411072" duration="262000" />
+      <workItem from="1567513603041" duration="1201000" />
+      <workItem from="1567524419485" duration="16000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94629000" />
+    <option name="totallyTimeSpent" value="100566000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -283,10 +271,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1929" y="75" width="1502" height="919" extended-state="0" />
-    <editor active="true" />
+    <frame x="1801" y="36" width="1502" height="919" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.28082192" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.28082192" />
       <window_info id="Structure" order="1" sideWeight="0.5009009" side_tool="true" weight="0.1923077" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -300,7 +287,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.286578" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.286578" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -332,33 +319,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/robots.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_search/TeachersSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="55" selection-start-line="1" selection-start-column="55" selection-end-line="1" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_search/TeachersSearch.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="21" lean-forward="true" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/forum/forum_navigation_tab/forum_navigation_tab.js" />
     <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/DashboardCourse.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -379,52 +339,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_list/TeachersList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_description/TeachersDescription.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-402">
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/TeachersSpecific.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_comments/TeachersComments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="52" lean-forward="true" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/Teachers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_list/TeachersList.js" />
+    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_description/TeachersDescription.js" />
+    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/TeachersSpecific.js" />
+    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_comments/TeachersComments.js" />
+    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/Teachers.js" />
     <entry file="file://$PROJECT_DIR$/.vscode/settings.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -498,16 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/forum/forum.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="51" column="26" lean-forward="true" selection-start-line="51" selection-start-column="26" selection-end-line="51" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -546,13 +455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/forum/ForumContent/pagination/pagination.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -607,13 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/http.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="153" column="36" lean-forward="true" selection-start-line="153" selection-start-column="36" selection-end-line="153" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/ThreadComment/ThreadComment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -643,44 +538,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/reducers/ThreadCommentIsPostedReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/actions/ThreadCommentIsPostedAction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hoc/FormHoc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/redux/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -701,29 +562,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/Thread.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/DashboardContent.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="85" column="43" lean-forward="true" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="43" />
+        <state relative-caret-position="165">
+          <caret line="42" column="39" lean-forward="true" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/forum/ForumContent/ForumContent.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="121" column="41" selection-start-line="121" selection-start-column="38" selection-end-line="121" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/ThreadCommentTextPane/ThreadCommentTextPane.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="510">
           <caret line="78" column="74" selection-start-line="78" selection-start-column="74" selection-end-line="78" selection-end-column="74" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
@@ -731,13 +582,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/DashboardContent.js">
+    <entry file="file://$PROJECT_DIR$/src/redux/actions/ThreadCommentIsPostedAction.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="50" column="12" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="54" />
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/reducers/ThreadCommentIsPostedReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/forum/forum.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="44" column="78" selection-start-line="44" selection-start-column="68" selection-end-line="44" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/navigation/pagination/ForumPagination/pagination.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/forum/ForumContent/ForumContent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="140" column="24" selection-start-line="140" selection-start-column="24" selection-end-line="145" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/Thread.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/testQuiz/testQuiz.js" />
+    <entry file="file://$PROJECT_DIR$/src/containers/test.js" />
+    <entry file="file://$PROJECT_DIR$/src/containers/test/test.js" />
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/http.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="88" selection-end-column="7" />
         </state>
       </provider>
     </entry>

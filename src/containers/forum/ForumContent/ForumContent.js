@@ -3,7 +3,7 @@ import ForumContentList from "./forumContentList/forumContentList";
 import ForumContentItem from "./forumContentList/forumContentItem/forumContentItem";
 import service from '../../../service/http'
 import decoder from '../../../util/Decoder'
-import Pagination from "./pagination/pagination";
+import Pagination from "../../../components/navigation/pagination/ForumPagination/pagination";
 import BackButton from "../backButton/backButton";
 import queryString from 'query-string'
 import {Redirect,withRouter} from 'react-router-dom'
@@ -93,7 +93,7 @@ class ForumContent extends Component{
         let {history,match} = this.props;
         let path ={
             pathname: `/forum/${match.params.forumName}/${threadItem.title}`,
-            search: `id=${threadItem._id}`
+            search: `id=${threadItem._id}&page=1`
         }
         history.push(path)
     }
