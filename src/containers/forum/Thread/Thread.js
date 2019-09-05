@@ -80,11 +80,6 @@ class Thread extends Component {
           author: res.Data.author,
           content: res.Data.content,
           replyNum: res.Data.replyNum
-        },()=>{
-          this.getThreadCommentsHandler(
-              queryString.parse(this.props.location.search).id,
-              queryString.parse(this.props.location.search).page
-          );
         });
       },
       err => {
@@ -92,6 +87,10 @@ class Thread extends Component {
           isRedirect: true
         });
       }
+    );
+    this.getThreadCommentsHandler(
+        queryString.parse(this.props.location.search).id,
+        queryString.parse(this.props.location.search).page
     );
   };
 
