@@ -3,7 +3,6 @@
 Justin todos:
 
 1. 重写sidebar
-2. header加fourm导航
 
 Oliver下一步要做:
 
