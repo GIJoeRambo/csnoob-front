@@ -5,12 +5,14 @@
   color: var(--primary-gray);
   font-size: 1rem;
   font-weight: bold;
+  padding:0!important;
 }
 .cs_footer_top_label {
   text-align: center;
   color: var(--primary-gray);
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
+  padding: 0!important;
 }
 .cs_footer_top_label:hover {
   cursor: pointer;

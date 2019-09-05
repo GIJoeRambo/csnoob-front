@@ -12,6 +12,7 @@ import decoder from "../../../util/Decoder";
 import { connect } from "react-redux";
 import moment from "moment";
 import Pagination from "../../../components/navigation/pagination/ForumPagination/pagination";
+import SessionStorage from 'sessionstorage'
 
 class Thread extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class Thread extends Component {
       total: 1,
       skip: 0,
       comments: [],
-      replyNum: 0,
+      replyNum: 0
     };
   }
 
@@ -61,7 +62,7 @@ class Thread extends Component {
         });
       },
       err => {
-        console.log(err);
+        alert(err)
       }
     );
   };
@@ -72,26 +73,34 @@ class Thread extends Component {
       this.paginationHandler(1)
       return;
     }
-    service.getThreadByThreadId(
-      queryString.parse(this.props.location.search).id,
-      res => {
-        this.setState({
-          title: res.Data.title,
-          author: res.Data.author,
-          content: res.Data.content,
-          replyNum: res.Data.replyNum
-        },()=>{
-          this.getThreadCommentsHandler(
-              queryString.parse(this.props.location.search).id,
-              queryString.parse(this.props.location.search).page
-          );
-        });
-      },
-      err => {
-        this.setState({
-          isRedirect: true
-        });
-      }
+    if (this.props.location.state.details){
+      this.setState({
+        title: this.props.location.state.details.title,
+        author: this.props.location.state.details.author,
+        content: this.props.location.state.details.content,
+        replyNum: this.props.location.state.details.replyNum
+      })
+    }else{
+      service.getThreadByThreadId(
+          queryString.parse(this.props.location.search).id,
+          res => {
+            this.setState({
+              title: res.Data.title,
+              author: res.Data.author,
+              content: res.Data.content,
+              replyNum: res.Data.replyNum
+            });
+          },
+          err => {
+            this.setState({
+              isRedirect: true
+            });
+          }
+      );
+    }
+    this.getThreadCommentsHandler(
+        queryString.parse(this.props.location.search).id,
+        queryString.parse(this.props.location.search).page
     );
   };
 
@@ -104,6 +113,15 @@ class Thread extends Component {
     history.push(path);
   };
 
+  goBack = ()=>{
+    const lastPagePath = SessionStorage.getItem("lastPage")
+    if (lastPagePath){
+      this.props.history.push(lastPagePath)
+    }else{
+      this.props.history.push('/forum')
+    }
+  }
+
   render() {
     if (this.state.isRedirect) {
       return <Redirect to="/forum" />;
@@ -113,7 +131,7 @@ class Thread extends Component {
         <Helmet>
           <style>{"body { background-color: #F6F8FF; }"}</style>
         </Helmet>
-        <BackButton click={() => this.props.history.goBack()} />
+        <BackButton click={this.goBack} />
         <ThreadHeader
           title={this.state.title}
           author={this.state.author}

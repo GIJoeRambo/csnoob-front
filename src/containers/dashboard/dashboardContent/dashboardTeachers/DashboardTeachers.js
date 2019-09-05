@@ -26,8 +26,20 @@ class DashboardTeachers extends Component {
   }
 
   componentDidMount = () => {
-    httpService.getTeachers(
+    const uniNum = this.props.uni.id;
+    this.getTeachersListFromServer(uniNum);
+  }
+
+  componentWillReceiveProps = (nextProps) => {
+    console.log(nextProps)
+    const uniNum = this.props.uni.id;
+    console.log(uniNum)
+  }
+
+  getTeachersListFromServer = (uniNum) => {
+    httpService.getTeachersBySchoolNum(
       (res) => {
+        console.log(res)
         this.isTeachersListDisplayed = true;
         this.teachersList = res.Data;
         this.setState(() => {
@@ -42,7 +54,8 @@ class DashboardTeachers extends Component {
       },
       (err) => {
         console.log(err)
-      }
+      },
+      uniNum
     )
   }
 
@@ -61,7 +74,7 @@ class DashboardTeachers extends Component {
                 onChange={e => this.handleChange(e)}
               />
               <IconButton onClick={this.searchTeacher}>
-                <SearchIcon/>
+                <SearchIcon />
               </IconButton>
             </span>
           </div>
@@ -85,7 +98,7 @@ class DashboardTeachers extends Component {
 
   handleChange = (event) => {
     const searchText = event.target.value;
-    if(this.state.searchText === searchText){
+    if (this.state.searchText === searchText) {
       this.isReSearch = false;
       return;
     }
@@ -97,23 +110,23 @@ class DashboardTeachers extends Component {
   }
 
   searchTeacher = () => {
-    if(!this.isReSearch){
+    if (!this.isReSearch) {
       return
     }
     const searchText = this.state.searchText;
     httpService.getSpecificTeacher(
-      (res)=>{
+      (res) => {
         this.teachersListAfterSearch = res.Data;
-        this.setState(()=>{
+        this.setState(() => {
           return (
             {
-              teachersListByRow: res.Data.slice(0,this.state.rowsPerPage),
+              teachersListByRow: res.Data.slice(0, this.state.rowsPerPage),
               count: res.Data.length
             }
           )
         })
       },
-      (err)=>{
+      (err) => {
 
       },
       searchText

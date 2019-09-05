@@ -14,7 +14,7 @@ const FooterMiddleRow = () => {
     { uniId: 7, uniName: "lincoln", uniHref: "http://www.lincoln.ac.nz/" }
   ];
   return (
-    <div className="col-12 FooterMiddleRow">
+    <div className="row FooterMiddleRow">
       <FooterIcon uniAbbrList={uniAbbrList} />
       <div className="row cs_footer_contact_group">
         <div className='col-3'></div>

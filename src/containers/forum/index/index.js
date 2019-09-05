@@ -2,17 +2,24 @@ import React,{Component,Fragment} from 'react';
 import ForumList from "./forumList/forumList";
 import ForumItem from './forumList/forumItem/forumItem'
 import service from '../../../service/http'
+import sessionStorage from 'sessionstorage'
 class ForumIndex extends Component{
     state = {
         data: []
     }
 
     componentDidMount = () => {
-        service.getForum(res=>{
-            this.setState({data:res.Data})
-        },err=>{
-            console.log(err);
-        })
+        if (!sessionStorage.getItem("forums")){
+            service.getForum(res=>{
+                this.setState({data:res.Data},()=>{
+                    sessionStorage.setItem("forums",JSON.stringify(res.Data))
+                })
+            },err=>{
+                console.log(err);
+            })
+        }else{
+            this.setState({data:JSON.parse(sessionStorage.getItem("forums"))})
+        }
     }
 
     clickHandler = (forum) =>{
