@@ -33,8 +33,8 @@ const service = {
       });
   },
 
-  getTeachers: (resCallback, errCallback) => {
-    fetch(hostUrl + "teacher")
+  getTeachersBySchoolNum: (resCallback, errCallback,schoolNum) => {
+    fetch(hostUrl + "teacher/getTeachersBySchoolNum/" + schoolNum)
       .then(res => res.json())
       .then(res => {
         resCallback(res);
