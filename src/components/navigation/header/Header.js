@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { withRouter } from "react-router-dom";
+import { Button } from "@material-ui/core";
 import "./Header.css";
 
 class Header extends React.Component {
@@ -13,24 +14,44 @@ class Header extends React.Component {
     }, 1000);
   };
 
-  handleClick = () => {
+  handleLogoclick = () => {
     this.props.history.push("/");
+  };
+
+  handleForumClick = () => {
+    this.props.history.push("/forum");
   };
 
   render() {
     return (
       <Fragment>
-        <div className="row Header">
-          <span className="cs_header_title" onClick={() => this.handleClick()}>
-            cs noob
+        <div className="d-flex justify-content-between Header">
+          <span>
+            <span
+              className="cs_header_title"
+              onClick={() => this.handleLogoclick()}
+            >
+              cs noob
+            </span>
+            <span
+              className={
+                this.state.displayFlag ? "cs_header_bar" : "cs_header_white_bar"
+              }
+            >
+              |
+            </span>
           </span>
-          <span
-            className={
-              this.state.displayFlag ? "cs_header_bar" : "cs_header_white_bar"
-            }
+          <Button
+            style={{
+              color: "white"
+            }}
+            className="mr-5"
+            onClick={() => {
+              this.handleForumClick();
+            }}
           >
-            |
-          </span>
+            Forum
+          </Button>
         </div>
       </Fragment>
     );
