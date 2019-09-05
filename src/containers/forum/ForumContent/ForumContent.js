@@ -108,7 +108,8 @@ class ForumContent extends Component{
         let {history,match} = this.props;
         let path ={
             pathname: `/forum/${match.params.forumName}/${threadItem.title.replace("?","")}`,
-            search: `id=${threadItem._id}&page=1`
+            search: `id=${threadItem._id}&page=1`,
+            state: {details:threadItem}
         }
         history.push(path)
     }

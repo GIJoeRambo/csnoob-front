@@ -25,7 +25,7 @@ class Thread extends Component {
       total: 1,
       skip: 0,
       comments: [],
-      replyNum: 0,
+      replyNum: 0
     };
   }
 
@@ -62,7 +62,7 @@ class Thread extends Component {
         });
       },
       err => {
-        console.log(err);
+        alert(err)
       }
     );
   };
@@ -73,22 +73,31 @@ class Thread extends Component {
       this.paginationHandler(1)
       return;
     }
-    service.getThreadByThreadId(
-      queryString.parse(this.props.location.search).id,
-      res => {
-        this.setState({
-          title: res.Data.title,
-          author: res.Data.author,
-          content: res.Data.content,
-          replyNum: res.Data.replyNum
-        });
-      },
-      err => {
-        this.setState({
-          isRedirect: true
-        });
-      }
-    );
+    if (this.props.location.state.details){
+      this.setState({
+        title: this.props.location.state.details.title,
+        author: this.props.location.state.details.author,
+        content: this.props.location.state.details.content,
+        replyNum: this.props.location.state.details.replyNum
+      })
+    }else{
+      service.getThreadByThreadId(
+          queryString.parse(this.props.location.search).id,
+          res => {
+            this.setState({
+              title: res.Data.title,
+              author: res.Data.author,
+              content: res.Data.content,
+              replyNum: res.Data.replyNum
+            });
+          },
+          err => {
+            this.setState({
+              isRedirect: true
+            });
+          }
+      );
+    }
     this.getThreadCommentsHandler(
         queryString.parse(this.props.location.search).id,
         queryString.parse(this.props.location.search).page
