@@ -3,7 +3,7 @@ import React from 'react';
 
 const Pagination = (props)=>{
     return (
-        <div className="pagination">
+        <div className="pagination pb-2">
             <button onClick={props.first} className="btn-circle" disabled={props.prevDisabled}><i className="fa fa-angle-left"/><i className="fa fa-angle-left"/></button>
             <button onClick={props.prev} className="btn-circle" disabled={props.prevDisabled}><i className="fa fa-angle-left"/></button>
             {props.currentPage} of {props.totalPage}

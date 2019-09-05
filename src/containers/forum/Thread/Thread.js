@@ -47,6 +47,12 @@ class Thread extends Component {
       ThreadId,
       page,
       res => {
+        if (res.Data.details.length===0){
+          if (page !== "1"){
+            this.paginationHandler(res.Data.total)
+          }
+          return;
+        }
         this.setState({
           comments: res.Data.details,
           total: res.Data.total,
@@ -60,6 +66,11 @@ class Thread extends Component {
   };
 
   componentDidMount = () => {
+    const page = queryString.parse(this.props.location.search).page;
+    if (isNaN(page)){
+      this.paginationHandler(1)
+      return;
+    }
     service.getThreadByThreadId(
       queryString.parse(this.props.location.search).id,
       res => {
@@ -67,6 +78,11 @@ class Thread extends Component {
           title: res.Data.title,
           author: res.Data.author,
           content: res.Data.content
+        },()=>{
+          this.getThreadCommentsHandler(
+              queryString.parse(this.props.location.search).id,
+              queryString.parse(this.props.location.search).page
+          );
         });
       },
       err => {
@@ -74,10 +90,6 @@ class Thread extends Component {
           isRedirect: true
         });
       }
-    );
-    this.getThreadCommentsHandler(
-      queryString.parse(this.props.location.search).id,
-      queryString.parse(this.props.location.search).page
     );
   };
 
@@ -104,12 +116,17 @@ class Thread extends Component {
           title={this.state.title}
           author={this.state.author}
           replies={this.state.comments.length}
-          PostDate={moment(
-            decoder(queryString.parse(this.props.location.search).id)
-          ).fromNow()}
+          PostDate={
+            queryString.parse(this.props.location.search).id?
+            moment(decoder(queryString.parse(this.props.location.search).id)).fromNow()
+              :""
+          }
         />
         <div className="post-list">
-          <ThreadContent content={this.state.content} />
+          <ThreadContent
+              content={this.state.content}
+              Author={this.state.author}
+          />
           <h2>Comments</h2>
           {this.state.comments.map((s, index) => {
             return (
@@ -163,7 +180,6 @@ class Thread extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     IsPosted: state.ThreadCommentIsPosted
   };
