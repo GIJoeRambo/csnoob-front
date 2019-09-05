@@ -4,8 +4,8 @@ import {
   ListItem,
   Drawer,
   Divider,
-  ListItemIcon,
-  ListItemText
+  ListItemText,
+  ListSubheader
 } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 import "./Sidebar.css";
@@ -28,6 +28,7 @@ class Sidebar extends React.Component {
     if (uni) {
       this.setState({ selectedId: uni.id });
     }
+    console.log(univisityList);
   };
 
   render() {
@@ -40,19 +41,18 @@ class Sidebar extends React.Component {
       >
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
+          <ListSubheader>Unis</ListSubheader>
+          {univisityList.map((el, index) => (
+            <ListItem button key={el.id}>
+              <ListItemText primary={el.name} />
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button>
+            <ListItemText primary={"Fourm"} />
+          </ListItem>
         </List>
       </Drawer>
     );

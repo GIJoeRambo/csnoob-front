@@ -8,13 +8,23 @@ import "./Header.css";
 
 class Header extends React.Component {
   state = {
-    displayFlag: false
+    displayFlag: false,
+    isHomepage: false
   };
 
   componentDidMount = () => {
     setInterval(() => {
       this.setState({ displayFlag: !this.state.displayFlag });
     }, 1000);
+    this.setState({ isHomepage: this.props.location.pathname === "/" });
+  };
+
+  static getDerivedStateFromProps = (nextProps, prevState) => {
+    let flag = nextProps.location.pathname === "/";
+    if (flag !== prevState.isHomepage) {
+      return { isHomepage: flag };
+    }
+    return null;
   };
 
   handleLogoclick = () => {
@@ -40,14 +50,16 @@ class Header extends React.Component {
               |
             </span>
           </span>
-          <IconButton
-            color="secondary"
-            aria-label="open drawer"
-            onClick={this.props.handleDrawerOpen}
-            edge="start"
-          >
-            <MenuIcon />
-          </IconButton>
+          {this.state.isHomepage ? null : (
+            <IconButton
+              color="secondary"
+              aria-label="open drawer"
+              onClick={this.props.handleDrawerOpen}
+              edge="start"
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
         </div>
       </Fragment>
     );
