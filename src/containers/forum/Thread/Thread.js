@@ -12,6 +12,7 @@ import decoder from "../../../util/Decoder";
 import { connect } from "react-redux";
 import moment from "moment";
 import Pagination from "../../../components/navigation/pagination/ForumPagination/pagination";
+import SessionStorage from 'sessionstorage'
 
 class Thread extends Component {
   constructor(props) {
@@ -103,6 +104,15 @@ class Thread extends Component {
     history.push(path);
   };
 
+  goBack = ()=>{
+    const lastPagePath = SessionStorage.getItem("lastPage")
+    if (lastPagePath){
+      this.props.history.push(lastPagePath)
+    }else{
+      this.props.history.push('/forum')
+    }
+  }
+
   render() {
     if (this.state.isRedirect) {
       return <Redirect to="/forum" />;
@@ -112,7 +122,7 @@ class Thread extends Component {
         <Helmet>
           <style>{"body { background-color: #F6F8FF; }"}</style>
         </Helmet>
-        <BackButton click={() => this.props.history.goBack()} />
+        <BackButton click={this.goBack} />
         <ThreadHeader
           title={this.state.title}
           author={this.state.author}

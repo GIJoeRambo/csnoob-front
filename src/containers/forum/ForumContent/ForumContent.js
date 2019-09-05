@@ -8,6 +8,7 @@ import BackButton from "../backButton/backButton";
 import queryString from 'query-string'
 import {Redirect,withRouter} from 'react-router-dom'
 import moment from 'moment'
+import SessionStorage from 'sessionstorage';
 
 class ForumContent extends Component{
     constructor(props){
@@ -29,17 +30,29 @@ class ForumContent extends Component{
             this.paginationHandler(1)
             return;
         }
-        service.getForumByForumId(queryString.parse(this.props.location.search).id,res=>{
+        if (!SessionStorage.getItem(queryString.parse(this.props.location.search).id)){
+            service.getForumByForumId(queryString.parse(this.props.location.search).id,res=>{
+                this.setState({
+                    title:res.Data.title,
+                    subtitle:res.Data.subtitle,
+                    PostThreadButtonDisabled:false
+                },()=>{
+                    SessionStorage.setItem(queryString.parse(this.props.location.search).id,JSON.stringify(res.Data))
+                    this.getThreadsHandler(queryString.parse(this.props.location.search).id,page)
+                })
+            },err=>{
+                this.setState({isRedirect: true})
+            });
+        }else{
+            const data = JSON.parse(SessionStorage.getItem(queryString.parse(this.props.location.search).id))
             this.setState({
-                title:res.Data.title,
-                subtitle:res.Data.subtitle,
+                title:data.title,
+                subtitle:data.subtitle,
                 PostThreadButtonDisabled:false
             },()=>{
                 this.getThreadsHandler(queryString.parse(this.props.location.search).id,page)
             })
-        },err=>{
-            this.setState({isRedirect: true})
-        });
+        }
     };
 
     componentWillReceiveProps(nextProps, nextContext) {
@@ -91,6 +104,7 @@ class ForumContent extends Component{
     }
 
     ClickThreadHandler = (threadItem) =>{
+        SessionStorage.setItem("lastPage",this.props.location.pathname+this.props.location.search)
         let {history,match} = this.props;
         let path ={
             pathname: `/forum/${match.params.forumName}/${threadItem.title.replace("?","")}`,
