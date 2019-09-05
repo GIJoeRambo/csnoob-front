@@ -1,8 +1,17 @@
 import React from "react";
-import { List, ListItem } from "@material-ui/core";
-import { withRouter, NavLink } from "react-router-dom";
+import {
+  List,
+  ListItem,
+  Drawer,
+  Divider,
+  ListItemText,
+  ListSubheader
+} from "@material-ui/core";
+import { withRouter } from "react-router-dom";
 import "./Sidebar.css";
 import { univisityList } from "../../../shared/sharedData";
+import { sidebarClose } from "../../../redux/actions/sidebarAction";
+import { connect } from "react-redux";
 
 class Sidebar extends React.Component {
   state = {
@@ -19,37 +28,45 @@ class Sidebar extends React.Component {
     if (uni) {
       this.setState({ selectedId: uni.id });
     }
+    console.log(univisityList);
   };
 
   render() {
     return (
-      <List component="nav" className="row col-12 col-md-3 SideBar">
-        {univisityList.map(item => {
-          let path = {
-            pathname: this.props.match.path + "/" + item.path
-          };
-          return (
-            <NavLink
-              to={path}
-              key={item.id}
-              className="cs_sidebar_link col-6 col-md-12"
-              onClick={() => this.handleClick(item)}
-            >
-              <ListItem
-                className={`row cs_sidebar_item ${
-                  this.state.selectedId === item.id
-                    ? "cs_sidebar_item_selected"
-                    : ""
-                }`}
-              >
-                <h5 className="cs_sidebar_uniName">{item.name}</h5>
-              </ListItem>
-            </NavLink>
-          );
-        })}
-      </List>
+      <Drawer
+        variant="temporary"
+        open={this.props.drawerOpen}
+        anchor="right"
+        onClose={() => this.props.handleClose()}
+      >
+        <Divider />
+        <List>
+          <ListSubheader>Unis</ListSubheader>
+          {univisityList.map((el, index) => (
+            <ListItem button key={el.id}>
+              <ListItemText primary={el.name} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          <ListItem button>
+            <ListItemText primary={"Fourm"} />
+          </ListItem>
+        </List>
+      </Drawer>
     );
   }
 }
 
-export default withRouter(Sidebar);
+const mapStatetoProps = state => ({ drawerOpen: state.sidebarReducer });
+const mapDispatchToProps = dispatch => ({
+  handleClose: () => dispatch(sidebarClose())
+});
+
+export default withRouter(
+  connect(
+    mapStatetoProps,
+    mapDispatchToProps
+  )(Sidebar)
+);

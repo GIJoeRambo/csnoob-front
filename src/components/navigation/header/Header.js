@@ -1,25 +1,34 @@
 import React, { Fragment } from "react";
 import { withRouter } from "react-router-dom";
-import { Button } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
+import { sidebarOpen } from "../../../redux/actions/sidebarAction";
+import { connect } from "react-redux";
 import "./Header.css";
 
 class Header extends React.Component {
   state = {
-    displayFlag: false
+    displayFlag: false,
+    isHomepage: false
   };
 
   componentDidMount = () => {
     setInterval(() => {
       this.setState({ displayFlag: !this.state.displayFlag });
     }, 1000);
+    this.setState({ isHomepage: this.props.location.pathname === "/" });
+  };
+
+  static getDerivedStateFromProps = (nextProps, prevState) => {
+    let flag = nextProps.location.pathname === "/";
+    if (flag !== prevState.isHomepage) {
+      return { isHomepage: flag };
+    }
+    return null;
   };
 
   handleLogoclick = () => {
     this.props.history.push("/");
-  };
-
-  handleForumClick = () => {
-    this.props.history.push("/forum");
   };
 
   render() {
@@ -41,21 +50,30 @@ class Header extends React.Component {
               |
             </span>
           </span>
-          <Button
-            style={{
-              color: "white"
-            }}
-            className="mr-5"
-            onClick={() => {
-              this.handleForumClick();
-            }}
-          >
-            Forum
-          </Button>
+          {this.state.isHomepage ? null : (
+            <IconButton
+              color="secondary"
+              aria-label="open drawer"
+              onClick={this.props.handleDrawerOpen}
+              edge="start"
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
         </div>
       </Fragment>
     );
   }
 }
 
-export default withRouter(Header);
+const mapStatetoProps = state => ({ drawerOpen: state.sidebarReducer });
+const mapDispatchToProps = dispatch => ({
+  handleDrawerOpen: () => dispatch(sidebarOpen())
+});
+
+export default withRouter(
+  connect(
+    mapStatetoProps,
+    mapDispatchToProps
+  )(Header)
+);
