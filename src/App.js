@@ -4,7 +4,7 @@ import Dashboard from "./containers/dashboard/dashboard";
 import NotFound from "./containers/NotFound/NotFound";
 import MainLayout from "./components/layout/main_layout/main_layout";
 import CourseView from "./containers/course/CourseView";
-import Teachers from './containers/teachers/Teachers';
+import Teachers from "./containers/teachers/Teachers";
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -19,6 +19,9 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: "#2a2a2a"
+    },
+    secondary: {
+      main: "#8d8c8c"
     }
   }
 });
@@ -34,7 +37,10 @@ const App = () => {
             <Route path="/forum" component={Forum} />
             <Route path="/course/:uniName/:courseName" component={CourseView} />
             <Route path="/" exact component={Home} />
-            <Route path='/teacher/:uniName/:teacherName' component={Teachers}></Route>
+            <Route
+              path="/teacher/:uniName/:teacherName"
+              component={Teachers}
+            ></Route>
             {/* <Route path="/teachers" component={Teachers}></Route> */}
             <Redirect from={"*"} to={"/404"} />
           </Switch>

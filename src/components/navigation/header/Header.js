@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 import { withRouter } from "react-router-dom";
-import { Button } from "@material-ui/core";
+import { IconButton } from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
+import { sidebarOpen } from "../../../redux/actions/sidebarAction";
+import { connect } from "react-redux";
 import "./Header.css";
 
 class Header extends React.Component {
@@ -16,10 +19,6 @@ class Header extends React.Component {
 
   handleLogoclick = () => {
     this.props.history.push("/");
-  };
-
-  handleForumClick = () => {
-    this.props.history.push("/forum");
   };
 
   render() {
@@ -41,21 +40,28 @@ class Header extends React.Component {
               |
             </span>
           </span>
-          <Button
-            style={{
-              color: "white"
-            }}
-            className="mr-5"
-            onClick={() => {
-              this.handleForumClick();
-            }}
+          <IconButton
+            color="secondary"
+            aria-label="open drawer"
+            onClick={this.props.handleDrawerOpen}
+            edge="start"
           >
-            Forum
-          </Button>
+            <MenuIcon />
+          </IconButton>
         </div>
       </Fragment>
     );
   }
 }
 
-export default withRouter(Header);
+const mapStatetoProps = state => ({ drawerOpen: state.sidebarReducer });
+const mapDispatchToProps = dispatch => ({
+  handleDrawerOpen: () => dispatch(sidebarOpen())
+});
+
+export default withRouter(
+  connect(
+    mapStatetoProps,
+    mapDispatchToProps
+  )(Header)
+);

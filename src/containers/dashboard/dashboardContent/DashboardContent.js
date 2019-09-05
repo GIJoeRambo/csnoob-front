@@ -5,6 +5,8 @@ import DashboardTeachers from "./dashboardTeachers/DashboardTeachers";
 import "./DashboardContent.css";
 import { univisityList } from "../../../shared/sharedData";
 import { Redirect } from "react-router-dom";
+import { sidebarOpen } from "../../../redux/actions/sidebarAction";
+import { connect } from "react-redux";
 
 class DashboardContent extends React.Component {
   state = {
@@ -36,6 +38,7 @@ class DashboardContent extends React.Component {
         shouldRedirect: true
       });
     }
+    this.props.openDrawer();
   };
 
   render() {
@@ -58,4 +61,12 @@ class DashboardContent extends React.Component {
   }
 }
 
-export default DashboardContent;
+const mapStatetoProps = state => ({ drawerOpen: state.sidebarReducer });
+const mapDispatchToProps = dispatch => ({
+  openDrawer: () => dispatch(sidebarOpen())
+});
+
+export default connect(
+  mapStatetoProps,
+  mapDispatchToProps
+)(DashboardContent);
