@@ -23,7 +23,8 @@ class Thread extends Component {
       isRedirect: false,
       total: 1,
       skip: 0,
-      comments: []
+      comments: [],
+      replyNum: 0,
     };
   }
 
@@ -77,7 +78,8 @@ class Thread extends Component {
         this.setState({
           title: res.Data.title,
           author: res.Data.author,
-          content: res.Data.content
+          content: res.Data.content,
+          replyNum: res.Data.replyNum
         },()=>{
           this.getThreadCommentsHandler(
               queryString.parse(this.props.location.search).id,
@@ -115,7 +117,7 @@ class Thread extends Component {
         <ThreadHeader
           title={this.state.title}
           author={this.state.author}
-          replies={this.state.comments.length}
+          replies={this.state.replyNum}
           PostDate={
             queryString.parse(this.props.location.search).id?
             moment(decoder(queryString.parse(this.props.location.search).id)).fromNow()

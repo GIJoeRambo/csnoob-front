@@ -93,7 +93,7 @@ class ForumContent extends Component{
     ClickThreadHandler = (threadItem) =>{
         let {history,match} = this.props;
         let path ={
-            pathname: `/forum/${match.params.forumName}/${threadItem.title}`,
+            pathname: `/forum/${match.params.forumName}/${threadItem.title.replace("?","")}`,
             search: `id=${threadItem._id}&page=1`
         }
         history.push(path)
