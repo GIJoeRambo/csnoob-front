@@ -14,21 +14,18 @@ import { sidebarClose } from "../../../redux/actions/sidebarAction";
 import { connect } from "react-redux";
 
 class Sidebar extends React.Component {
-  state = {
-    selectedId: 1
-  };
-
-  handleClick = item => {
-    this.setState({ selectedId: item.id });
-  };
-
   componentDidMount = () => {
     const uniName = this.props.location.pathname.split("/")[2];
     const uni = uniName && univisityList.find(el => el.path === uniName);
-    if (uni) {
-      this.setState({ selectedId: uni.id });
-    }
     console.log(univisityList);
+  };
+
+  uniOnClick = path => {
+    this.props.history.push(this.props.match.path + "/" + path);
+  };
+
+  fourmOnClick = () => {
+    this.props.history.push("/forum");
   };
 
   render() {
@@ -42,15 +39,19 @@ class Sidebar extends React.Component {
         <Divider />
         <List>
           <ListSubheader>Unis</ListSubheader>
-          {univisityList.map((el, index) => (
-            <ListItem button key={el.id}>
+          {univisityList.map(el => (
+            <ListItem
+              button
+              key={el.id}
+              onClick={() => this.uniOnClick(el.path)}
+            >
               <ListItemText primary={el.name} />
             </ListItem>
           ))}
         </List>
         <Divider />
         <List>
-          <ListItem button>
+          <ListItem button onClick={() => this.fourmOnClick()}>
             <ListItemText primary={"Fourm"} />
           </ListItem>
         </List>
