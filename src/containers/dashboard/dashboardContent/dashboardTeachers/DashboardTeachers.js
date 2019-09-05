@@ -30,7 +30,8 @@ class DashboardTeachers extends Component {
     this.getTeachersListFromServer(uniNum);
   }
 
-  componentWillReceiveProps = () => {
+  componentWillReceiveProps = (nextProps) => {
+    console.log(nextProps)
     const uniNum = this.props.uni.id;
     console.log(uniNum)
   }

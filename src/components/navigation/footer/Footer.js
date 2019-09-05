@@ -6,7 +6,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="row Footer">
+    <div className="Footer">
       <FooterTopRow />
       <FooterMiddleRow />
       <FooterBottomRow />
