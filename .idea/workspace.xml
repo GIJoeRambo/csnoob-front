@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f9cca90-c916-49c1-9afb-756660e5c898" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/pagination/ForumPagination/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/pagination/ForumPagination/pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/forum/forum.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/forum.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,11 +17,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/navigation/pagination/ForumPagination/pagination.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="180">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/service/http.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="38" lean-forward="true" selection-start-column="24" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -119,15 +136,15 @@
         <option value="$PROJECT_DIR$/src/containers/forum/ForumContent/ForumContent.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/Thread/ThreadContent/ThreadContent.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/Thread/Thread.js" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/forum.css" />
         <option value="$PROJECT_DIR$/src/components/navigation/pagination/ForumPagination/pagination.js" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1865" />
-    <option name="y" value="111" />
+    <option name="x" value="1890" />
+    <option name="y" value="122" />
     <option name="width" value="1502" />
     <option name="height" value="919" />
   </component>
@@ -184,6 +201,25 @@
               <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -284,12 +320,13 @@
       <workItem from="1567573052341" duration="25000" />
       <workItem from="1567608247348" duration="1681000" />
       <workItem from="1567611589755" duration="498000" />
-      <workItem from="1567612677157" duration="338000" />
+      <workItem from="1567612677157" duration="435000" />
+      <workItem from="1567641594772" duration="1247000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106043000" />
+    <option name="totallyTimeSpent" value="107387000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -301,10 +338,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1865" y="111" width="1502" height="919" extended-state="0" />
+    <frame x="1890" y="122" width="1502" height="919" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.28082192" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.28082192" />
       <window_info id="Structure" order="1" sideWeight="0.5009009" side_tool="true" weight="0.1923077" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -318,7 +355,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.286578" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.286578" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -350,9 +387,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_list/TeachersList.js" />
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_description/TeachersDescription.js" />
-    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/TeachersSpecific.js" />
     <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/teachers_specific/teachers_comments/TeachersComments.js" />
     <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboardContent/dashboardCourse/teachers/Teachers.js" />
     <entry file="file://$PROJECT_DIR$/.vscode/settings.json">
@@ -599,13 +633,6 @@
     <entry file="file://$PROJECT_DIR$/src/containers/testQuiz/testQuiz.js" />
     <entry file="file://$PROJECT_DIR$/src/containers/test.js" />
     <entry file="file://$PROJECT_DIR$/src/containers/test/test.js" />
-    <entry file="file://$PROJECT_DIR$/src/service/http.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="85" column="6" selection-start-line="85" selection-start-column="6" selection-end-line="88" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -674,13 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/Thread.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
@@ -691,10 +711,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/dashboard/DashboardBlank.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/sharedData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-379" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/http.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" lean-forward="true" selection-start-column="24" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/navigation/pagination/ForumPagination/pagination.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="180">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
