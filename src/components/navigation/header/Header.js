@@ -55,7 +55,7 @@ class Header extends React.Component {
   }
 }
 
-const mapStatetoProps = state => ({ drawerOpen: state.sidebarReducer });
+const mapStatetoProps = state => ({ drawerOpen: state.sidebarReducer.open });
 const mapDispatchToProps = dispatch => ({
   handleDrawerOpen: () => dispatch(sidebarOpen())
 });

@@ -2,7 +2,8 @@
 
 Justin todos:
 
-1. 重写sidebar
+1. 增加comming soon
+2. 修改postgraduate
 
 Oliver下一步要做:
 

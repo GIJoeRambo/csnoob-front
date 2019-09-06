@@ -5,7 +5,10 @@ import DashboardTeachers from "./dashboardTeachers/DashboardTeachers";
 import "./DashboardContent.css";
 import { univisityList } from "../../../shared/sharedData";
 import { Redirect } from "react-router-dom";
-import { sidebarOpen } from "../../../redux/actions/sidebarAction";
+import {
+  sidebarOpen,
+  setFirstTime
+} from "../../../redux/actions/sidebarAction";
 import { connect } from "react-redux";
 
 class DashboardContent extends React.Component {
@@ -38,7 +41,10 @@ class DashboardContent extends React.Component {
         shouldRedirect: true
       });
     }
-    this.props.openDrawer();
+    if (!this.props.firstTime) {
+      this.props.openDrawer();
+      this.props.setFirstTime();
+    }
   };
 
   render() {
@@ -61,9 +67,13 @@ class DashboardContent extends React.Component {
   }
 }
 
-const mapStatetoProps = state => ({ drawerOpen: state.sidebarReducer });
+const mapStatetoProps = state => ({
+  drawerOpen: state.sidebarReducer.open,
+  firstTime: state.sidebarReducer.firstTime
+});
 const mapDispatchToProps = dispatch => ({
-  openDrawer: () => dispatch(sidebarOpen())
+  openDrawer: () => dispatch(sidebarOpen()),
+  setFirstTime: () => dispatch(setFirstTime())
 });
 
 export default connect(

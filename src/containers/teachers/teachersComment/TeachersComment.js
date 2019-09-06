@@ -55,6 +55,7 @@ class TeacherComment extends Component {
   }
 
   changeName = (event) => {
+    // eslint-disable-next-line
     const name = event.target.value
     this.setState({ name: event.target.value })
   }

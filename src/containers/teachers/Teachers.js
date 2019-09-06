@@ -1,16 +1,10 @@
 import React, { Component } from "react";
-import {
-  Typography,
-  Divider,
-  Tab,
-  Tabs,
-  TablePagination
-} from "@material-ui/core";
+import { Typography, Divider, TablePagination } from "@material-ui/core";
 import { ColorButton } from "../../shared/styledComponent/styledComponent";
-import { withRouter, Redirect } from "react-router-dom";
-import TeachersComment from './teachersComment/TeachersComment';
-import TeachersCommentsList from './teachersCommentsList/TeachersCommentsList';
-import httpService from '../../service/http';
+import { withRouter } from "react-router-dom";
+import TeachersComment from "./teachersComment/TeachersComment";
+import TeachersCommentsList from "./teachersCommentsList/TeachersCommentsList";
+import httpService from "../../service/http";
 import "./Teachers.css";
 
 class Teachers extends Component {
@@ -18,7 +12,7 @@ class Teachers extends Component {
     comments: [],
     total: 0,
     currentPage: 0
-  }
+  };
 
   teacherId =
     this.props.location.search &&
@@ -33,43 +27,41 @@ class Teachers extends Component {
     this.props.history.push("/dashboard/" + this.props.match.params.uniName);
   };
 
-  changePage = (newIndex) => {
-    this.getTeacherRating(newIndex)
-  }
+  changePage = newIndex => {
+    this.getTeacherRating(newIndex);
+  };
 
-  getTeacherRating = (currentPage) => {
+  getTeacherRating = currentPage => {
     httpService.getTeacherRating(
-      (res) => {
-        this.setState(
-          () => {
-            return ({
-              comments: res.Data.details,
-              total: res.Data.total,
-              currentPage: currentPage
-            })
-          }
-        )
+      res => {
+        this.setState(() => {
+          return {
+            comments: res.Data.details,
+            total: res.Data.total,
+            currentPage: currentPage
+          };
+        });
       },
-      (err) => {
-        console.log(err)
+      err => {
+        console.log(err);
       },
-      this.teacherId, currentPage + 1
-    )
-  }
+      this.teacherId,
+      currentPage + 1
+    );
+  };
 
   refreshPage = () => {
-    console.log('rrr')
-    if(this.state.currentPage == 0){
-      this.getTeacherRating(0)
-    }
-    else{
+    console.log("rrr");
+    if (this.state.currentPage === 0) {
+      this.getTeacherRating(0);
+    } else {
       return;
     }
-  }
+  };
 
   componentDidMount = () => {
-    this.getTeacherRating(0)
-  }
+    this.getTeacherRating(0);
+  };
 
   render = () => {
     return (
@@ -86,13 +78,15 @@ class Teachers extends Component {
           </Typography>
         </div>
         <Divider className="mb-3"></Divider>
-        <TeachersComment 
+        <TeachersComment
           teacherId={this.teacherId}
           refreshPage={this.refreshPage}
         />
 
         <div className="cs_t_teacher_comment_panel">
-          <TeachersCommentsList commentsList={this.state.comments}></TeachersCommentsList>
+          <TeachersCommentsList
+            commentsList={this.state.comments}
+          ></TeachersCommentsList>
           <div className="d-flex justify-content-center">
             <TablePagination
               className="course_comment_pagination"
@@ -101,16 +95,13 @@ class Teachers extends Component {
               rowsPerPageOptions={[]}
               rowsPerPage={this.rowsPerPage}
               page={this.state.currentPage}
-              onChangePage={(e, newIndex) =>
-                this.changePage(newIndex)
-              }
+              onChangePage={(e, newIndex) => this.changePage(newIndex)}
             />
           </div>
         </div>
       </div>
     );
-  }
-
-};
+  };
+}
 
 export default withRouter(Teachers);

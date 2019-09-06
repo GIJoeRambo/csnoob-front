@@ -31,15 +31,16 @@ class DashboardTeachers extends Component {
   }
 
   componentWillReceiveProps = (nextProps) => {
-    console.log(nextProps)
+    // console.log(nextProps)
+    // eslint-disable-next-line
     const uniNum = this.props.uni.id;
-    console.log(uniNum)
+    // console.log(uniNum)
   }
 
   getTeachersListFromServer = (uniNum) => {
     httpService.getTeachersBySchoolNum(
       (res) => {
-        console.log(res)
+        // console.log(res)
         this.isTeachersListDisplayed = true;
         this.teachersList = res.Data;
         this.setState(() => {

@@ -15,14 +15,12 @@ import { sidebarClose } from "../../../redux/actions/sidebarAction";
 import { connect } from "react-redux";
 import MailIcon from "@material-ui/icons/Mail";
 class Sidebar extends React.Component {
-  componentDidMount = () => {
-    const uniName = this.props.location.pathname.split("/")[2];
-    const uni = uniName && univisityList.find(el => el.path === uniName);
-    console.log(univisityList);
+  state = {
+    tempUrl: this.props.location.pathname.split("/")[1]
   };
 
   uniOnClick = path => {
-    this.props.history.push(this.props.match.path + "/" + path);
+    this.props.history.push("/dashboard/" + path);
   };
 
   fourmOnClick = () => {
@@ -64,7 +62,10 @@ class Sidebar extends React.Component {
   }
 }
 
-const mapStatetoProps = state => ({ drawerOpen: state.sidebarReducer });
+const mapStatetoProps = state => ({
+  drawerOpen: state.sidebarReducer.open,
+  firstTime: state.sidebarReducer.firstTime
+});
 const mapDispatchToProps = dispatch => ({
   handleClose: () => dispatch(sidebarClose())
 });
