@@ -37,7 +37,6 @@ class CourseView extends React.Component {
   rowsPerPage = 10;
 
   componentDidMount = () => {
-    console.log(this.props);
     this.getCourse();
     this.getData(this.state.page);
   };
@@ -48,6 +47,7 @@ class CourseView extends React.Component {
 
   handleChangePage = index => {
     this.getData(index, () => {
+      window.scrollTo(0, 0);
       this.props.history.push(
         this.props.location.pathname +
           this.props.location.search.split("&")[0] +
@@ -103,7 +103,6 @@ class CourseView extends React.Component {
 
   render() {
     const { course, tabIndex, commentList } = this.state;
-    console.log(this.state);
     if (this.state.shouldRedirect) {
       return (
         <Redirect
@@ -157,9 +156,9 @@ class CourseView extends React.Component {
               count={this.state.total}
               rowsPerPage={this.rowsPerPage}
               page={this.state.page - 1}
-              onChangePage={(e, newIndex) =>
-                this.handleChangePage(newIndex + 1)
-              }
+              onChangePage={(e, newIndex) => {
+                this.handleChangePage(newIndex + 1);
+              }}
             />
           </div>
         </div>

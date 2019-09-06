@@ -2,6 +2,7 @@ import React from "react";
 import DashboardCourse from "./dashboardCourse/DashboardCourse";
 import DashboardDescription from "./dashboardSummary/DashboardSummary";
 import DashboardTeachers from "./dashboardTeachers/DashboardTeachers";
+import DashboardBlank from "./DashboardBlank";
 import "./DashboardContent.css";
 import { univisityList } from "../../../shared/sharedData";
 import { Redirect } from "react-router-dom";
@@ -51,14 +52,22 @@ class DashboardContent extends React.Component {
     if (this.state.shouldRedirect) {
       return <Redirect to="/"></Redirect>;
     }
+    let uni = this.state.uni;
     return (
       <React.Fragment>
-        {this.state.uni ? (
-          <div className="dashboard_content_container">
-            <DashboardDescription uni={this.state.uni} />
-            <DashboardCourse uni={this.state.uni} />
-            <DashboardTeachers uni={this.state.uni} />
-          </div>
+        {uni ? (
+          uni.id === 1 ? (
+            <div className="dashboard_content_container">
+              <DashboardDescription uni={uni} />
+              <DashboardCourse uni={uni} />
+              <DashboardTeachers uni={uni} />
+            </div>
+          ) : (
+            <div className="dashboard_content_container">
+              <DashboardDescription uni={uni} />
+              <DashboardBlank />
+            </div>
+          )
         ) : (
           <Redirect to="/"></Redirect>
         )}

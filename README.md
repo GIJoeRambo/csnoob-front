@@ -2,8 +2,8 @@
 
 Justin todos:
 
-1. 增加comming soon
-2. 修改postgraduate
+1. [ ] 增加comming soon
+2. [x] 增加sessionStorage
 
 Oliver下一步要做:
 
