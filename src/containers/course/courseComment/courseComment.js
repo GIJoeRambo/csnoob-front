@@ -70,7 +70,7 @@ const CourseComment = props => {
 
   const submitData = () => {
     let data = {
-      comment: comment.replace(/↵/g, "<br/>"),
+      comment,
       rate,
       semester,
       year,
