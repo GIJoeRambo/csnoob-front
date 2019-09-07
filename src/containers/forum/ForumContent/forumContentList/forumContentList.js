@@ -9,7 +9,7 @@ const ForumContentList = (props) =>{
                         <h1>{props.title}</h1>
                         <p className="text-lead">{props.description}</p>
                     </div>
-                    <button disabled={props.PostThreadButtonDisabled} onClick={props.PostThreadClick} className="btn-green btn-small">Post a thread</button>
+                    {props.isShowButton?<button disabled={props.PostThreadButtonDisabled} onClick={props.PostThreadClick} className="btn-green btn-small">Post a thread</button>:null}
                 </div>
             </div>
             <div className="col-full">

@@ -128,6 +128,7 @@ class ForumContent extends Component{
                     description={this.state.subtitle}
                     PostThreadClick={this.PostThreadClickHandler}
                     PostThreadButtonDisabled={this.state.PostThreadButtonDisabled}
+                    isShowButton={queryString.parse(this.props.location.search).id!=="5d65d6272a69ac36c2f554c5"}
                 >
                     {this.state.data.map((s,index)=>{
                         return (

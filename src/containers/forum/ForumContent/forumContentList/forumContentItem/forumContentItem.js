@@ -7,7 +7,7 @@ const ForumContentItem = (props) =>{
             <div>
                 <div onClick={props.titleClick} className="forum-item"><p>{props.title}</p></div>
                 <p className="text-faded text-xsmall">
-                    By <a href="/">{props.postAuthor}</a>, {props.when}.
+                    By <span className="forum-item">{props.postAuthor}</span>, {props.when}.
                 </p>
             </div>
 
@@ -22,7 +22,7 @@ const ForumContentItem = (props) =>{
 
                     <div>
                         <p className="text-xsmall">
-                            <a href="/">{props.LastReplyName}</a>
+                            <span className="forum-item">{props.LastReplyName}</span>
                         </p>
                         <p className="text-xsmall text-faded">{props.LastReplyTime}</p>
                     </div>
