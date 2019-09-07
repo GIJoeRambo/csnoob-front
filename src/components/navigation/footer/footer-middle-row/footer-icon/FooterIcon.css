@@ -23,6 +23,7 @@
 
 @media (max-width: 992px){
   .cs_footer_icon_item{
+    margin: 0 0.5rem!important;
     margin-top:0.5rem!important;
   }
 }

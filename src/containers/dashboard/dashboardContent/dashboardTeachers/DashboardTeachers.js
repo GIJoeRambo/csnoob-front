@@ -31,9 +31,13 @@ class DashboardTeachers extends Component {
   }
 
   componentWillReceiveProps = (nextProps) => {
-    console.log(nextProps)
-    const uniNum = this.props.uni.id;
-    console.log(uniNum)
+    const uniNum = nextProps.uni.id;
+    this.setState(()=>{
+      return(
+        {teachersListByRow:[]}
+      )
+    })
+    this.getTeachersListFromServer(uniNum);
   }
 
   getTeachersListFromServer = (uniNum) => {

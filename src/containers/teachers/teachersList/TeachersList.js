@@ -8,7 +8,7 @@ import './TeachersList.css';
 
 const TeachersList = (props) => {
 
-    const [isLike, setLike] = useState(false);
+    const [likeWhichTeacher, setLikeWitchTeacher] = useState({});
 
     //全是material-ui的东西
     const useStyles = makeStyles(theme => ({
@@ -29,11 +29,19 @@ const TeachersList = (props) => {
     const classes = useStyles();
     //////////////////////////////////////////////////////////////////////////////////////
 
-    const likeATeacher = () => {
-        setLike(!isLike)
+    const likeATeacher = (teacherId) => {
+        let obj = {...likeWhichTeacher}
+        console.log(obj)
+        if(obj[teacherId] === true){
+            delete obj[teacherId];
+        }
+        else{
+            obj[teacherId] = true;
+        }
+        setLikeWitchTeacher(obj);
     }
 
-    const openTeacherModal = (teacherName,teacherId) => {
+    const openTeacherModal = (teacherName, teacherId) => {
         console.log(props)
         let { history, match } = props;
         let path = {
@@ -42,7 +50,7 @@ const TeachersList = (props) => {
                 match.params.uniName +
                 "/" +
                 teacherName,
-            search:'?id=' + teacherId + "&page=1"
+            search: '?id=' + teacherId + "&page=1"
         };
         history.push(path);
     }
@@ -55,36 +63,36 @@ const TeachersList = (props) => {
                     props.teachersList.map(
                         (item) => {
                             return (
-                                <div className='cs_tl_teachers_lists_item' key={item._id} 
-                                    onClick={()=>{
-                                        openTeacherModal(item.name,item._id)
+                                <div className='cs_tl_teachers_lists_item' key={item._id}
+                                    onClick={() => {
+                                        openTeacherModal(item.name, item._id)
                                     }
-                                }>
+                                    }>
                                     <Paper className={classes.root}>
-                                        <div className='cs_tl_teachers_title cs_tl_teachers_hover'>
+                                        <div className='col-sm-12 cs_tl_teachers_title cs_tl_teachers_hover'>
                                             {item.title}
                                         </div>
-                                        <div component="div" className='row'>
-                                            <div className='col-6 cs_tl_teachers_name cs_tl_teachers_hover'>
+                                        <div className='row'>
+                                            <div className='col-md-6 col-sm-12 cs_tl_teachers_name cs_tl_teachers_hover'>
                                                 {item.name}
                                             </div>
 
-                                            <div className='col-3'>
+                                            <div className='col-md-3 col-sm-12'>
                                                 <Rating value={item.rate} readOnly />
                                             </div>
-                                            <div className='col-2'>
+                                            <div className='col-md-2 col-sm-12'>
                                                 <div className='row'>
                                                     <div className='col-4'>
                                                         <StyledRating
-                                                            onMouseDown={likeATeacher}
-                                                            value={isLike ? 1 : 0}
+                                                            onMouseDown={()=>{likeATeacher(item._id)}}
+                                                            value={likeWhichTeacher[item._id]?1:0}
                                                             precision={1}
                                                             max={1}
                                                             icon={<FavoriteIcon fontSize="inherit" />}
                                                         />
                                                     </div>
                                                     <div className='col-6'>
-                                                        XXXXX&nbsp;&nbsp;&nbsp;&nbsp;
+                                                        XXXXX&nbsp;&nbsp;
                                                         <span className='cs_tl_teachers_like'>Like</span>
                                                     </div>
                                                 </div>

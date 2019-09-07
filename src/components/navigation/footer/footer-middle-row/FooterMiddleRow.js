@@ -15,17 +15,20 @@ const FooterMiddleRow = () => {
   ];
   return (
     <div className="row FooterMiddleRow">
-      <FooterIcon uniAbbrList={uniAbbrList} />
-      <div className="row cs_footer_contact_group">
-        <div className='col-3'></div>
-        <div className="col-6">
-          <div className='row'>
-            <span className='col-md-4 col-sm-12 cs_footer_contact'>info@xxxxxxxx.com</span>
-            <span className='col-md-4 col-sm-12 cs_footer_contact'>xxxxxxxxx</span>
-            <span className='col-md-4 col-sm-12 cs_footer_contact'>xxxxxxxxxxxxxxxxx</span>
+      <div className='col-12'>
+        <FooterIcon uniAbbrList={uniAbbrList} />
+      </div>
+      <div className="col-12 cs_footer_contact_group">
+        <div className='row'>
+          <div className='col-3'></div>
+          <div className="col-6">
+            <div className='row'>
+              <span className='col-md-4 col-sm-12 cs_footer_contact'>info@xxxxxxxx.com</span>
+              <span className='col-md-4 col-sm-12 cs_footer_contact'>xxxxxxxxx</span>
+              <span className='col-md-4 col-sm-12 cs_footer_contact'>xxxxxxxxxxxxxxxxx</span>
+            </div>
           </div>
         </div>
-        <div className='col-3'></div>
       </div>
     </div>
   );
