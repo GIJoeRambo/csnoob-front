@@ -5,9 +5,9 @@ import { ColorButton } from "../../../../shared/styledComponent/styledComponent"
 
 class DashboardCourseTab extends React.Component {
   stageList = [
-    { id: 1, name: "Stage One", stage: 1 },
-    { id: 2, name: "Stage Two", stage: 2 },
-    { id: 3, name: "Stage Three", stage: 3 },
+    { id: 1, name: "Stage 1", stage: 1 },
+    { id: 2, name: "Stage 2", stage: 2 },
+    { id: 3, name: "Stage 3", stage: 3 },
     { id: 4, name: "Postgraduate", stage: 7 }
   ];
 
@@ -50,7 +50,13 @@ class DashboardCourseTab extends React.Component {
                 variant="fullWidth"
               >
                 {this.stageList.map((el, index) => {
-                  return <Tab label={el.name} key={index}></Tab>;
+                  return (
+                    <Tab
+                      label={el.name}
+                      style={{ wordBreak: "break-all" }}
+                      key={index}
+                    ></Tab>
+                  );
                 })}
               </Tabs>
 
@@ -59,7 +65,10 @@ class DashboardCourseTab extends React.Component {
                   .filter(course => course.stage === stage.stage)
                   .map(course => {
                     return (
-                      <div key={course._id} className="col-3 mt-3 text-center">
+                      <div
+                        key={course._id}
+                        className="col-sm-3 col-4 mt-3 text-center"
+                      >
                         <ColorButton
                           variant="contained"
                           onClick={() => this.handleClick(course)}

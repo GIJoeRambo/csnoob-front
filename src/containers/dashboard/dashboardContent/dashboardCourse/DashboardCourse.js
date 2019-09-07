@@ -12,6 +12,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import service from "../../../../service/http";
 import DashboardCourseTab from "./DashboardCourseTab";
 import Swal from "sweetalert2";
+import sessionstorage from "sessionstorage";
 
 class DashboardCourse extends Component {
   state = {
@@ -32,7 +33,7 @@ class DashboardCourse extends Component {
     return null;
   }
 
-  componentDidUpdate = (prevProps, prevState) => {
+  componentDidUpdate = () => {
     if (this.state.courseList.length === 0 && this.state.shouldUpdate) {
       this.getData(this.state.uniId);
       this.setState({ shouldUpdate: false });
@@ -40,13 +41,20 @@ class DashboardCourse extends Component {
   };
 
   getData = id => {
-    service.getCoursesByUniId(
-      res => {
-        this.setState({ courseList: res.Data });
-      },
-      err => console.log(err),
-      id
-    );
+    if (sessionstorage.getItem(id)) {
+      const data = JSON.parse(sessionstorage.getItem(id));
+      this.setState({ courseList: data });
+    } else {
+      service.getCoursesByUniId(
+        res => {
+          this.setState({ courseList: res.Data }, () => {
+            sessionstorage.setItem(id, JSON.stringify(res.Data));
+          });
+        },
+        err => console.log(err),
+        id
+      );
+    }
   };
 
   handleClick = () => {
@@ -57,7 +65,7 @@ class DashboardCourse extends Component {
         text: "Please enter at least three number"
       });
     } else {
-      let course = this.state.courseList.filter(el =>
+      let course = this.state.courseList.find(el =>
         el.code.includes(this.state.searchText)
       );
       if (course) {
@@ -68,7 +76,7 @@ class DashboardCourse extends Component {
             match.params.uniName +
             "/" +
             course.code.split(" ").join(""),
-          search: "?id=" + course._id
+          search: "?id=" + course._id + "&page=1"
         };
         history.push(path);
       } else {

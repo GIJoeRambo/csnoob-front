@@ -2,10 +2,14 @@ import React from "react";
 import DashboardCourse from "./dashboardCourse/DashboardCourse";
 import DashboardDescription from "./dashboardSummary/DashboardSummary";
 import DashboardTeachers from "./dashboardTeachers/DashboardTeachers";
+import DashboardBlank from "./DashboardBlank";
 import "./DashboardContent.css";
 import { univisityList } from "../../../shared/sharedData";
 import { Redirect } from "react-router-dom";
-import { sidebarOpen } from "../../../redux/actions/sidebarAction";
+import {
+  sidebarOpen,
+  setFirstTime
+} from "../../../redux/actions/sidebarAction";
 import { connect } from "react-redux";
 
 class DashboardContent extends React.Component {
@@ -38,21 +42,32 @@ class DashboardContent extends React.Component {
         shouldRedirect: true
       });
     }
-    this.props.openDrawer();
+    if (!this.props.firstTime) {
+      this.props.openDrawer();
+      this.props.setFirstTime();
+    }
   };
 
   render() {
     if (this.state.shouldRedirect) {
       return <Redirect to="/"></Redirect>;
     }
+    let uni = this.state.uni;
     return (
       <React.Fragment>
-        {this.state.uni ? (
-          <div className="dashboard_content_container">
-            <DashboardDescription uni={this.state.uni} />
-            <DashboardCourse uni={this.state.uni} />
-            <DashboardTeachers uni={this.state.uni} />
-          </div>
+        {uni ? (
+          uni.id === 1 ? (
+            <div className="dashboard_content_container">
+              <DashboardDescription uni={uni} />
+              <DashboardCourse uni={uni} />
+              <DashboardTeachers uni={uni} />
+            </div>
+          ) : (
+            <div className="dashboard_content_container">
+              <DashboardDescription uni={uni} />
+              <DashboardBlank />
+            </div>
+          )
         ) : (
           <Redirect to="/"></Redirect>
         )}
@@ -61,9 +76,13 @@ class DashboardContent extends React.Component {
   }
 }
 
-const mapStatetoProps = state => ({ drawerOpen: state.sidebarReducer });
+const mapStatetoProps = state => ({
+  drawerOpen: state.sidebarReducer.open,
+  firstTime: state.sidebarReducer.firstTime
+});
 const mapDispatchToProps = dispatch => ({
-  openDrawer: () => dispatch(sidebarOpen())
+  openDrawer: () => dispatch(sidebarOpen()),
+  setFirstTime: () => dispatch(setFirstTime())
 });
 
 export default connect(

@@ -1,9 +1,11 @@
-const sidebarReducer = (state = false, action) => {
+const sidebarReducer = (state = { open: false, firstTime: false }, action) => {
   switch (action.type) {
     case "open":
-      return true;
+      return { ...state, open: true };
     case "close":
-      return false;
+      return { ...state, open: false };
+    case "setTrue":
+      return { ...state, firstTime: true };
     default:
       return state;
   }

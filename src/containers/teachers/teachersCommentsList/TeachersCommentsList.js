@@ -24,8 +24,7 @@ const TeachersCommentsList = (props) => {
                 variant="h6"
                 className="col-md-3 col-6 mt-3"
               >
-                {/* {el.year + " Summer School "} */}
-                ssss
+                {el.year + " Summer School "}
               </Typography>
             ) : (
                 <Typography
@@ -33,8 +32,7 @@ const TeachersCommentsList = (props) => {
                   variant="h6"
                   className="col-md-3 col-6 mt-3"
                 >
-                  {/* {el.year + " Semester " + el.semester} */}
-                  ssss
+                  {el.year + " Semester " + el.semester}
               </Typography>
               )}
             <Rating

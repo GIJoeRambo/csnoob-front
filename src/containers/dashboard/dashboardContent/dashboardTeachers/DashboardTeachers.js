@@ -39,11 +39,11 @@ class DashboardTeachers extends Component {
     })
     this.getTeachersListFromServer(uniNum);
   }
-
+  
   getTeachersListFromServer = (uniNum) => {
     httpService.getTeachersBySchoolNum(
       (res) => {
-        console.log(res)
+        // console.log(res)
         this.isTeachersListDisplayed = true;
         this.teachersList = res.Data;
         this.setState(() => {

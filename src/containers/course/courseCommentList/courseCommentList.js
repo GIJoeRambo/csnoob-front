@@ -45,7 +45,7 @@ const CourseCommentList = props => {
               name="courseRating"
               value={el.rate}
               readOnly
-              className="mt-2"
+              className="mt-3"
             />
           </div>
           <Typography className="m-3">{el.comment}</Typography>

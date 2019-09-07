@@ -2,8 +2,8 @@
 
 Justin todos:
 
-1. 重写sidebar
-2. header加fourm导航
+1. [ ] 增加comming soon
+2. [x] 增加sessionStorage
 
 Oliver下一步要做:
 
