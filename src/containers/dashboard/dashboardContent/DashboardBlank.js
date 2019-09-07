@@ -11,6 +11,11 @@ const DashboardBlank = () => {
           </Typography>
         </div>
         <Divider></Divider>
+        <img
+          src="https://media.giphy.com/media/oHTONps3xBNlu/giphy.gif"
+          alt=""
+          className="mt-3"
+        ></img>
       </CardContent>
     </Card>
   );
