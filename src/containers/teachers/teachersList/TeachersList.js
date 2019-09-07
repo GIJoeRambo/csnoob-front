@@ -8,6 +8,7 @@ import './TeachersList.css';
 
 const TeachersList = (props) => {
 
+    console.log(props)
     const [likeWhichTeacher, setLikeWitchTeacher] = useState({});
 
     //全是material-ui的东西
@@ -54,7 +55,6 @@ const TeachersList = (props) => {
         };
         history.push(path);
     }
-
     //return
     return (
         <div className='row TeachersList'>

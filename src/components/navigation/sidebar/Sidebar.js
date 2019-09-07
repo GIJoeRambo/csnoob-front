@@ -57,6 +57,13 @@ class Sidebar extends React.Component {
             <ListItemText primary={"Fourm"} />
           </ListItem>
         </List>
+        <Divider />
+        <List>
+          <ListSubheader>Our Friends</ListSubheader>
+          <ListItem button>
+            <a href="http://gradspace.org/en/home" target='_blank' className='cs_sidebar_link'>Gradspace</a>
+          </ListItem>
+        </List>
       </Drawer>
     );
   }

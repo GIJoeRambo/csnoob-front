@@ -30,37 +30,40 @@ class DashboardTeachers extends Component {
     this.getTeachersListFromServer(uniNum);
   }
 
-  componentWillReceiveProps = (nextProps) => {
-    const uniNum = nextProps.uni.id;
-    this.setState(()=>{
-      return(
-        {teachersListByRow:[]}
-      )
-    })
-    this.getTeachersListFromServer(uniNum);
-  }
-  
   getTeachersListFromServer = (uniNum) => {
-    httpService.getTeachersBySchoolNum(
-      (res) => {
-        // console.log(res)
-        this.isTeachersListDisplayed = true;
-        this.teachersList = res.Data;
-        this.setState(() => {
-          return (
-            {
-              teachersListByRow: this.teachersList.slice(0, 10),
-              count: res.Data.length,
-              page: 0,
-            }
-          )
-        });
-      },
-      (err) => {
-        console.log(err)
-      },
-      uniNum
-    )
+    if (sessionStorage.getItem('teachersList')) {
+      this.isTeachersListDisplayed = true;
+      this.teachersList = JSON.parse(sessionStorage.getItem('teachersList'));
+      this.setState(
+          {
+            teachersListByRow:this.teachersList.slice(0, 10),
+            count: this.teachersList.length,
+            page: 0,
+          })
+    }
+    else {
+      httpService.getTeachersBySchoolNum(
+        (res) => {
+          // console.log(res)
+          this.isTeachersListDisplayed = true;
+          this.teachersList = res.Data;
+          sessionStorage.setItem('teachersList', JSON.stringify(this.teachersList));
+          this.setState(() => {
+            return (
+              {
+                teachersListByRow: this.teachersList.slice(0, 10),
+                count: res.Data.length,
+                page: 0,
+              }
+            )
+          });
+        },
+        (err) => {
+          console.log(err)
+        },
+        uniNum
+      )
+    }
   }
 
   render() {

@@ -28,8 +28,9 @@
 }
 
 .cs_sidebar_link {
-  background-color: var(--primary-black);
-  color: var(--primary-gray);
+  color:black;
+  display: inline-block;
+  width: 100%;
 }
 
 .cs_sidebar_link:hover {

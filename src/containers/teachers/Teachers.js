@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import TeachersComment from "./teachersComment/TeachersComment";
 import TeachersCommentsList from "./teachersCommentsList/TeachersCommentsList";
 import httpService from "../../service/http";
+import Swal from "sweetalert2";
 import "./Teachers.css";
 
 class Teachers extends Component {
@@ -43,7 +44,11 @@ class Teachers extends Component {
         });
       },
       err => {
-        console.log(err);
+        Swal.fire({
+          type: "error",
+          title: "Oops...",
+          text: "Server went to an error, please try later."
+        });
       },
       this.teacherId,
       currentPage + 1
