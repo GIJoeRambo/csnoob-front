@@ -89,7 +89,7 @@ class NewThreadForm extends Component {
 
         <form>
           <div className="row">
-            <div className="col-5">
+            <div className="col-md-5 col-11">
               <div className="form-group">
                 <TextField
                   name="title"
@@ -100,8 +100,8 @@ class NewThreadForm extends Component {
                 ></TextField>
               </div>
             </div>
-            <div className="col-1"></div>
-            <div className="col-5">
+            {/* <div className="col-1"></div> */}
+            <div className="col-md-5 col-11">
               <div className="form-group">
                 <TextField
                   name="author"
@@ -127,14 +127,6 @@ class NewThreadForm extends Component {
             />
           </div>
           <div className="btn-group">
-            {/* <button
-              onClick={this.CancelHandler}
-              disabled={this.state.buttonDisabled}
-              type="button"
-              className="btn btn-ghost"
-            >
-              Cancel
-            </button> */}
             <Button
               name="Publish"
               color="primary"
@@ -148,7 +140,6 @@ class NewThreadForm extends Component {
             <Button
               name="cancel"
               color="secondary"
-              variant="contained"
               onClick={this.CancelHandler}
               disabled={this.state.buttonDisabled}
             >
