@@ -16,7 +16,7 @@ class DashboardCourseTab extends React.Component {
   };
 
   componentDidMount = () => {
-    if (this.props.location.state.stage) {
+    if (this.props.location.state && this.props.location.state.stage) {
       this.setState({
         tabIndex:
           this.stageList.find(

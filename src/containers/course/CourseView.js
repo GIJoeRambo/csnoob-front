@@ -109,7 +109,6 @@ class CourseView extends React.Component {
 
   render() {
     const { course, tabIndex, commentList } = this.state;
-    console.log(course);
     if (this.state.shouldRedirect) {
       return (
         <Redirect
