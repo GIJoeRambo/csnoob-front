@@ -98,11 +98,18 @@ class CourseView extends React.Component {
   };
 
   handleReturnClick = () => {
-    this.props.history.push("/dashboard/" + this.props.match.params.uniName);
+    let path = {
+      pathname: "/dashboard/" + this.props.match.params.uniName,
+      state: {
+        stage: this.state.course.stage
+      }
+    };
+    this.props.history.push(path);
   };
 
   render() {
     const { course, tabIndex, commentList } = this.state;
+    console.log(course);
     if (this.state.shouldRedirect) {
       return (
         <Redirect

@@ -95,7 +95,7 @@ class DashboardCourse extends Component {
 
   render() {
     return (
-      <Card>
+      <Card className="mt-3">
         <CardContent>
           <div className="d-flex justify-content-between">
             <Typography variant="h5" component="span" gutterBottom>

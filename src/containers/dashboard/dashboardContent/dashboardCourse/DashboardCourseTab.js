@@ -15,6 +15,17 @@ class DashboardCourseTab extends React.Component {
     tabIndex: 0
   };
 
+  componentDidMount = () => {
+    if (this.props.location.state.stage) {
+      this.setState({
+        tabIndex:
+          this.stageList.find(
+            el => el.stage === this.props.location.state.stage
+          ).id - 1
+      });
+    }
+  };
+
   handleChange = (e, newValue) => {
     this.setState({ tabIndex: newValue });
   };

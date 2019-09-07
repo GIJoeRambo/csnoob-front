@@ -10,7 +10,7 @@ class DashboardSummary extends Component {
             {this.props.uni.name}
           </Typography>
           <Divider></Divider>
-          <Typography variant="body1" color="textSecondary">
+          <Typography variant="body1" color="textSecondary" className="mt-3">
             {this.props.uni.description}
           </Typography>
         </CardContent>

@@ -70,17 +70,16 @@ class ThreadCommentTextPane extends Component {
     return (
       <div>
         <div className="post">
-          <div>
-            <TextField
-              className="mb-3"
-              name="name"
-              label="Name(Optional)"
-              variant="outlined"
-              onChange={this.props.onChange}
-              value={this.props.fields.name}
-            ></TextField>
-          </div>
           <TextField
+            className="m-3"
+            name="name"
+            label="Name(Optional)"
+            variant="outlined"
+            onChange={this.props.onChange}
+            value={this.props.fields.name}
+          ></TextField>
+          <TextField
+            className="mx-3"
             fullWidth
             multiline
             rowsMax={100}
@@ -94,7 +93,7 @@ class ThreadCommentTextPane extends Component {
             color="primary"
             onClick={this.handleSubmit}
             variant="contained"
-            className="my-3"
+            className="my-3 ml-3"
           >
             Post
           </Button>
