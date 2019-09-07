@@ -41,7 +41,10 @@ const CourseComment = props => {
     { id: 6, name: "B+" },
     { id: 7, name: "A-" },
     { id: 8, name: "A" },
-    { id: 9, name: "A+" }
+    { id: 9, name: "A+" },
+    { id: 10, name: "D-" },
+    { id: 11, name: "D" },
+    { id: 12, name: "D+" }
   ];
 
   const prepareData = () => {
@@ -67,7 +70,7 @@ const CourseComment = props => {
 
   const submitData = () => {
     let data = {
-      comment,
+      comment: comment.replace(/↵/g, "<br/>"),
       rate,
       semester,
       year,
@@ -75,6 +78,7 @@ const CourseComment = props => {
       name: name || "Anonymous",
       courseId: props.course._id
     };
+    console.log(data);
     service.postCourseRating(
       res => {
         setDialog(true);

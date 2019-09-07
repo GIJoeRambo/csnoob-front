@@ -77,6 +77,11 @@ class CourseView extends React.Component {
     service.getCourseRating(
       res => {
         if (res.Data.details.length) {
+          let tempCommentList = res.Data.details;
+          tempCommentList.forEach(el => {
+            el.comment = el.comment.replace(/\n/g, "\n\r");
+            console.log(el);
+          });
           this.setState(
             {
               commentList: res.Data.details,
@@ -102,6 +107,7 @@ class CourseView extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     const { course, tabIndex, commentList } = this.state;
     if (this.state.shouldRedirect) {
       return (

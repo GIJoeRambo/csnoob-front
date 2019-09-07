@@ -18,7 +18,7 @@ const CommentConfirmDialog = props => {
     >
       <DialogTitle>Confirmed</DialogTitle>
       <DialogContent>
-        <DialogContentText>Thanks for you comment!</DialogContentText>
+        <DialogContentText>Thanks for your comment!</DialogContentText>
       </DialogContent>
       <DialogActions>
         <Button
