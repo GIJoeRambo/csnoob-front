@@ -42,7 +42,7 @@ class Header extends React.Component {
             </span>
           </span>
           <IconButton
-            color="secondary"
+            style={{ color: "white" }}
             aria-label="open drawer"
             onClick={this.props.handleDrawerOpen}
             edge="start"
