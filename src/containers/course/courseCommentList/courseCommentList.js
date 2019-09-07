@@ -48,7 +48,9 @@ const CourseCommentList = props => {
               className="mt-3"
             />
           </div>
-          <Typography className="m-3">{el.comment}</Typography>
+          <Typography className="m-3" style={{ whiteSpace: "pre-wrap" }}>
+            {el.comment}
+          </Typography>
           <Typography className="m-3" color="textSecondary">
             {"posted at " +
               moment(Decoder(el._id)).format("Do MMMM YYYY, h:mm:ss a")}
