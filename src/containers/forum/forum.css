@@ -2307,7 +2307,7 @@ figure {
     align-items: center;
 }
 
-.col {
+/* .col {
     margin: 0 1%;
 }
 
@@ -2405,8 +2405,9 @@ figure {
     .col-7 {
         flex-basis: 96%;
         margin: 4% 4%;
-    }
+    } 
 }
+*/
 
 .container {
     display: flex;

@@ -103,7 +103,7 @@ class DashboardCourse extends Component {
             </Typography>
             <span>
               <InputBase
-                placeholder="Enter Number eg. 120"
+                placeholder="Enter Code (e.g. 120)"
                 value={this.state.searchText}
                 onChange={e => this.handleChange(e)}
               />
