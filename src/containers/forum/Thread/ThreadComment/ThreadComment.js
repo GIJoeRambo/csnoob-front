@@ -1,5 +1,5 @@
 import React from "react";
-import personLogo from "../../../../assets/images/forum_thread/criminal.jpg";
+import personLogo from "../../../../assets/images/forum_thread/people.png";
 const ThreadComment = props => {
   return (
     <div className="post">
