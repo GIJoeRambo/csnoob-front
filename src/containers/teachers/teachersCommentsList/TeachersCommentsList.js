@@ -5,7 +5,6 @@ import Decoder from "../../../util/Decoder";
 import moment from "moment";
 
 const TeachersCommentsList = (props) => {
-  console.log(props)
   return (
     <div>
       {props.commentsList.map(el => (

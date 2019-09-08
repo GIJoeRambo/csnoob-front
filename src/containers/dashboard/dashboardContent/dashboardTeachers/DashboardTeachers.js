@@ -26,19 +26,24 @@ class DashboardTeachers extends Component {
   }
 
   componentDidMount = () => {
+    if(!sessionStorage.getItem('currentPage')){
+      sessionStorage.setItem('currentPage',0)
+    }
     const uniNum = this.props.uni.id;
     this.getTeachersListFromServer(uniNum);
   }
 
   getTeachersListFromServer = (uniNum) => {
     if (sessionStorage.getItem('teachersList')) {
+      const currentPage = JSON.parse(sessionStorage.getItem('currentPage'));
+      console.log(currentPage)
       this.isTeachersListDisplayed = true;
       this.teachersList = JSON.parse(sessionStorage.getItem('teachersList'));
       this.setState(
           {
-            teachersListByRow:this.teachersList.slice(0, 10),
+            teachersListByRow:this.teachersList.slice(currentPage*10, currentPage*10 + 10),
             count: this.teachersList.length,
-            page: 0,
+            page: currentPage,
           })
     }
     else {
@@ -144,6 +149,7 @@ class DashboardTeachers extends Component {
     const startIndex = this.state.rowsPerPage * nextPage;
     const endInde = startIndex + this.state.rowsPerPage;
     this.setState(() => {
+      sessionStorage.setItem('currentPage',nextPage);
       return (
         {
           page: nextPage,
