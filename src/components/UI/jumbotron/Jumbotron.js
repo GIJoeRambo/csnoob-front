@@ -9,10 +9,13 @@ const Jumbotron = props => {
     <div className="col-12 Jumbotron text-center">
       <p className="jumbotron_title">Welcome, Noobs!</p>
       <Typography className="mt-3 jumbotron_content">
-        This is a simple hero unit, a simple jumbotron-style component for
-        calling extra attention to featured content or information. It uses
-        utility classes for typography and spacing to space content out within
-        the larger container.
+        <h4>Hello guys and welcome !!!</h4>
+        <br/>
+        CS Noob is a great zone for cs students 
+        currently in eight unis in New Zealand ( we implement UoA first, others are coming soon ) and cs big fans.
+        You can ask questions, search the courses and rate them and can meet talented friends like you!
+        <br/>
+        Click the button below and start your journey now.
       </Typography>
       <ColorButton
         className="mt-3"
