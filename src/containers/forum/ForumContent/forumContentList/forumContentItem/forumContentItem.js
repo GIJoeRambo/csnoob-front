@@ -1,5 +1,5 @@
 import React from 'react'
-
+import personLogo from '../../../../../assets/images/forum_thread/people.png'
 
 const ForumContentItem = (props) =>{
     return (
@@ -17,7 +17,7 @@ const ForumContentItem = (props) =>{
                 </p>
 
                 <img className="avatar-medium"
-                     src="http://i0.kym-cdn.com/photos/images/facebook/000/010/934/46623-batman_pikachu_super.png"
+                     src={personLogo}
                      alt=""/>
 
                     <div>
