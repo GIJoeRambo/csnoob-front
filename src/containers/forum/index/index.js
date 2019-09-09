@@ -16,6 +16,7 @@ class ForumIndex extends Component{
                 })
             },err=>{
                 console.log(err);
+                alert("Server Error")
             })
         }else{
             this.setState({data:JSON.parse(sessionStorage.getItem("forums"))})
