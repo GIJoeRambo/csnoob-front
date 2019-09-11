@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0f9cca90-c916-49c1-9afb-756660e5c898" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/forum/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/forum/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/footer/footer-middle-row/FooterMiddleRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/footer/footer-middle-row/FooterMiddleRow.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -17,13 +17,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/forum/index/index.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/navigation/footer/Footer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+            <state>
               <folding>
-                <element signature="e#0#47#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/navigation/footer/footer-middle-row/FooterMiddleRow.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,7 +85,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/UI/background/tellurion/tellurion.js" />
         <option value="$PROJECT_DIR$/src/components/UI/background/tellurion/tellurion.css" />
         <option value="$PROJECT_DIR$/src/components/layout/main_layout/main_layout.css" />
         <option value="$PROJECT_DIR$/src/components/forumList/forumItem/forumItem.js" />
@@ -125,11 +135,12 @@
         <option value="$PROJECT_DIR$/src/containers/forum/Thread/ThreadComment/ThreadComment.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/ForumContent/forumContentList/forumContentItem/forumContentItem.js" />
         <option value="$PROJECT_DIR$/src/containers/forum/index/index.js" />
+        <option value="$PROJECT_DIR$/src/components/navigation/footer/footer-middle-row/FooterMiddleRow.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2003" />
+    <option name="x" value="1886" />
     <option name="y" value="45" />
     <option name="width" value="1714" />
     <option name="height" value="919" />
@@ -156,22 +167,40 @@
               <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="navigation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="forum" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="navigation" type="462c0819:PsiDirectoryNode" />
+              <item name="footer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="navigation" type="462c0819:PsiDirectoryNode" />
+              <item name="footer" type="462c0819:PsiDirectoryNode" />
+              <item name="footer-bottom-row" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="csnoob-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="csnoob-front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="navigation" type="462c0819:PsiDirectoryNode" />
+              <item name="footer" type="462c0819:PsiDirectoryNode" />
+              <item name="footer-middle-row" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -296,12 +325,13 @@
       <workItem from="1567903852998" duration="30000" />
       <workItem from="1567903962892" duration="47000" />
       <workItem from="1567914021493" duration="771000" />
-      <workItem from="1568068736916" duration="142000" />
+      <workItem from="1568068736916" duration="285000" />
+      <workItem from="1568172733486" duration="63000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118460000" />
+    <option name="totallyTimeSpent" value="118666000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -313,7 +343,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2003" y="45" width="1714" height="919" extended-state="0" />
+    <frame x="1886" y="45" width="1714" height="919" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.24521531" />
@@ -362,42 +392,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/react-redux/es/connect/mapDispatchToProps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hoc/FormHoc.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="31" column="38" lean-forward="true" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/teachers/teachersList/TeachersList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/ThreadCommentTextPane/ThreadCommentTextPane.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -686,15 +680,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/background/tellurion/tellurion.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/home/Home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -726,10 +711,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/forum/index/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="-143">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/background/tellurion/tellurion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UI/jumbotron/Jumbotron.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/navigation/footer/footer-bottom-row/FooterBottomRow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/navigation/footer/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/navigation/footer/footer-middle-row/FooterMiddleRow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
