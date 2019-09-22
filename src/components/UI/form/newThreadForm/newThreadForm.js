@@ -3,6 +3,10 @@ import FormHoc from "../../../../hoc/FormHoc";
 import service from "../../../../service/http";
 import Swal from "sweetalert2";
 import { TextField, Button } from "@material-ui/core";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import CKEditor from "@ckeditor/ckeditor5-react";
+import ImageUploader from "../../../../shared/ImageUploader";
+
 class NewThreadForm extends Component {
   state = {
     buttonDisabled: false
@@ -100,7 +104,6 @@ class NewThreadForm extends Component {
                 ></TextField>
               </div>
             </div>
-            {/* <div className="col-1"></div> */}
             <div className="col-md-5 col-11">
               <div className="form-group">
                 <TextField
@@ -115,7 +118,7 @@ class NewThreadForm extends Component {
           </div>
 
           <div className="form-group">
-            <TextField
+            {/* <TextField
               name="content"
               multiline
               rowsMax="100"
@@ -124,6 +127,39 @@ class NewThreadForm extends Component {
               variant="outlined"
               onChange={this.props.onChange}
               value={this.props.fields.content}
+            /> */}
+            <CKEditor
+              style={{ minHeight: "400px" }}
+              name="comment"
+              editor={ClassicEditor}
+              onInit={editor => {
+                editor.plugins.get(
+                  "FileRepository"
+                ).createUploadAdapter = loader => {
+                  return new ImageUploader(loader);
+                };
+              }}
+              onChange={(event, editor) =>
+                this.props.editorOnChange(event, editor)
+              }
+              config={{
+                toolbar: [
+                  "heading",
+                  "|",
+                  "bold",
+                  "italic",
+                  "|",
+                  "link",
+                  "imageUpload",
+                  "|",
+                  "bulletedList",
+                  "numberedList",
+                  "blockQuote",
+                  "|",
+                  "undo",
+                  "redo"
+                ]
+              }}
             />
           </div>
           <div className="btn-group">

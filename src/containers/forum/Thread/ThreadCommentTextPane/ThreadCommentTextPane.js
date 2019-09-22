@@ -5,7 +5,10 @@ import Swal from "sweetalert2";
 import { IsPostedHandler } from "../../../../redux/actions/ThreadCommentIsPostedAction";
 import { connect } from "react-redux";
 import { TextField, Button } from "@material-ui/core";
-
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import CKEditor from "@ckeditor/ckeditor5-react";
+import ImageUploader from "../../../../shared/ImageUploader";
+import "../../../../shared/css/richTextEditor.css";
 class ThreadCommentTextPane extends Component {
   IsPostedHandler = () => {
     this.props.IsPostedHandler();
@@ -69,7 +72,7 @@ class ThreadCommentTextPane extends Component {
   render() {
     return (
       <div>
-        <div className="post">
+        <div className="post d-flex flex-column">
           <TextField
             className="m-3"
             name="name"
@@ -77,23 +80,44 @@ class ThreadCommentTextPane extends Component {
             variant="outlined"
             onChange={this.props.onChange}
             value={this.props.fields.name}
-          ></TextField>
-          <TextField
-            className="mx-3"
-            fullWidth
-            multiline
-            rowsMax={100}
-            name="comment"
-            label="Comment"
-            variant="outlined"
-            onChange={this.props.onChange}
-            value={this.props.fields.comment}
-          ></TextField>
+          />
+          <CKEditor
+            id="threadComment"
+            editor={ClassicEditor}
+            onInit={editor => {
+              editor.plugins.get(
+                "FileRepository"
+              ).createUploadAdapter = loader => {
+                return new ImageUploader(loader);
+              };
+            }}
+            onChange={(event, editor) =>
+              this.props.editorOnChange(event, editor)
+            }
+            config={{
+              toolbar: [
+                "heading",
+                "|",
+                "bold",
+                "italic",
+                "|",
+                "link",
+                "imageUpload",
+                "|",
+                "bulletedList",
+                "numberedList",
+                "blockQuote",
+                "|",
+                "undo",
+                "redo"
+              ]
+            }}
+          />
           <Button
             color="primary"
             onClick={this.handleSubmit}
             variant="contained"
-            className="my-3 ml-3"
+            className="m-3"
           >
             Post
           </Button>
@@ -118,4 +142,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(FormHoc({ name: "", comment: "" })(ThreadCommentTextPane));
+)(FormHoc({ name: "", content: "" })(ThreadCommentTextPane));

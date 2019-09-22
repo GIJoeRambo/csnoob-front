@@ -11,22 +11,28 @@ const FormHoc = fields => {
         });
       };
 
+      editorOnChange = (event, editor) => {
+        const data = editor.getData();
+        this.setState({ content: data });
+      };
+
       SubmitHandler = (event, onSubmit) => {
         event.preventDefault();
         onSubmit();
       };
 
-      reset = () =>{
-        Object.keys(this.state).forEach(async key=>{
-          await this.setState({[key]:""})
-        })
-      }
+      reset = () => {
+        Object.keys(this.state).forEach(async key => {
+          await this.setState({ [key]: "" });
+        });
+      };
 
       render() {
         return (
           <WrappedForm
             {...this.props}
             onChange={this.InputChangeHandler.bind(this)}
+            editorOnChange={this.editorOnChange.bind(this)}
             onSubmit={this.SubmitHandler.bind(this)}
             reset={this.reset.bind(this)}
             fields={{ ...this.state }}
