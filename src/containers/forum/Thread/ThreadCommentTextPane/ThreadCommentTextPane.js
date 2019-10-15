@@ -33,17 +33,20 @@ class ThreadCommentTextPane extends Component {
             : re.test(this.props.fields.name)
             ? "Anonymous"
             : this.props.fields.name,
-        comment: this.props.fields.comment,
+        comment: this.props.fields.content,
         threadId: this.props.threadId
       };
+      console.log(model,this.props.fields);
       service.PostThreadComment(
         model,
         res => {
+          console.log(res);
           Swal.fire({
             type: "success",
             title: res.Data,
             showConfirmButton: true
           }).then(result => {
+            console.log(result);
             if (result.value) {
               this.IsPostedHandler();
               this.props.reset();

@@ -118,16 +118,6 @@ class NewThreadForm extends Component {
           </div>
 
           <div className="form-group">
-            {/* <TextField
-              name="content"
-              multiline
-              rowsMax="100"
-              fullWidth
-              label="Content"
-              variant="outlined"
-              onChange={this.props.onChange}
-              value={this.props.fields.content}
-            /> */}
             <CKEditor
               style={{ minHeight: "400px" }}
               name="comment"
