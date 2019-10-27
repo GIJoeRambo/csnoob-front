@@ -59,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -76,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+            <state relative-caret-position="165">
+              <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -181,7 +181,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1975" />
     <option name="y" value="87" />
     <option name="width" value="1260" />
@@ -352,12 +352,13 @@
       <workItem from="1571971993026" duration="236000" />
       <workItem from="1572153526674" duration="275000" />
       <workItem from="1572153926898" duration="327000" />
-      <workItem from="1572180923669" duration="922000" />
+      <workItem from="1572180923669" duration="1084000" />
+      <workItem from="1572183442881" duration="5000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128425000" />
+    <option name="totallyTimeSpent" value="128592000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -369,10 +370,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1975" y="87" width="1260" height="713" extended-state="0" />
+    <frame x="1680" y="23" width="1920" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.21674877" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4990991" visible="true" weight="0.14057508" />
       <window_info id="Structure" order="1" sideWeight="0.5009009" side_tool="true" weight="0.1923077" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -386,7 +387,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.28502417" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.18341969" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -762,6 +763,7 @@
     <entry file="file://$PROJECT_DIR$/build/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/build/google1e22764ecfb2153f.html" />
     <entry file="file://$PROJECT_DIR$/src/containers/forum/Thread/Thread.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1680">
@@ -792,6 +794,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/service/http.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -799,20 +808,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/google1e22764ecfb2153f.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state relative-caret-position="165">
+          <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
         </state>
       </provider>
     </entry>
