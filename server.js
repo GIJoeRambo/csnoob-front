@@ -10,7 +10,7 @@ app.use((req,res,next)=>{
     if (/^(facebookexternalhit)|(Facebot)|(Twitterbot)|(Pinterest)/gi.test(ua)) {
         fs.readFile("./metaTemplate.html",(err,data)=>{
             let str = data.toString()
-            if (res.url === "/forum"){
+            if (req.url === "/forum"){
                 str = str.replace('{{title}}',"CSNOOB FORUM");
                 str = str.replace("{{description}}","Find your favourite forum about Computer Science in CSNOOB");
                 str = str.replace("{{url}}","http://csnoob.co.nz/forum");
