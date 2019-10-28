@@ -16,6 +16,7 @@ app.use((req,res,next)=>{
                 str = str.replace("{{url}}","http://csnoob.co.nz/forum");
                 str = str.replace("{{imgurl}}","http://csnoob.co.nz/csnoob.png");
             }
+            res.send(str);
         })
     }else{
         next()
