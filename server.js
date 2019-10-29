@@ -15,6 +15,11 @@ app.use((req,res,next)=>{
                 str = str.replace("{{description}}","Find your favourite forum about Computer Science in CSNOOB");
                 str = str.replace("{{url}}","http://csnoob.co.nz/forum");
                 str = str.replace("{{imgurl}}","http://csnoob.co.nz/csnoob.png");
+            }else if (req.url === '/'){
+                str = str.replace('{{title}}',"Great Zone for CS students in New Zealand");
+                str = str.replace("{{description}}","CS Noob is a great zone for cs students currently in eight university in New Zealand (We implement UoA first, others are coming soon) and cs big fans");
+                str = str.replace("{{url}}","http://csnoob.co.nz");
+                str = str.replace("{{imgurl}}","http://csnoob.co.nz/csnoob.png");
             }
             res.send(str);
         })
