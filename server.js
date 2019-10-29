@@ -7,7 +7,7 @@ const fs = require('fs')
 
 app.use((req,res,next)=>{
     var ua = req.headers['user-agent'];
-    if (/^(facebookexternalhit)|(Facebot)|(Twitterbot)|(Pinterest)|(GoogleBot)/gi.test(ua)) {
+    if (/^(facebookexternalhit)|(Facebot)|(Twitterbot)|(Pinterest)/gi.test(ua)) {
         fs.readFile("./metaTemplate.html",(err,data)=>{
             let str = data.toString()
             if (req.url === "/forum"){
