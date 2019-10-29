@@ -36,7 +36,7 @@ class ThreadCommentTextPane extends Component {
         comment: this.props.fields.content,
         threadId: this.props.threadId
       };
-      console.log(model,this.props.fields);
+      console.log(model, this.props.fields);
       service.PostThreadComment(
         model,
         res => {

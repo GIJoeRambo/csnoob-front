@@ -1,0 +1,24 @@
+.post-content blockquote {
+  display: block;
+  padding: 0.5em 1em;
+  border-left: 5px solid #bdbdbd;
+  background-color: #efefef;
+}
+
+.post-content p {
+  display: block;
+}
+
+.post-content ul {
+  padding: 1rem;
+}
+
+.post-content ul li {
+  list-style-position: inside;
+  list-style: square;
+  padding-left: 30px;
+}
+
+.post-content ol {
+  padding: 1rem;
+}
