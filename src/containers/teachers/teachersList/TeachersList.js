@@ -8,7 +8,7 @@ import './TeachersList.css';
 
 const TeachersList = (props) => {
 
-    console.log(props)
+    // console.log(props)
     const [likeWhichTeacher, setLikeWitchTeacher] = useState({});
 
     //全是material-ui的东西
@@ -32,7 +32,7 @@ const TeachersList = (props) => {
 
     const likeATeacher = (teacherId) => {
         let obj = {...likeWhichTeacher}
-        console.log(obj)
+        // console.log(obj)
         if(obj[teacherId] === true){
             delete obj[teacherId];
         }
@@ -43,7 +43,7 @@ const TeachersList = (props) => {
     }
 
     const openTeacherModal = (teacherName, teacherId) => {
-        console.log(props)
+        // console.log(props)
         let { history, match } = props;
         let path = {
             pathname:

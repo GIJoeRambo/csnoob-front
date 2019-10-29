@@ -36,7 +36,7 @@ class DashboardTeachers extends Component {
   getTeachersListFromServer = (uniNum) => {
     if (sessionStorage.getItem('teachersList')) {
       const currentPage = JSON.parse(sessionStorage.getItem('currentPage'));
-      console.log(currentPage)
+      // console.log(currentPage)
       this.isTeachersListDisplayed = true;
       this.teachersList = JSON.parse(sessionStorage.getItem('teachersList'));
       this.setState(

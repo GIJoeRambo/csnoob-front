@@ -56,7 +56,7 @@ class Teachers extends Component {
   };
 
   refreshPage = () => {
-    console.log("rrr");
+    // console.log("rrr");
     if (this.state.currentPage === 0) {
       this.getTeacherRating(0);
     } else {

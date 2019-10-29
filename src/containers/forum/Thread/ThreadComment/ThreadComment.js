@@ -1,7 +1,7 @@
 import React from "react";
 import personLogo from "../../../../assets/images/forum_thread/people.png";
 const ThreadComment = props => {
-  console.log(props);
+  // console.log(props);
   return (
     <div className="post">
       <div className="user-info">

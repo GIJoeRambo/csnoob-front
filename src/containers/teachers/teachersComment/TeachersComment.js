@@ -136,7 +136,7 @@ class TeacherComment extends Component {
   };
 
   submitToServer = () => {
-    console.log(this.props)
+    // console.log(this.props)
     let data = {
       comment: this.state.comment,
       rate: this.state.rate,

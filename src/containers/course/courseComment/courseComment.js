@@ -78,7 +78,7 @@ const CourseComment = props => {
       name: name || "Anonymous",
       courseId: props.course._id
     };
-    console.log(data);
+    // console.log(data);
     service.postCourseRating(
       res => {
         setDialog(true);

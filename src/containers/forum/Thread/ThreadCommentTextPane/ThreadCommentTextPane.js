@@ -36,17 +36,17 @@ class ThreadCommentTextPane extends Component {
         comment: this.props.fields.content,
         threadId: this.props.threadId
       };
-      console.log(model, this.props.fields);
+      // console.log(model, this.props.fields);
       service.PostThreadComment(
         model,
         res => {
-          console.log(res);
+          // console.log(res);
           Swal.fire({
             type: "success",
             title: res.Data,
             showConfirmButton: true
           }).then(result => {
-            console.log(result);
+            // console.log(result);
             if (result.value) {
               this.IsPostedHandler();
               this.props.reset();
