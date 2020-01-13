@@ -14,6 +14,9 @@ import {
 } from "react-router-dom";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Forum from "./containers/forum/forum";
+import {Provider} from 'react-redux'
+import store from './redux/store'
+
 
 const theme = createMuiTheme({
   palette: {
@@ -26,27 +29,30 @@ const theme = createMuiTheme({
   }
 });
 
+
 const App = () => {
   return (
-    <MuiThemeProvider theme={theme}>
-      <Router>
-        <MainLayout>
-          <Switch>
-            <Route exact path="/404" component={NotFound} />
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/forum" component={Forum} />
-            <Route path="/course/:uniName/:courseName" component={CourseView} />
-            <Route path="/" exact component={Home} />
-            <Route
-              path="/teacher/:uniName/:teacherName"
-              component={Teachers}
-            ></Route>
-            {/* <Route path="/teachers" component={Teachers}></Route> */}
-            <Redirect from={"*"} to={"/404"} />
-          </Switch>
-        </MainLayout>
-      </Router>
-    </MuiThemeProvider>
+   <Provider store={store}>
+     <MuiThemeProvider theme={theme}>
+       <Router>
+         <MainLayout>
+           <Switch>
+             <Route exact path="/404" component={NotFound} />
+             <Route path="/dashboard" component={Dashboard} />
+             <Route path="/forum" component={Forum} />
+             <Route path="/course/:uniName/:courseName" component={CourseView} />
+             <Route path="/" exact component={Home} />
+             <Route
+                 path="/teacher/:uniName/:teacherName"
+                 component={Teachers}
+             ></Route>
+             {/* <Route path="/teachers" component={Teachers}></Route> */}
+             <Redirect from={"*"} to={"/404"} />
+           </Switch>
+         </MainLayout>
+       </Router>
+     </MuiThemeProvider>
+   </Provider>
   );
 };
 

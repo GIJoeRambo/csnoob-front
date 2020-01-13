@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Component} from "react";
 import DashboardCourse from "./dashboardCourse/DashboardCourse";
 import DashboardDescription from "./dashboardSummary/DashboardSummary";
 import DashboardTeachers from "./dashboardTeachers/DashboardTeachers";
@@ -12,7 +12,7 @@ import {
 } from "../../../redux/actions/sidebarAction";
 import { connect } from "react-redux";
 
-class DashboardContent extends React.Component {
+class DashboardContent extends Component {
   state = {
     uni: {},
     shouldRedirect: false

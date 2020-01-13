@@ -23,9 +23,9 @@ const FooterMiddleRow = () => {
           <div className='col-3'></div>
           <div className="col-6">
             <div className='row'>
-              <span className='col-md-4 col-sm-12 cs_footer_contact'>385361267@qq.com</span>
-              <span className='col-md-4 col-sm-12 cs_footer_contact'>xxxxxxxxx</span>
-              <span className='col-md-4 col-sm-12 cs_footer_contact'>xxxxxxxxxxxxxxxxx</span>
+              <span className='col-md-4 col-sm-12 cs_footer_contact'>oliverdeng1005@gmail.com</span>
+              <span className='col-md-4 col-sm-12 cs_footer_contact'>02108736339</span>
+              <span className='col-md-4 col-sm-12 cs_footer_contact'>Oliver Deng</span>
             </div>
           </div>
         </div>
