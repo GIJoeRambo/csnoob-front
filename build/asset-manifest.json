@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9a9f0e18.chunk.css",
+    "main.js": "/static/js/main.a3e12d05.chunk.js",
+    "main.js.map": "/static/js/main.a3e12d05.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.d64bca8d.js",
+    "runtime~main.js.map": "/static/js/runtime~main.d64bca8d.js.map",
+    "static/css/2.22a7d4ef.chunk.css": "/static/css/2.22a7d4ef.chunk.css",
+    "static/js/2.d119b8fe.chunk.js": "/static/js/2.d119b8fe.chunk.js",
+    "static/js/2.d119b8fe.chunk.js.map": "/static/js/2.d119b8fe.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.921c3754da34099586db61032d23d42b.js": "/precache-manifest.921c3754da34099586db61032d23d42b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.22a7d4ef.chunk.css.map": "/static/css/2.22a7d4ef.chunk.css.map",
+    "static/css/main.9a9f0e18.chunk.css.map": "/static/css/main.9a9f0e18.chunk.css.map",
+    "static/media/Lego.png": "/static/media/Lego.32cc4632.png",
+    "static/media/WireBiting.css": "/static/media/WireBiting.e4301010.gif",
+    "static/media/aut": "/static/media/aut.052d2e8d.bin",
+    "static/media/Home.css": "/static/media/coding3.bddb32dc.jpg",
+    "static/media/lincoln": "/static/media/lincoln.1aae2fd3.bin",
+    "static/media/massey": "/static/media/massey.40a00cf0.bin",
+    "static/media/massey_backup": "/static/media/massey_backup.9f58a321.bin",
+    "static/media/otago": "/static/media/otago.f2220ff2.bin",
+    "static/media/people.png": "/static/media/people.6443c58e.png",
+    "static/media/uc": "/static/media/uc.2c66ddd0.bin",
+    "static/media/uoa": "/static/media/uoa.40031763.bin",
+    "static/media/victoria": "/static/media/victoria.9a1dffaf.bin",
+    "static/media/waikato": "/static/media/waikato.e6fe1d57.bin"
+  }
+}
