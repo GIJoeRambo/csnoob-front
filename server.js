@@ -70,12 +70,12 @@ router.use('^/$', serverRenderer)
 
 router.use(
     express.static(path.resolve(__dirname, '.', 'build'), { maxAge: '30d' })
-)
+);
 
 // tell the app to use the above rules
-app.use(router)
+app.use(router);
 
 // app.use(express.static('./build'))
 app.listen(PORT, () => {
     console.log(`SSR running on port ${PORT}`)
-})
+});

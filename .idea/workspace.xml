@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0f9cca90-c916-49c1-9afb-756660e5c898" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/DashboardContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/dashboard/dashboardContent/DashboardContent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,36 +19,6 @@
         <option value="JavaScript File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>osb</find>
-      <find>href</find>
-      <find>four_zero_four_bg</find>
-      <find>container</find>
-      <find>location</find>
-      <find>fa</find>
-      <find>a</find>
-      <find>a:</find>
-      <find>.forum-item</find>
-      <find>pointer</find>
-      <find>breadcrumbs</find>
-      <find>col-full</find>
-      <find>verifyData</find>
-      <find>this.props.location.</find>
-      <find>this.props.location</find>
-      <find>style</find>
-      <find>posted</find>
-      <find>paginationHandler</find>
-      <find>post-content</find>
-      <find>getThreadByThreadId</find>
-      <find>dec</find>
-      <find>mom</find>
-      <find>id</find>
-      <find>thread-list</find>
-      <find>icon</find>
-      <find>index</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -226,6 +190,19 @@
       <workItem from="1578628954930" duration="12000" />
       <workItem from="1578630747621" duration="666000" />
       <workItem from="1578638888068" duration="3000" />
+      <workItem from="1578946233575" duration="574000" />
+      <workItem from="1579145219912" duration="38000" />
+      <workItem from="1579494741714" duration="501000" />
+      <workItem from="1579495298358" duration="1000" />
+      <workItem from="1579552504521" duration="61000" />
+      <workItem from="1579552639289" duration="520000" />
+      <workItem from="1579553846378" duration="1000" />
+      <workItem from="1579553863930" duration="66000" />
+      <workItem from="1579554092850" duration="2866000" />
+      <workItem from="1579569180232" duration="957000" />
+      <workItem from="1579573096469" duration="1000" />
+      <workItem from="1580158786253" duration="17000" />
+      <workItem from="1583717074086" duration="878000" />
     </task>
     <servers />
   </component>
@@ -240,5 +217,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1372" y="229" key="run.anything.popup" timestamp="1583717533977">
+      <screen x="-1920" y="23" width="1920" height="992" />
+    </state>
+    <state x="-1372" y="229" key="run.anything.popup/-1920.23.1920.992/0.23.1680.1027@-1920.23.1920.992" timestamp="1583717533977" />
   </component>
 </project>
