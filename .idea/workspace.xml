@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0f9cca90-c916-49c1-9afb-756660e5c898" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/precache-manifest.921c3754da34099586db61032d23d42b.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.a3e12d05.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.a3e12d05.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/http.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/http.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +207,8 @@
       <workItem from="1579569180232" duration="957000" />
       <workItem from="1579573096469" duration="1000" />
       <workItem from="1580158786253" duration="17000" />
-      <workItem from="1583717074086" duration="1992000" />
+      <workItem from="1583717074086" duration="2170000" />
+      <workItem from="1583720246317" duration="106000" />
     </task>
     <servers />
   </component>
